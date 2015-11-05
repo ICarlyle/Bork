@@ -1,0 +1,16 @@
+Javadoc Progress:
+
+Jamal:
+Room.java -- Incomplete
+Exit.java -- Incomplete
+Dungeon.java -- Incomplete
+
+Alec:
+
+TakeCommand.java -- Incomplete
+DropCommand.java -- Incomplete
+InventoryCommand.java -- Incomplete
+
+Ian:
+
+GameState.java -- Incomplete
