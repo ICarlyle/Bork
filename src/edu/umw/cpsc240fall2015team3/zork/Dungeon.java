@@ -34,7 +34,6 @@ public class Dungeon {
     private Hashtable<String,Room> rooms;
     private Hashtable<String,Item> items;
     private String filename;
-
     Dungeon(String name, Room entry) {
         init();
         this.filename = null;    // null indicates not hydrated from file.

@@ -2,7 +2,9 @@
 package edu.umw.cpsc240fall2015team3.zork;
 
 import java.util.ArrayList;
-
+/**
+@author Alec
+*/
 class DropCommand extends Command {
 
     private String itemName;
@@ -10,7 +12,9 @@ class DropCommand extends Command {
     DropCommand(String itemName) {
         this.itemName = itemName;
     }
-
+/**
+Returns a string that tells the player what they dropped.  If the player doesn't have any items or they don't say what they are dropping, a corresponding String is returned.
+*/
     public String execute() {
         if (itemName == null || itemName.trim().length() == 0) {
             return "Drop what?\n";
@@ -30,7 +34,10 @@ class DropCommand extends Command {
             return dropItemNamed(itemName);
         }
     }
-
+/**
+Returns a string that tells the player what item they dropped.`
+@throws NoItemException if the player doesn't have the item they are trying to drop.
+*/
     private String dropItemNamed(String name) {
         try {
             Item theItem = GameState.instance().getItemFromInventoryNamed(
