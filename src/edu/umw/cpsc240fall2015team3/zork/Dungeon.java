@@ -164,6 +164,10 @@ public class Dungeon {
     public Room getEntry() { return entry; }
     public String getName() { return name; }
     public String getFilename() { return filename; }
+/**
+Stores a room object into this dungeon so that it can be retrieved later via the { @link getRoom } method.  If the same room is added twice, no effect.  If room is null, nothing happens.  If 2 rooms with the same name are added, the first room is replaced with the second.
+@param room the room to be added
+*/
     public void add(Room room) { rooms.put(room.getTitle(),room); }
     public void add(Item item) { items.put(item.getPrimaryName(),item); }
 
