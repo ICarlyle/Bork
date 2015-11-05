@@ -3,6 +3,7 @@ Javadoc Progress:
 Jamal:
 Room.java -- Incomplete
 Exit.java -- Incomplete
+Item.java -- Incomplete
 
 Alec:
 
