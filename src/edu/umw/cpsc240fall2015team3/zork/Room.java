@@ -1,5 +1,5 @@
 
-package edu.umw.stephen.bork;
+package edu.umw.cpsc240fall2015team3.zork;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -31,8 +31,8 @@ public class Room {
 
     /** Given a Scanner object positioned at the beginning of a "room" file
         entry, read and return a Room object representing it. 
-        @param d The containing {@link edu.umw.stephen.bork.Dungeon} object, 
-        necessary to retrieve {@link edu.umw.stephen.bork.Item} objects.
+        @param d The containing {@link edu.umw.cpsc240fall2015team3.zork.Dungeon} object, 
+        necessary to retrieve {@link edu.umw.cpsc240fall2015team3.zork.Item} objects.
         @param initState should items listed for this room be added to it?
         @throws NoRoomException The reader object is not positioned at the
         start of a room entry. A side effect of this is the reader's cursor

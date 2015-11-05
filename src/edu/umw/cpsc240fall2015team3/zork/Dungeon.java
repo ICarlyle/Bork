@@ -1,5 +1,5 @@
 
-package edu.umw.stephen.bork;
+package edu.umw.cpsc240fall2015team3.zork;
 
 import java.util.Hashtable;
 import java.util.Scanner;
