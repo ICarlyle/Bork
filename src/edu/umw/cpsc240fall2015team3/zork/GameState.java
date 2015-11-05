@@ -9,7 +9,9 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 
 public class GameState {
+/**$
 
+*/
     public static class IllegalSaveFormatException extends Exception {
         public IllegalSaveFormatException(String e) {
             super(e);
