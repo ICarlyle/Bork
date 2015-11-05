@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class Room {/*{@link edu.umw.cpsc240fall2015team3.zork.Dungeon*}*/ 
+public class Room {
 
     class NoRoomException extends Exception {}
 
@@ -166,23 +166,37 @@ public class Room {/*{@link edu.umw.cpsc240fall2015team3.zork.Dungeon*}*/
         return null;
     }
 
-		/**Generates an {@link edu.umw.cpsc240fall2015team3.zork.Exit} that connects this {@link edu.umw.cpsc240fall2015team3.zork.Room} to another {@link edu.umw.cpsc240fall2015team3.zork.Room}.
+		/**Connects this {@link edu.umw.cpsc240fall2015team3.zork.Room} to another {@link edu.umw.cpsc240fall2015team3.zork.Room} via an hlnkExit}.
 
-		@param exit The {@link edu.umw.cpsc240fall2015team3.zork.Exit} object to be added to the {@link edu.umw.cpsc240fall2015team3.zork Room}.
+		@param exit The {@link edu.umw.cpsc240fall2015team3.zork.Exit} object to be added to the {@link edu.umw.cpsc240fall2015team3.zork.Room}.
 		*/
-
     void addExit(Exit exit) {
         exits.add(exit);
     }
 
+		/**Inserts an hlnkItem} into this hlnkRoom}.
+
+		@param item The hlnkItem} to be added to the hlnkRoom}.
+		*/
     void add(Item item) {
         contents.add(item);
     }
 
+		/**Deletes an hlnkItem} from this hlnkRoom}.
+
+		@param item The hlnkItem} to be removed to the hlnkRoom}.
+		*/
     void remove(Item item) {
         contents.remove(item);
     }
 
+				
+		/**Returns the hlnkItem} present in the hlnkRoom} that has primary or secondary name given in the parameter. If there is no hlnkItem} that goes by that name present in the hlnkRoom}, throws an hlnkItem.NoItemException}.
+
+		@param name The identifier used to search for the hlnkItem}.
+
+		@throws Item.NoItemException
+		*/
     Item getItemNamed(String name) throws Item.NoItemException {
         for (Item item : contents) {
             if (item.goesBy(name)) {
@@ -192,6 +206,8 @@ public class Room {/*{@link edu.umw.cpsc240fall2015team3.zork.Dungeon*}*/
         throw new Item.NoItemException();
     }
 
+		/**Returns a collection of hlnkItem} objects contained by the hlnkRoom}.
+		*/
     ArrayList<Item> getContents() {
         return contents;
     }
