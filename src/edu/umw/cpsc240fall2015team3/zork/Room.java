@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class Room {
+public class Room {/*{@link edu.umw.cpsc240fall2015team3.zork.Dungeon*}*/ 
 
     class NoRoomException extends Exception {}
 
@@ -165,6 +165,11 @@ public class Room {
         }
         return null;
     }
+
+		/**Generates an {@link edu.umw.cpsc240fall2015team3.zork.Exit} that connects this {@link edu.umw.cpsc240fall2015team3.zork.Room} to another {@link edu.umw.cpsc240fall2015team3.zork.Room}.
+
+		@param exit The {@link edu.umw.cpsc240fall2015team3.zork.Exit} object to be added to the {@link edu.umw.cpsc240fall2015team3.zork Room}.
+		*/
 
     void addExit(Exit exit) {
         exits.add(exit);
