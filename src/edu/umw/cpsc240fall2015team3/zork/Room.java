@@ -166,7 +166,7 @@ public class Room {
         return null;
     }
 
-		/**Connects this {@link edu.umw.cpsc240fall2015team3.zork.Room} to another {@link edu.umw.cpsc240fall2015team3.zork.Room} via an @link edu.umw.cpsc240fall2015team3.zork.Exit}.
+		/**Connects this {@link edu.umw.cpsc240fall2015team3.zork.Room} to another {@link edu.umw.cpsc240fall2015team3.zork.Room} via an {@link edu.umw.cpsc240fall2015team3.zork.Exit}.
 
 		@param exit The {@link edu.umw.cpsc240fall2015team3.zork.Exit} object to be added to the {@link edu.umw.cpsc240fall2015team3.zork.Room}.
 		*/
@@ -174,26 +174,26 @@ public class Room {
         exits.add(exit);
     }
 
-		/**Inserts an @link edu.umw.cpsc240fall2015team3.zork.Item} into this @link edu.umw.cpsc240fall2015team3.zork.Room}.
+		/**Inserts an {@link edu.umw.cpsc240fall2015team3.zork.Item} into this {@link edu.umw.cpsc240fall2015team3.zork.Room}.
 
-		@param item The @link edu.umw.cpsc240fall2015team3.zork.Item} to be added to the @link edu.umw.cpsc240fall2015team3.zork.Room}.
+		@param item The {@link edu.umw.cpsc240fall2015team3.zork.Item} to be added to the {@link edu.umw.cpsc240fall2015team3.zork.Room}.
 		*/
     void add(Item item) {
         contents.add(item);
     }
 
-		/**Deletes an @link edu.umw.cpsc240fall2015team3.zork.Item} from this @link edu.umw.cpsc240fall2015team3.zork.Room}.
+		/**Deletes an {@link edu.umw.cpsc240fall2015team3.zork.Item} from this {@link edu.umw.cpsc240fall2015team3.zork.Room}.
 
-		@param item The @link edu.umw.cpsc240fall2015team3.zork.Item} to be removed to the @link edu.umw.cpsc240fall2015team3.zork.Room}.
+		@param item The {@link edu.umw.cpsc240fall2015team3.zork.Item} to be removed to the {@link edu.umw.cpsc240fall2015team3.zork.Room}.
 		*/
     void remove(Item item) {
         contents.remove(item);
     }
 
 				
-		/**Returns the @link edu.umw.cpsc240fall2015team3.zork.Item} present in the @link edu.umw.cpsc240fall2015team3.zork.Room} that has primary or secondary name given in the parameter. If there is no @link edu.umw.cpsc240fall2015team3.zork.Item} that goes by that name present in the @link edu.umw.cpsc240fall2015team3.zork.Room}, throws an @link edu.umw.cpsc240fall2015team3.zork.Item.NoItemException}.
+		/**Returns the {@link edu.umw.cpsc240fall2015team3.zork.Item} present in the {@link edu.umw.cpsc240fall2015team3.zork.Room} that has primary or secondary name given in the parameter. If there is no {@link edu.umw.cpsc240fall2015team3.zork.Item} that goes by that name present in the {@link edu.umw.cpsc240fall2015team3.zork.Room}, throws an {@link edu.umw.cpsc240fall2015team3.zork.Item.NoItemException}.
 
-		@param name The identifier used to search for the @link edu.umw.cpsc240fall2015team3.zork.Item}.
+		@param name The identifier used to search for the {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 
 		@throws Item.NoItemException
 		*/
@@ -206,7 +206,7 @@ public class Room {
         throw new Item.NoItemException();
     }
 
-		/**Returns a collection of @link edu.umw.cpsc240fall2015team3.zork.Item} objects contained by the @link edu.umw.cpsc240fall2015team3.zork.Room}.
+		/**Returns a collection of {@link edu.umw.cpsc240fall2015team3.zork.Item} objects contained by the {@link edu.umw.cpsc240fall2015team3.zork.Room}.
 		*/
     ArrayList<Item> getContents() {
         return contents;
