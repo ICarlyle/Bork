@@ -1,4 +1,3 @@
-
 package edu.umw.cpsc240fall2015team3.zork;
 
 import java.util.Scanner;
@@ -38,11 +37,15 @@ public class GameState {
         }
         return theInstance;
     }
-
+/**$
+Instantiates
+*/
     private GameState() {
         inventory = new ArrayList<Item>();
     }
-
+/**$
+Restores the dungeon to a previous save state.
+*/
     void restore(String filename) throws FileNotFoundException,
         IllegalSaveFormatException, Dungeon.IllegalDungeonFormatException {
 
@@ -124,7 +127,10 @@ public class GameState {
     void removeFromInventory(Item item) {
         inventory.remove(item);
     }
-
+/**$
+Searches the player's inventory and the players current room for an item with the passed string name and returns the item by that name. 
+If no item was found throw NoItemException
+*/
     Item getItemInVicinityNamed(String name) throws Item.NoItemException {
 
         // First, check inventory.
@@ -143,7 +149,10 @@ public class GameState {
 
         throw new Item.NoItemException();
     }
-
+/**$
+Searches the players current inventory for an item with the passed String name and returns the item by that name.
+If no item was found by that name throw NoItemException.
+*/
     Item getItemFromInventoryNamed(String name) throws Item.NoItemException {
 
         for (Item item : inventory) {
@@ -161,15 +170,21 @@ public class GameState {
         }
         return weight;
     }
-
+/**$
+returns the player's current room.
+*/
     Room getAdventurersCurrentRoom() {
         return adventurersCurrentRoom;
     }
-
+/**$
+Sets the player's current room to the room that is passed.
+*/
     void setAdventurersCurrentRoom(Room room) {
         adventurersCurrentRoom = room;
     }
-
+/**$
+returns the current dungeon object.
+*/
     Dungeon getDungeon() {
         return dungeon;
     }
