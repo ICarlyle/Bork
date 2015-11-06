@@ -4,7 +4,9 @@
 package edu.umw.cpsc240fall2015team3.zork;
 
 import java.util.ArrayList;
-
+/**
+The TakeCommand class is an extension of the Command class used for when the player wants to take and hold onto an item.
+*/
 class TakeCommand extends Command {
 
     private String itemName;

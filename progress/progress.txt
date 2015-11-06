@@ -7,9 +7,9 @@ Item.java -- Incomplete
 
 Alec:
 
-TakeCommand.java -- Incomplete
-DropCommand.java -- Incomplete
-InventoryCommand.java -- Incomplete
+TakeCommand.java -- complete?
+DropCommand.java -- complete?
+InventoryCommand.java -- complete?
 Dungeon.java -- complete?
 Interpreter.java -- complete?
 Npc.java -- complete?
