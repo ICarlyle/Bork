@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 
 public class GameState {
 /**$
-Prints the error message after being triggered.
+Prints the error message after being called.
 */
     public static class IllegalSaveFormatException extends Exception {
         public IllegalSaveFormatException(String e) {
@@ -40,13 +40,15 @@ Prints the error message after being triggered.
         return theInstance;
     }
 /**$
-Instantiates a new ArrayList of items
+Instantiates a new ArrayList of items.
 */
     private GameState() {
         inventory = new ArrayList<Item>();
     }
-/**$
-Restores the dungeon to a previous save state.
+/**$(More)
+Restores the dungeon to a previous save state with the passed parameter as the title.
+If there is no file by that filename throw
+@param filename name of file that is to be restored
 */
     void restore(String filename) throws FileNotFoundException,
         IllegalSaveFormatException, Dungeon.IllegalDungeonFormatException {
@@ -87,14 +89,14 @@ Restores the dungeon to a previous save state.
             }
         }
     }
-/**$
-
+/**$(Create a link)
+Runs the store method with the default save title argument
 */
     void store() throws IOException {
         store(DEFAULT_SAVE_FILE);
     }
-/**$
-
+/**$(More)
+Creates a new file with the title of the argument passed with a save file extension.
 */
     void store(String saveName) throws IOException {
         String filename = saveName + SAVE_FILE_EXTENSION;
@@ -130,13 +132,15 @@ Restores the dungeon to a previous save state.
         return names;
     }
 /**$
-
+Adds an item to the players inventory.
+@param item to be added to players inventory
 */
     void addToInventory(Item item) /* throws TooHeavyException */ {
         inventory.add(item);
     }
 /**$
-
+Removes an item from the players inventory.
+@param item to be removed from players inventory
 */
     void removeFromInventory(Item item) {
         inventory.remove(item);
