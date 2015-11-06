@@ -11,6 +11,8 @@ TakeCommand.java -- Incomplete
 DropCommand.java -- Incomplete
 InventoryCommand.java -- Incomplete
 Dungeon.java - Incomplete
+Interpreter.java
+Npc.java
 
 Ian:
 
@@ -21,7 +23,6 @@ NeedsDone:
 
 Command.java -- Incomplete
 CommandFactory.java -- Incomplete
-Interpreter.java -- Incomplete
 
 ItemSpecificCommand.java -- Incomplete
 LookCommand.java -- Incomplete

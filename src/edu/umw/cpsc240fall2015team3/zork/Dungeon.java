@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.PrintWriter;
-
+/**
+@author Alec
+*/
 public class Dungeon {
 
     public static class IllegalDungeonFormatException extends Exception {

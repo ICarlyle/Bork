@@ -36,8 +36,8 @@ Returns a String that corresponds to what the player is trying to take.  If ther
         }
     }
 /**
-Returns a string that tells the player 1) if they can take the item in the vicinity and 2) what the item is that they are taking.
-@param name String that is the item the player is trying to take.
+Returns a string that tells the player 1) if they can take the item in the vicinity and 2) what the item is that they are taking.  If the item is found, it is removed from GameState.
+@param name String that is the name of the item the player is trying to take.
 @throws NoItemException if theere is no item that the player is trying to take.
 */
     private String tryToTakeItemNamed(String name) {
@@ -60,7 +60,7 @@ Returns a string that tells the player 1) if they can take the item in the vicin
         }
     }
 /**
-Returns a capitalzied string.
+Returns a string with the first letter capitalized.
 @param s  the string to have the first letter capitalized
 */
     static String capitalize(String s) {
