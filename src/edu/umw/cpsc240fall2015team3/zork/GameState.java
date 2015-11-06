@@ -12,7 +12,9 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 
 /**
-The GameState class stores variables that need to accessed on the fly. It also stores a pointer to a dungeon, player stats, and time.
+The GameState class represents the current state of the game and has methods that change the game's state.
+These methods include the ability to save and restore the games state, the player's status and inventory, and the current Dungeon and Room.
+
 @param health int that is the player's current health
 @param score int that is the player's current score
 @param str int that measures how strong the player is
