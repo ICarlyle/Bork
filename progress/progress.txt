@@ -17,7 +17,7 @@ Npc.java -- Incomplete
 Ian:
 
 GameState.java -- Needs Review
-UnknownCommand.java -- Incomplete
+UnknownCommand.java -- Done/Review
 
 
 NeedsDone:
