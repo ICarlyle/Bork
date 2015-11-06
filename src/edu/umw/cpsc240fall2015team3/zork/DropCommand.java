@@ -5,6 +5,9 @@ import java.util.ArrayList;
 /**
 @author Alec
 */
+/**
+Extends the command class; comes into effect when a player or potentially an Npc wishes to drop a certain (or all) item(s).  
+*/
 class DropCommand extends Command {
 
     private String itemName;

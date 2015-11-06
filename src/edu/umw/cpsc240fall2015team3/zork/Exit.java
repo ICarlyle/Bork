@@ -3,6 +3,12 @@ package edu.umw.cpsc240fall2015team3.zork;
 
 import java.util.Scanner;
 
+/**
+@author Robert Jamal Washington
+*/
+/**
+Connects one {@link edu.umw.cpsc240fall2015team3.zork.Room} object to another {@link edu.umw.cpsc240fall2015team3.zork.Room} object.
+*/
 public class Exit {
 
     class NoExitException extends Exception {}
@@ -10,11 +16,11 @@ public class Exit {
     private String dir;
     private Room src, dest;
 
-		/**Returns an hlnkExit} object that connects a source hlnkRoom} with a destination hlnkRoom} in a specific direction.
+		/**Returns an {@link edu.umw.cpsc240fall2015team3.zork.Exit} object that connects a source {@link edu.umw.cpsc240fall2015team3.zork.Room} with a destination {@link edu.umw.cpsc240fall2015team3.zork.Room} in a specific direction.
 
-		@param dir The direction this hlnkExit} faces.
-		@param src The source hlnkRoom} of this hlnkExit}.
-		@param dest The destination hlnkRoom} of this hlnkExit}.
+		@param dir The direction this {@link edu.umw.cpsc240fall2015team3.zork.Exit} faces.
+		@param src The source {@link edu.umw.cpsc240fall2015team3.zork.Room} of this {@link edu.umw.cpsc240fall2015team3.zork.Exit}.
+		@param dest The destination {@link edu.umw.cpsc240fall2015team3.zork.Room} of this {@link edu.umw.cpsc240fall2015team3.zork.Exit}.
 		*/
     Exit(String dir, Room src, Room dest) {
         init();
@@ -62,21 +68,21 @@ public class Exit {
     }
 
 
-		/**Returns information about the direction this hlnkExit} faces and which hlnkRoom} it leads to.
+		/**Returns information about the direction this {@link edu.umw.cpsc240fall2015team3.zork.Exit} faces and which {@link edu.umw.cpsc240fall2015team3.zork.Room} it leads to.
 		*/
     String describe() {
         return "You can go " + dir + " to " + dest.getTitle() + ".";
     }
 
-		/**Returns the direction that this hlnkExit} faces.
+		/**Returns the direction that this {@link edu.umw.cpsc240fall2015team3.zork.Exit} faces.
 		*/
     String getDir() { return dir; }
 		
-		/**Returns the hlnkRoom} that produces this hlnkExit}.
+		/**Returns the {@link edu.umw.cpsc240fall2015team3.zork.Room} that produces this {@link edu.umw.cpsc240fall2015team3.zork.Exit}.
 		*/
     Room getSrc() { return src; }
 
-		/**Returns the hlnkRoom} that this hlnkExit} connects to.
+		/**Returns the {@link edu.umw.cpsc240fall2015team3.zork.Room} that this {@link edu.umw.cpsc240fall2015team3.zork.Exit} connects to.
 		*/
     Room getDest() { return dest; }
 }

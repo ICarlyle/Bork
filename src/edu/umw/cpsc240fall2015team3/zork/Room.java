@@ -6,6 +6,12 @@ import java.util.Scanner;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+@author Robert Jamal Washington
+*/
+/**
+Represents the individual sections of a {@link edu.umw.cpsc240fall2015team3.zork.Dungeon that the player will traverse through.
+*/
 public class Room {
 
     class NoRoomException extends Exception {}
