@@ -39,9 +39,6 @@ Prints the error message after being called.
         }
         return theInstance;
     }
-/**$
-Instantiates a new ArrayList of items.
-*/
     private GameState() {
         inventory = new ArrayList<Item>();
     }
@@ -89,14 +86,16 @@ If there is no file by that filename throw
             }
         }
     }
-/**$(Create a link)
-Runs the store method with the default save title argument
+/**$
+Runs the store method with a default save title argument.
+@throws IOException if there is an error saving the file
 */
     void store() throws IOException {
         store(DEFAULT_SAVE_FILE);
     }
-/**$(More)
+/**$(Add throws)
 Creates a new file with the title of the argument passed with a save file extension.
+@throws IOException if there is an error saving the file
 */
     void store(String saveName) throws IOException {
         String filename = saveName + SAVE_FILE_EXTENSION;
@@ -115,14 +114,14 @@ Creates a new file with the title of the argument passed with a save file extens
         w.close();
     }
 /**$
-
+Stores the passed parameter as the current dungeon.
 */
     void initialize(Dungeon dungeon) {
         this.dungeon = dungeon;
         adventurersCurrentRoom = dungeon.getEntry();
     }
 /**$
-
+Instantiates and returns an arraylist of item names in the form of strings
 */
     ArrayList<String> getInventoryNames() {
         ArrayList<String> names = new ArrayList<String>();
