@@ -2,7 +2,7 @@ Javadoc Progress:
 
 Jamal:
 Room.java -- Needs Review
-Exit.java -- Incomplete
+Exit.java -- Needs Review
 Item.java -- Incomplete
 
 Alec:
@@ -13,40 +13,30 @@ InventoryCommand.java -- Incomplete
 Dungeon.java -- complete?
 Interpreter.java -- complete?
 Npc.java -- complete?
-EventFactory
-WinEvent
-DieEvent
-CommandFactory
-Command
-Event
-
-Ian:
-
-GameState.java -- Needs Review
-UnknownCommand.java -- Done/Review
-
-
-NeedsDone:
-
-Command.java -- Incomplete
-CommandFactory.java -- Incomplete
-
-ItemSpecificCommand.java -- Incomplete
-LookCommand.java -- Incomplete
-MovementCommand.java -- Incomplete
-SaveCommand.java -- Incomplete
-
-
-
-Events need to be changed in Organization before JavaDocing them
-ShowHealthCommand -- Incomplete
+EventFactory -- Incomplete
 DieEvent -- Incomplete
 WinEvent -- Incomplete
+CommandFactory.java -- Incomplete
+Command.java -- Incomplete
+Event -- Incomplete
+
+Ian:
+GameState.java -- Needs Review
+UnknownCommand.java -- Done/Review
+LookCommand.java -- Incomplete
+MovementCommand.java -- Incomplete
+
+NeedsDone:
+ItemSpecificCommand.java -- Incomplete
+SaveCommand.java -- Incomplete
+
+Events need to be changed in Organization before JavaDocing them
+WaitCommand -- Incomplete
+AttackCommand -- Incomplete
+ShowHealthCommand -- Incomplete
 LowerHealthEvent -- Incomplete
 TransformEvent -- Incomplete
 TeleportEvent -- Incomplete
 UnlockEvent -- Incomplete
 AddScoreEvent -- Incomplete
 DisappearEvent -- Incomplete
-WaitCommand -- Incomplete
-AttackCommand -- Incomplete

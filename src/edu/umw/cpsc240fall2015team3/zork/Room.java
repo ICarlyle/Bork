@@ -106,7 +106,7 @@ public class Room {
         beenHere = false;
     }
 
-		/**Returns the title of this {@link edu.umw.cpsc240fall2015team3.zork.Room.
+		/**Returns the title of this {@link edu.umw.cpsc240fall2015team3.zork.Room}.
 		*/
     String getTitle() { return title; }
 
