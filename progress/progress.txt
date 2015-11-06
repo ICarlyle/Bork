@@ -27,13 +27,12 @@ LookCommand.java -- Incomplete
 MovementCommand.java -- Incomplete
 
 NeedsDone:
-
 ItemSpecificCommand.java -- Incomplete
 SaveCommand.java -- Incomplete
 
-
-
 Events need to be changed in Organization before JavaDocing them
+WaitCommand -- Incomplete
+AttackCommand -- Incomplete
 ShowHealthCommand -- Incomplete
 LowerHealthEvent -- Incomplete
 TransformEvent -- Incomplete
@@ -41,5 +40,3 @@ TeleportEvent -- Incomplete
 UnlockEvent -- Incomplete
 AddScoreEvent -- Incomplete
 DisappearEvent -- Incomplete
-WaitCommand -- Incomplete
-AttackCommand -- Incomplete
