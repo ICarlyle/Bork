@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 
 public class GameState {
 /**$
-
+Prints the error message after being triggered.
 */
     public static class IllegalSaveFormatException extends Exception {
         public IllegalSaveFormatException(String e) {
@@ -40,7 +40,7 @@ public class GameState {
         return theInstance;
     }
 /**$
-Instantiates
+Instantiates a new ArrayList of items
 */
     private GameState() {
         inventory = new ArrayList<Item>();
@@ -87,11 +87,15 @@ Restores the dungeon to a previous save state.
             }
         }
     }
+/**$
 
+*/
     void store() throws IOException {
         store(DEFAULT_SAVE_FILE);
     }
+/**$
 
+*/
     void store(String saveName) throws IOException {
         String filename = saveName + SAVE_FILE_EXTENSION;
         PrintWriter w = new PrintWriter(new FileWriter(filename));
@@ -108,12 +112,16 @@ Restores the dungeon to a previous save state.
         }
         w.close();
     }
+/**$
 
+*/
     void initialize(Dungeon dungeon) {
         this.dungeon = dungeon;
         adventurersCurrentRoom = dungeon.getEntry();
     }
+/**$
 
+*/
     ArrayList<String> getInventoryNames() {
         ArrayList<String> names = new ArrayList<String>();
         for (Item item : inventory) {
@@ -121,11 +129,15 @@ Restores the dungeon to a previous save state.
         }
         return names;
     }
+/**$
 
+*/
     void addToInventory(Item item) /* throws TooHeavyException */ {
         inventory.add(item);
     }
+/**$
 
+*/
     void removeFromInventory(Item item) {
         inventory.remove(item);
     }
@@ -164,7 +176,9 @@ If no item was found by that name throw NoItemException.
         }
         throw new Item.NoItemException();
     }
+/**$
 
+*/
     int weightCarried() {
         int weight = 0;
         for (Item item : inventory) {
