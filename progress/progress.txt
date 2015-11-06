@@ -15,3 +15,16 @@ Dungeon.java - Incomplete
 Ian:
 
 GameState.java -- Incomplete
+
+
+NeedsDone:
+
+Command.java -- Incomplete
+CommandFactory.java -- Incomplete
+Interpreter.java -- Incomplete
+
+ItemSpecificCommand.java -- Incomplete
+LookCommand.java -- Incomplete
+MovementCommand.java -- Incomplete
+SaveCommand.java -- Incomplete
+UnknownCommand.java -- Incomplete
