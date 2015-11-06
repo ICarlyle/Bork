@@ -16,7 +16,7 @@ Npc.java -- Incomplete
 
 Ian:
 
-GameState.java -- Incomplete
+GameState.java -- Needs Review
 
 
 NeedsDone:
@@ -30,6 +30,9 @@ MovementCommand.java -- Incomplete
 SaveCommand.java -- Incomplete
 UnknownCommand.java -- Incomplete
 
+
+
+Events need to be changed in Organization before JavaDocing them
 ShowHealthCommand -- Incomplete
 DieCommand -- Incomplete
 WinCommand -- Incomplete
