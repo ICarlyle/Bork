@@ -1,8 +1,9 @@
 package edu.umw.cpsc240fall2015team3.zork;
-
-
 /**
 @author Alec
+*/
+
+/**
 The Npc class represents a hostile/nonhostile enemy in the Zork dungeon.  These NPCs cannot move on their own and are tied to specific rooms.  They have their own dialogue that they will say every combat "turn" and have their own description, inventory, stats, and a number of points that they are worth when killed.  The NPC will award a number of points and drop its "inventory" on death. 
 */
 public class Npc{

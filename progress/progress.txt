@@ -10,9 +10,15 @@ Alec:
 TakeCommand.java -- Incomplete
 DropCommand.java -- Incomplete
 InventoryCommand.java -- Incomplete
-Dungeon.java -- Incomplete
-Interpreter.java -- Incomplete
-Npc.java -- Incomplete
+Dungeon.java -- complete?
+Interpreter.java -- complete?
+Npc.java -- complete?
+EventFactory
+WinEvent
+DieEvent
+CommandFactory
+Command
+Event
 
 Ian:
 
@@ -31,13 +37,13 @@ SaveCommand.java -- Incomplete
 UnknownCommand.java -- Incomplete
 
 ShowHealthCommand -- Incomplete
-DieCommand -- Incomplete
-WinCommand -- Incomplete
-LowerHealthCommand -- Incomplete
-TransformCommand -- Incomplete
-TeleportCommand -- Incomplete
-UnlockCommand -- Incomplete
-AddScoreCommand -- Incomplete
-DisappearCommand -- Incomplete
+DieEvent -- Incomplete
+WinEvent -- Incomplete
+LowerHealthEvent -- Incomplete
+TransformEvent -- Incomplete
+TeleportEvent -- Incomplete
+UnlockEvent -- Incomplete
+AddScoreEvent -- Incomplete
+DisappearEvent -- Incomplete
 WaitCommand -- Incomplete
 AttackCommand -- Incomplete

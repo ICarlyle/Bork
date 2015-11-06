@@ -1,5 +1,8 @@
 
 package edu.umw.cpsc240fall2015team3.zork;
+/**
+@author Alec
+*/
 
 import java.util.Hashtable;
 import java.util.Scanner;
@@ -8,7 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.PrintWriter;
 /**
-@author Alec
+The Dungeon class represents the dungeon that the player will player through.  It is read in from a .zork/.sav file. 
 */
 public class Dungeon {
 
@@ -36,6 +39,10 @@ public class Dungeon {
     private Hashtable<String,Room> rooms;
     private Hashtable<String,Item> items;
     private String filename;
+/**
+@param name String that represents the name of this dungeon
+@param entry Room object that will be the first room of the dungeon.
+*/
     Dungeon(String name, Room entry) {
         init();
         this.filename = null;    // null indicates not hydrated from file.
@@ -44,10 +51,12 @@ public class Dungeon {
         rooms = new Hashtable<String,Room>();
     }
 
-    /**
-     * Read from the .bork filename passed, and instantiate a Dungeon object
-     * based on it.
-     */
+/**
+Reads from the file passed and instantiates a new dungeon based on it.
+@param filename String that holds onto the .zork dungeon.
+@throws IllegalDungeonFormatException if the .zork file is inaccurate to the format specifacations
+@throws FileNotFoundException if the system cannot find the .zork file
+*/
     public Dungeon(String filename) throws FileNotFoundException, 
         IllegalDungeonFormatException {
 
@@ -55,8 +64,10 @@ public class Dungeon {
     }
 
     /**
-     * Read from the .bork filename passed, and instantiate a Dungeon object
+     * Read from the .zork filename passed, and instantiate a Dungeon object
      * based on it, including (possibly) the items in their original locations.
+	@throws FileNotFoundException if the system cannot find the file
+	@throws IllegalDungeonFormatException if the .zork file format is inaccurate
      */
     public Dungeon(String filename, boolean initState) 
         throws FileNotFoundException, IllegalDungeonFormatException {
@@ -121,16 +132,18 @@ public class Dungeon {
         s.close();
     }
     
-    // Common object initialization tasks, regardless of which constructor
-    // is used.
+/**
+Initializes new variables for the dungeon object in a new/restored dungeon
+*/
     private void init() {
         rooms = new Hashtable<String,Room>();
         items = new Hashtable<String,Item>();
     }
 
-    /*
+    /**
      * Store the current (changeable) state of this dungeon to the writer
      * passed.
+	@param w PrintWriter that will save the state of this dungeon.
      */
     void storeState(PrintWriter w) throws IOException {
         w.println(FILENAME_LEADER + getFilename());
@@ -141,9 +154,11 @@ public class Dungeon {
         w.println(TOP_LEVEL_DELIM);
     }
 
-    /*
+    /**
      * Restore the (changeable) state of this dungeon to that reflected in the
      * reader passed.
+	@param s Scanner that reads from a .sav file in order to restore a dungeon object.
+	@throws GameState.IllegalDungeonFormatException if the .sav file format is inaccurate
      */
     void restoreState(Scanner s) throws GameState.IllegalSaveFormatException {
 
@@ -161,25 +176,37 @@ public class Dungeon {
             roomName = s.nextLine();
         }
     }
-
+/**
+Returns the room that is the entrance of this dungeon.
+*/
     public Room getEntry() { return entry; }
+/**
+Returns the String that is the name of this dungeon.
+*/
     public String getName() { return name; }
+/**
+Returns the string that is the filename of this dungeon.
+*/
     public String getFilename() { return filename; }
 /**
-Stores a room object into this dungeon so that it can be retrieved later via the { @link getRoom } method.  If the same room is added twice, no effect.  If room is null, nothing happens.  If 2 rooms with the same name are added, the first room is replaced with the second.
+Stores a room object into this dungeon so that it can be retrieved later.  If the same room is added twice, no effect.  If room is null, nothing happens.  If 2 rooms with the same name are added, the first room is replaced with the second.
 @param room the room to be added
 */
     public void add(Room room) { rooms.put(room.getTitle(),room); }
+/**
+Stores an item object into this dungeon so that it can be retrieved later.  If the same item is added twice, no effect.  If the item is null, nothing happens.  If 2 items with the same name are added, the first item  is replaced with the second.
+*/
     public void add(Item item) { items.put(item.getPrimaryName(),item); }
-
+/**
+Returns a room object with the same title as the passes String.  If there is no room with the passed title, returns null.
+*/
     public Room getRoom(String roomTitle) {
         return rooms.get(roomTitle);
     }
 
     /**
-     * Get the Item object whose primary name is passed. This has nothing to
-     * do with where the Adventurer might be, or what's in his/her inventory,
-     * etc.
+     * Returns the Item object whose primary name is passed.  
+	@throws Item.NoItemException if the passed string does not match any items
      */
     public Item getItem(String primaryItemName) throws Item.NoItemException {
         
