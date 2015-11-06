@@ -13,35 +13,28 @@ InventoryCommand.java -- Incomplete
 Dungeon.java -- complete?
 Interpreter.java -- complete?
 Npc.java -- complete?
-EventFactory
-WinEvent
-DieEvent
-CommandFactory
-Command
-Event
+EventFactory -- Incomplete
+DieEvent -- Incomplete
+WinEvent -- Incomplete
+CommandFactory.java -- Incomplete
+Command.java -- Incomplete
+Event -- Incomplete
 
 Ian:
-
 GameState.java -- Needs Review
 UnknownCommand.java -- Done/Review
-
+LookCommand.java -- Incomplete
+MovementCommand.java -- Incomplete
 
 NeedsDone:
 
-Command.java -- Incomplete
-CommandFactory.java -- Incomplete
-
 ItemSpecificCommand.java -- Incomplete
-LookCommand.java -- Incomplete
-MovementCommand.java -- Incomplete
 SaveCommand.java -- Incomplete
 
 
 
 Events need to be changed in Organization before JavaDocing them
 ShowHealthCommand -- Incomplete
-DieEvent -- Incomplete
-WinEvent -- Incomplete
 LowerHealthEvent -- Incomplete
 TransformEvent -- Incomplete
 TeleportEvent -- Incomplete
