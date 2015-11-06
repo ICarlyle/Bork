@@ -21,8 +21,8 @@ Command.java -- Incomplete
 Event -- Incomplete
 
 Ian:
-GameState.java -- Needs Review
-UnknownCommand.java -- Done/Review
+GameState.java -- Done|Review
+UnknownCommand.java -- Done|Review
 LookCommand.java -- Incomplete
 MovementCommand.java -- Incomplete
 
