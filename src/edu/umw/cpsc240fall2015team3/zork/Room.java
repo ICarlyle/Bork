@@ -108,6 +108,11 @@ public class Room {
         w.println(Dungeon.SECOND_LEVEL_DELIM);
     }
 
+		/**Initializes this hlnkRoom} in a state specified by the contents of a .sav file. If the file read is not a valid .sav file, throws a hlnkGameState.IllegalSaveFormatException}.
+
+		@param s The Scanner that reads the .sav file.
+		@param d The hlnkDungeon} that contains this hlnkRoom}.
+		*/
     void restoreState(Scanner s, Dungeon d) throws 
         GameState.IllegalSaveFormatException {
 
@@ -133,10 +138,16 @@ public class Room {
         }
     }
 
+		/**Returns information about this hlnkRoom}, including its title, its description, and its hlnkItem} contents. After being called, changes the boolean beenHere to true.
+		*/
     public String describe() {
         return describe(false);
     }
+		
+		/**Returns information about this hlnkRoom}, including its title, its description, its hlnkItem} contents, and the hlnkExit}s leading from this hlnkRoom}. After being called, changes the boolean beenHere to true.
 
+		@param full Pending description.
+		*/
     public String describe(boolean full) {
         String description;
         if (beenHere && !full) {
@@ -157,6 +168,10 @@ public class Room {
         return description;
     }
     
+		/**Returns the hlnkRoom} connected by the hlnkExit} in the direction specified by the parameter. If there is no hlnkExit} in that direction, returns NULL.
+
+		@param dir The direction for which to search for an hlnkExit}.
+		*/
     public Room leaveBy(String dir) {
         for (Exit exit : exits) {
             if (exit.getDir().equals(dir)) {
@@ -191,7 +206,7 @@ public class Room {
     }
 
 				
-		/**Returns the {@link edu.umw.cpsc240fall2015team3.zork.Item} present in the {@link edu.umw.cpsc240fall2015team3.zork.Room} that has primary or secondary name given in the parameter. If there is no {@link edu.umw.cpsc240fall2015team3.zork.Item} that goes by that name present in the {@link edu.umw.cpsc240fall2015team3.zork.Room}, throws an {@link edu.umw.cpsc240fall2015team3.zork.Item.NoItemException}.
+		/**Returns the {@link edu.umw.cpsc240fall2015team3.zork.Item} present in the {@link edu.umw.cpsc240fall2015team3.zork.Room} that has the primary or secondary name given in the parameter. If there is no {@link edu.umw.cpsc240fall2015team3.zork.Item} that goes by that name present in the {@link edu.umw.cpsc240fall2015team3.zork.Room}, throws an {@link edu.umw.cpsc240fall2015team3.zork.Item.NoItemException}.
 
 		@param name The identifier used to search for the {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 
