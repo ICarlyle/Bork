@@ -4,6 +4,8 @@ Jamal:
 Room.java -- Needs Review
 Exit.java -- Needs Review
 Item.java -- Needs Review
+ItemSpecificCommand.java -- Incomplete
+SaveCommand.java -- Incomplete
 
 Alec:
 
@@ -27,8 +29,6 @@ LookCommand.java -- Incomplete
 MovementCommand.java -- Incomplete
 
 NeedsDone:
-ItemSpecificCommand.java -- Incomplete
-SaveCommand.java -- Incomplete
 
 Events need to be changed in Organization before JavaDocing them
 WaitCommand -- Incomplete
