@@ -17,6 +17,7 @@ Npc.java -- Incomplete
 Ian:
 
 GameState.java -- Needs Review
+UnknownCommand.java -- Incomplete
 
 
 NeedsDone:
@@ -28,7 +29,6 @@ ItemSpecificCommand.java -- Incomplete
 LookCommand.java -- Incomplete
 MovementCommand.java -- Incomplete
 SaveCommand.java -- Incomplete
-UnknownCommand.java -- Incomplete
 
 
 
