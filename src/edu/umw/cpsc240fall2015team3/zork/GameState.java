@@ -1,3 +1,6 @@
+/**
+@author Ian
+*/
 package edu.umw.cpsc240fall2015team3.zork;
 
 import java.util.Scanner;
@@ -9,7 +12,6 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 
 /**
-@author Ian
 The GameState class stores variables that need to accessed on the fly.
 @param health int that is the player's current health
 @param score int that is the player's current score
