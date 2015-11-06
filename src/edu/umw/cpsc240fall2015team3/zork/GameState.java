@@ -12,7 +12,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 
 /**
-The GameState class stores variables that need to accessed on the fly.
+The GameState class stores variables that need to accessed on the fly. It also stores a pointer to a dungeon, player stats, and time.
 @param health int that is the player's current health
 @param score int that is the player's current score
 @param str int that measures how strong the player is
