@@ -10,6 +10,12 @@ public class Exit {
     private String dir;
     private Room src, dest;
 
+		/**Returns an hlnkExit} object that connects a source hlnkRoom} with a destination hlnkRoom} in a specific direction.
+
+		@param dir The direction this hlnkExit} faces.
+		@param src The source hlnkRoom} of this hlnkExit}.
+		@param dest The destination hlnkRoom} of this hlnkExit}.
+		*/
     Exit(String dir, Room src, Room dest) {
         init();
         this.dir = dir;
@@ -55,11 +61,22 @@ public class Exit {
     private void init() {
     }
 
+
+		/**Returns information about the direction this hlnkExit} faces and which hlnkRoom} it leads to.
+		*/
     String describe() {
         return "You can go " + dir + " to " + dest.getTitle() + ".";
     }
 
+		/**Returns the direction that this hlnkExit} faces.
+		*/
     String getDir() { return dir; }
+		
+		/**Returns the hlnkRoom} that produces this hlnkExit}.
+		*/
     Room getSrc() { return src; }
+
+		/**Returns the hlnkRoom} that this hlnkExit} connects to.
+		*/
     Room getDest() { return dest; }
 }

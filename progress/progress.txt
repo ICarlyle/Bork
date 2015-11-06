@@ -2,7 +2,7 @@ Javadoc Progress:
 
 Jamal:
 Room.java -- Needs Review
-Exit.java -- Incomplete
+Exit.java -- Needs Review
 Item.java -- Incomplete
 
 Alec:
