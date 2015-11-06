@@ -10,9 +10,9 @@ Alec:
 TakeCommand.java -- Incomplete
 DropCommand.java -- Incomplete
 InventoryCommand.java -- Incomplete
-Dungeon.java - Incomplete
-Interpreter.java
-Npc.java
+Dungeon.java -- Incomplete
+Interpreter.java -- Incomplete
+Npc.java -- Incomplete
 
 Ian:
 
@@ -29,3 +29,15 @@ LookCommand.java -- Incomplete
 MovementCommand.java -- Incomplete
 SaveCommand.java -- Incomplete
 UnknownCommand.java -- Incomplete
+
+ShowHealthCommand -- Incomplete
+DieCommand -- Incomplete
+WinCommand -- Incomplete
+LowerHealthCommand -- Incomplete
+TransformCommand -- Incomplete
+TeleportCommand -- Incomplete
+UnlockCommand -- Incomplete
+AddScoreCommand -- Incomplete
+DisappearCommand -- Incomplete
+WaitCommand -- Incomplete
+AttackCommand -- Incomplete
