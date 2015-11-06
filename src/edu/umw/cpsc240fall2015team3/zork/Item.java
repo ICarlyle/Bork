@@ -24,7 +24,7 @@ public class Item {
     private Hashtable<String,String[]> messages;
 
 
-		/**Initializes this hlnkItem}'s container variables.
+		/**Initializes this {@link edu.umw.cpsc240fall2015team3.zork.Item}'s container variables.
 		*/
     private void init() {
         messages = new Hashtable<String,String[]>();
@@ -32,11 +32,11 @@ public class Item {
     }
 
 		
-    /** Returns an hlnkItem} object read from the "Items" section of a .zork file by a Scanner.
+    /** Returns an {@link edu.umw.cpsc240fall2015team3.zork.Item} object read from the "Items" section of a .zork file by a Scanner.
         @param s The Scanner that reads the .zork file.
 
         @throws NoItemException The reader object is not positioned at the
-        start of an hlnkItem} entry. A side effect of this is the reader's cursor
+        start of an {@link edu.umw.cpsc240fall2015team3.zork.Item} entry. A side effect of this is the reader's cursor
         is now positioned one line past where it was.
         @throws IllegalDungeonFormatException A structural problem with the
         dungeon file itself, detected when trying to read this room.
@@ -80,34 +80,34 @@ public class Item {
         }
     }
 
-		/**Returns whether or not this hlnkItem} has a certain primary or secondary name.
+		/**Returns whether or not this {@link edu.umw.cpsc240fall2015team3.zork.Item} has a certain primary or secondary name.
 
-		@param name The alias to compare to the hlnkItem}'s primary and secondary names.
+		@param name The alias to compare to the {@link edu.umw.cpsc240fall2015team3.zork.Item}'s primary and secondary names.
 		*/
     boolean goesBy(String name) {
         return primaryName.equals(name) || aliases.contains(name);
     }
 
-		/**Returns the primary name of this hlnkItem}.
+		/**Returns the primary name of this {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 		*/
     String getPrimaryName() { return primaryName; }
 
-		/**Returns a message associated with an action the player takes with this hlnkItem}.
+		/**Returns a message associated with an action the player takes with this {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 
-		@param verb The action the player uses with this hlnkItem}.
+		@param verb The action the player uses with this {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 		*/
     public String getMessageForVerb(String verb) {
         String[] possibleMessages = messages.get(verb);
         return possibleMessages[rng.nextInt(possibleMessages.length)];
     }
 
-		/**Returns a String that represents this hlnkItem}.
+		/**Returns a String that represents this {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 		*/
     public String toString() {
         return primaryName;
     }
 
-		/**Returns the carrying weight of this hlnkItem}.
+		/**Returns the carrying weight of this {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 		*/
     public int getWeight() {
         return weight;
