@@ -18,11 +18,25 @@ public class Room {
     private ArrayList<Item> contents;
     private ArrayList<Exit> exits;
 
+		/**Returns an empty {@link edu.umw.cpsc240fall2015team3.zork.Room} with the specificied title.
+
+		@param title The title to be given to the {@link edu.umw.cpsc240fall2015team3.zork.Room}.
+		*/
     Room(String title) {
         init();
         this.title = title;
     }
 
+		/**Returns a {@link edu.umw.cpsc240fall2015team3.zork.Room} object generated from a Scanner object positioned at the "Room" section of a .zork file.
+
+        @param d The containing {@link edu.umw.cpsc240fall2015team3.zork.Dungeon} object, necessary to retrieve {@link edu.umw.cpsc240fall2015team3.zork.Item} objects.
+
+        @throws NoRoomException The reader object is not positioned at the
+        start of a room entry. A side effect of this is the reader's cursor
+        is now positioned one line past where it was.
+        @throws IllegalDungeonFormatException A structural problem with the
+        dungeon file itself, detected when trying to read this room.
+		*/
     Room(Scanner s, Dungeon d) throws NoRoomException,
         Dungeon.IllegalDungeonFormatException {
 
@@ -80,21 +94,32 @@ public class Room {
         }
     }
 
-    // Common object initialization tasks.
+    
+		/**Initializes this {@link edu.umw.cpsc240fall2015team3.zork.Room} in a state specified by the contents of a .sav file. If the file read is not a valid .sav file, throws a {@link edu.umw.cpsc240fall2015team3.zork.GameState.IllegalSaveFormatException}.
+
+		@param s The Scanner that reads the .sav file.
+		@param d The {@link edu.umw.cpsc240fall2015team3.zork.Dungeon} that contains this {@link edu.umw.cpsc240fall2015team3.zork.Room}.
+		*/
     private void init() {
         contents = new ArrayList<Item>();
         exits = new ArrayList<Exit>();
         beenHere = false;
     }
 
+		/**Returns the title of this {@link edu.umw.cpsc240fall2015team3.zork.Room.
+		*/
     String getTitle() { return title; }
 
+		/**Sets the description of thiis {@link edu.umw.cpsc240fall2015team3.zork.Room}.
+
+		@param desc The String to set the description to.
+		*/
     void setDesc(String desc) { this.desc = desc; }
 
-    /*
-     * Store the current (changeable) state of this room to the writer
-     * passed.
-     */
+		/**Generates a part of a .zork file that preserves the current state of this {@link edu.umw.cpsc240fall2015team3.zork.Room}.
+
+		@param w The PrintWriter that writes the .bork file for the {@link edu.umw.cpsc240fall2015team3.zork.Dungeon}.
+		*/
     void storeState(PrintWriter w) throws IOException {
         w.println(title + ":");
         w.println("beenHere=" + beenHere);
@@ -108,10 +133,10 @@ public class Room {
         w.println(Dungeon.SECOND_LEVEL_DELIM);
     }
 
-		/**Initializes this hlnkRoom} in a state specified by the contents of a .sav file. If the file read is not a valid .sav file, throws a hlnkGameState.IllegalSaveFormatException}.
+		/**Initializes this {@link edu.umw.cpsc240fall2015team3.zork.Room} in a state specified by the contents of a .sav file. If the file read is not a valid .sav file, throws a {@link edu.umw.cpsc240fall2015team3.zork.GameState.IllegalSaveFormatException}.
 
 		@param s The Scanner that reads the .sav file.
-		@param d The hlnkDungeon} that contains this hlnkRoom}.
+		@param d The {@link edu.umw.cpsc240fall2015team3.zork.Dungeon} that contains this {@link edu.umw.cpsc240fall2015team3.zork.Room}.
 		*/
     void restoreState(Scanner s, Dungeon d) throws 
         GameState.IllegalSaveFormatException {
@@ -138,15 +163,15 @@ public class Room {
         }
     }
 
-		/**Returns information about this hlnkRoom}, including its title, its description, and its hlnkItem} contents. After being called, changes the boolean beenHere to true.
+		/**Returns information about this {@link edu.umw.cpsc240fall2015team3.zork.Room}, including its title, its description, and its {@link edu.umw.cpsc240fall2015team3.zork.Item} contents. After being called, changes the boolean beenHere to true.
 		*/
     public String describe() {
         return describe(false);
     }
 		
-		/**Returns information about this hlnkRoom}, including its title, its description, its hlnkItem} contents, and the hlnkExit}s leading from this hlnkRoom}. After being called, changes the boolean beenHere to true.
+		/**Returns information about this {@link edu.umw.cpsc240fall2015team3.zork.Room}, including its title, its description, its {@link edu.umw.cpsc240fall2015team3.zork.Item} contents, and the {@link edu.umw.cpsc240fall2015team3.zork.Exit}s leading from this {@link edu.umw.cpsc240fall2015team3.zork.Room}. After being called, changes the boolean beenHere to true.
 
-		@param full Pending description.
+		@param full Determines whether or not to return the complete description of this {@link edu.umw.cpsc240fall2015team3.zork.Room}.
 		*/
     public String describe(boolean full) {
         String description;
@@ -168,9 +193,9 @@ public class Room {
         return description;
     }
     
-		/**Returns the hlnkRoom} connected by the hlnkExit} in the direction specified by the parameter. If there is no hlnkExit} in that direction, returns NULL.
+		/**Returns the {@link edu.umw.cpsc240fall2015team3.zork.Room} connected by the {@link edu.umw.cpsc240fall2015team3.zork.Exit} in the direction specified by the parameter. If there is no {@link edu.umw.cpsc240fall2015team3.zork.Exit} in that direction, returns NULL.
 
-		@param dir The direction for which to search for an hlnkExit}.
+		@param dir The direction for which to search for an {@link edu.umw.cpsc240fall2015team3.zork.Exit}.
 		*/
     public Room leaveBy(String dir) {
         for (Exit exit : exits) {

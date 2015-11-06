@@ -8,6 +8,15 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
+/**
+@author Ian
+The GameState class stores variables that need to accessed on the fly.
+@param health int that is the player's current health
+@param score int that is the player's current score
+@param str int that measures how strong the player is
+@param def int that measures how much damage the player can avoid
+@param totalTime int that stores how much time has passed in the dungeon
+*/
 public class GameState {
 /**$
 Prints the error message after being called.
@@ -39,6 +48,9 @@ Prints the error message after being called.
         }
         return theInstance;
     }
+/**$
+Instantiates objects on creation of GameState
+*/
     private GameState() {
         inventory = new ArrayList<Item>();
     }
@@ -207,5 +219,40 @@ returns the current dungeon object.
     Dungeon getDungeon() {
         return dungeon;
     }
+/**$
+Returns the player's current health.
+*/
+    void getAdventurersHealth(){}
+/**$
+Sets the players health to the players health minus the passed int
+*/
+    void subtractAdventurersHealthBy(int damage){}
+/**$
+Returns the player's current Score
+*/
+    void getAdventurersScore(){}
+/**$
 
+*/
+    void addToAdventurersScoreBy(int theScore){}
+/**$
+*/
+    void getTotalTime(){}
+/**$
+*/
+    void addToTime(int time){}
+/**$
+*/
+    void getStr(){}
+/**$
+*/
+    void getDef(){}
+/**$
+*/
+    void upStr(int str){}
+/**$
+*/
+    void upDef(int def){}
+    
+    
 }

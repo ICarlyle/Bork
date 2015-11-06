@@ -1,7 +1,7 @@
 Javadoc Progress:
 
 Jamal:
-Room.java -- Incomplete
+Room.java -- Needs Review
 Exit.java -- Incomplete
 Item.java -- Incomplete
 
@@ -22,7 +22,8 @@ Event
 
 Ian:
 
-GameState.java -- Incomplete
+GameState.java -- Needs Review
+UnknownCommand.java -- Done/Review
 
 
 NeedsDone:
@@ -34,8 +35,10 @@ ItemSpecificCommand.java -- Incomplete
 LookCommand.java -- Incomplete
 MovementCommand.java -- Incomplete
 SaveCommand.java -- Incomplete
-UnknownCommand.java -- Incomplete
 
+
+
+Events need to be changed in Organization before JavaDocing them
 ShowHealthCommand -- Incomplete
 DieEvent -- Incomplete
 WinEvent -- Incomplete
