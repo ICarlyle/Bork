@@ -33,7 +33,7 @@ UnknownCommand.java -- Done|Review
 LookCommand.java -- Done|Review
 MovementCommand.java -- Done|Review
 WaitCommand -- Done|Review
-ShowHealthCommand -- Incomplete
+ShowHealthCommand -- Done|Review
 
 
 NeedsDone:
