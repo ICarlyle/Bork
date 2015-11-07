@@ -6,7 +6,7 @@ import java.util.Scanner;
 @author Alec
 */
 /**
-The interpreter class reads in a .bork/.sav file to create/restore a dungeon and continuously prompts the user for input commands in order to play through the dungeon.
+The interpreter class reads in a .zork/.sav file to create/restore a dungeon and continuously prompts the user for input commands in order to play through the dungeon.
 */
 public class Interpreter {
 
@@ -16,7 +16,7 @@ public class Interpreter {
     public static String USAGE_MSG = 
         "Usage: Interpreter borkFile.bork|saveFile.sav.";
 /**
-Instantiates a new Dungeon object based on a .bork or a .sav file and continuously prompts the player for input for commands to play through the dungeon.  If there is a problem with the file format, a usage error is printed and the system exits.  If a .bork file is supplied, then a brand new dungeon is loaded based on that .bork file.  If a .sav file is supplied, then a saved dungeon is restored complete with appropriate item and enemy placements.  The old player stats as well as room locked/unlocked information is read in through the .sav file in order to restore the previously played dungeon.   
+Instantiates a new Dungeon object based on a .zork or a .sav file and continuously prompts the player for input for commands to play through the dungeon.  If there is a problem with the file format, a usage error is printed and the system exits.  If a .bork file is supplied, then a brand new dungeon is loaded based on that .bork file.  If a .sav file is supplied, then a saved dungeon is restored complete with appropriate item and enemy placements.  The old player stats as well as room locked/unlocked information is read in through the .sav file in order to restore the previously played dungeon.   
 */
     public static void main(String args[]) {
 

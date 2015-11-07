@@ -19,7 +19,7 @@ Npc.java -- complete?
 EventFactory -- complete?
 DieEvent -- Incomplete
 WinEvent -- Incomplete
-Event -- Incomplete
+Event -- complete?
 CommandFactory.java -- complete?
 
 Ian:
