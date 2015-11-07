@@ -28,11 +28,13 @@ LookCommand.java -- Done|Review
 MovementCommand.java -- Done|Review
 WaitCommand -- Done|Review
 ShowHealthCommand -- Incomplete
+
+
 NeedsDone:
 
 Events need to be changed in Organization before JavaDocing them
 AttackCommand -- Incomplete
-
+___________EVENTS_____________
 LowerHealthEvent -- Incomplete
 TransformEvent -- Incomplete
 TeleportEvent -- Incomplete
