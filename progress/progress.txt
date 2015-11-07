@@ -34,6 +34,7 @@ NeedsDone:
 Events need to be changed in Organization before JavaDocing them
 AttackCommand -- Incomplete
 ShowHealthCommand -- Incomplete
+
 LowerHealthEvent -- Incomplete
 TransformEvent -- Incomplete
 TeleportEvent -- Incomplete
