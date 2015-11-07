@@ -31,8 +31,6 @@ ShowHealthCommand -- Incomplete
 
 
 NeedsDone:
-
-Events need to be changed in Organization before JavaDocing them
 AttackCommand -- Incomplete
 ___________EVENTS_____________
 LowerHealthEvent -- Incomplete
