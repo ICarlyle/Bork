@@ -16,7 +16,6 @@ AddScoreEvent.java -- Incomplete
 DisappearEvent.java -- Incomplete
 
 Alec:
-
 TakeCommand.java -- complete?
 DropCommand.java -- complete?
 InventoryCommand.java -- complete?
@@ -26,19 +25,29 @@ Npc.java -- complete?
 EventFactory -- complete?
 DieEvent -- Incomplete
 WinEvent -- Incomplete
-Event -- Incomplete
+Event -- complete?
 CommandFactory.java -- complete?
 
 Ian:
-GameState.java -- Done|Review Marked 2 sections 
+GameState.java -- Done|Review       2 Segments NEED review
 UnknownCommand.java -- Done|Review
 LookCommand.java -- Done|Review
 MovementCommand.java -- Done|Review
-WaitCommand -- Incomplete
-
-NeedsDone:
-
-Events need to be changed in Organization before JavaDocing them
-AttackCommand -- Incomplete
+WaitCommand -- Done|Review
 ShowHealthCommand -- Incomplete
 
+
+NeedsDone:
+AttackCommand -- Incomplete
+<<<<<<< HEAD
+ShowHealthCommand -- Incomplete
+
+=======
+___________EVENTS_____________
+LowerHealthEvent -- Incomplete
+TransformEvent -- Incomplete
+TeleportEvent -- Incomplete
+UnlockEvent -- Incomplete
+AddScoreEvent -- Incomplete
+DisappearEvent -- Incomplete
+>>>>>>> 4a97a35e8e8003a14174d4ec97dc106f204e87d3
