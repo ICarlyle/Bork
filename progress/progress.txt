@@ -22,8 +22,8 @@ Dungeon.java -- complete?
 Interpreter.java -- complete?
 Npc.java -- complete?
 EventFactory -- complete?
-DieEvent -- Incomplete
-WinEvent -- Incomplete
+DieEvent -- complete?
+WinEvent -- complete?
 Event -- complete?
 CommandFactory.java -- complete?
 
@@ -33,9 +33,5 @@ UnknownCommand.java -- Done|Review
 LookCommand.java -- Done|Review
 MovementCommand.java -- Done|Review
 WaitCommand -- Done|Review
-ShowHealthCommand -- Incomplete
-
-
-NeedsDone:
+ShowHealthCommand -- Done|Review
 AttackCommand -- Incomplete
-ShowHealthCommand -- Incomplete
