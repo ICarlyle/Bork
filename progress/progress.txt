@@ -24,8 +24,8 @@ DieEvent -- complete?
 WinEvent -- complete?
 Event -- complete?
 CommandFactory.java -- complete?
-AddScoreEvent.java -- Incomplete
-DisappearEvent.java -- Incomplete
+AddScoreEvent.java -- complete?
+DisappearEvent.java -- complete?
 
 Ian:
 [J]GameState.java -- Done
