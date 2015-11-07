@@ -9,8 +9,8 @@ SaveCommand.java -- Needs Review
 Command.java -- Needs Review
 LowerHealthEvent.java -- Needs Review
 TransformEvent.java -- Needs Review
-TeleportEvent.java -- Incomplete
-UnlockEvent.java -- Incomplete
+TeleportEvent.java -- Needs Review
+UnlockEvent.java -- Needs Review
 
 Alec:
 TakeCommand.java -- complete?
