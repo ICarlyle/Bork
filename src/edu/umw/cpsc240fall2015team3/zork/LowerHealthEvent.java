@@ -8,6 +8,9 @@ package edu.umw.cpsc240fall2015team3.zork;
 Changes the player's health by a specified value.
 */
 class LowerHealthEvent extends Event{
+
+		private int damage;
+
 		/**Returns a {@link edu.umw.cpsc240fall2015team3.zork.LowerHealthEvent} that uses a certain damage value.
 
 		@param damage The amount that the player's health should be lowered by.

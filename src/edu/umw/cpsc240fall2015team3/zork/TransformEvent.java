@@ -8,6 +8,9 @@ package edu.umw.cpsc240fall2015team3.zork;
 Changes an {@link edu.umw.cpsc240fall2015team3.zork.Item} into a different {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 */
 class TransformEvent extends Event{
+
+		private String oldItemName, newItemName;
+
 		/**Returns a {@link edu.umw.cpsc240fall2015team3.zork.TransformEvent} that uses two specific {@link edu.umw.cpsc240fall2015team3.zork.Item}s.
 
 		@param oldItemName The {@link edu.umw.cpsc240fall2015team3.zork.Item} that is being transformed.
