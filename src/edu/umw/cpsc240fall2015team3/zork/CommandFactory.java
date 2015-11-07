@@ -1,5 +1,5 @@
 /**
-@author
+@author Alec
 */
 package edu.umw.cpsc240fall2015team3.zork;
 
