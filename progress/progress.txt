@@ -34,7 +34,4 @@ LookCommand.java -- Done|Review
 MovementCommand.java -- Done|Review
 WaitCommand -- Done|Review
 ShowHealthCommand -- Done|Review
-
-
-NeedsDone:
 AttackCommand -- Incomplete
