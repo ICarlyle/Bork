@@ -59,6 +59,7 @@ public class Room {
         is now positioned one line past where it was.
         @throws Dungeon.IllegalDungeonFormatException A structural problem with the
         dungeon file itself, detected when trying to read this room.
+	@param s The Scanner that reads the .sav file.
      */
     Room(Scanner s, Dungeon d, boolean initState) throws NoRoomException,
         Dungeon.IllegalDungeonFormatException {
@@ -102,9 +103,6 @@ public class Room {
 
     
 		/**Initializes this {@link edu.umw.cpsc240fall2015team3.zork.Room} in a state specified by the contents of a .sav file. If the file read is not a valid .sav file, throws a {@link edu.umw.cpsc240fall2015team3.zork.GameState.IllegalSaveFormatException}.
-
-		@param s The Scanner that reads the .sav file.
-		@param d The {@link edu.umw.cpsc240fall2015team3.zork.Dungeon} that contains this {@link edu.umw.cpsc240fall2015team3.zork.Room}.
 		*/
     private void init() {
         contents = new ArrayList<Item>();
