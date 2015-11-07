@@ -104,14 +104,14 @@ Restores the dungeon to a previous save state with the passed parameter as the t
             }
         }
     }
-/**$
+/**
 Runs the store method with a default save title argument.
 @throws IOException if there is an error saving the file
 */
     void store() throws IOException {
         store(DEFAULT_SAVE_FILE);
     }
-/**$(fix throws)
+/**
 Creates a new file with the title of the argument passed with a save file extension.
 @throws IOException if there is an error saving the file
 */
