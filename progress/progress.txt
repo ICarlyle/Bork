@@ -7,12 +7,10 @@ Item.java -- Needs Review
 ItemSpecificCommand.java -- Needs Review
 SaveCommand.java -- Needs Review
 Command.java -- Needs Review
-LowerHealthEvent.java -- Incomplete
-TransformEvent.java -- Incomplete
-TeleportEvent.java -- Incomplete
-UnlockEvent.java -- Incomplete
-AddScoreEvent.java -- Incomplete
-DisappearEvent.java -- Incomplete
+LowerHealthEvent.java -- Needs Review
+TransformEvent.java -- Needs Review
+TeleportEvent.java -- Needs Review
+UnlockEvent.java -- Needs Review
 
 Alec:
 TakeCommand.java -- complete?
@@ -26,6 +24,8 @@ DieEvent -- complete?
 WinEvent -- complete?
 Event -- complete?
 CommandFactory.java -- complete?
+AddScoreEvent.java -- Incomplete
+DisappearEvent.java -- Incomplete
 
 Ian:
 [J]GameState.java -- Done
@@ -34,4 +34,4 @@ Ian:
 [A][J]MovementCommand.java -- Done|Review
 [A][J]WaitCommand -- Done|Review
 [A][J]ShowHealthCommand -- Done|Review
-[A][J]AttackCommand -- Incomplete
+[A][J]AttackCommand -- Done|Review
