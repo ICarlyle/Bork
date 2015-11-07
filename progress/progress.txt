@@ -6,8 +6,7 @@ Exit.java -- Needs Review
 Item.java -- Needs Review
 ItemSpecificCommand.java -- Needs Review
 SaveCommand.java -- Needs Review
-CommandFactory.java -- Incomplete
-Command.java -- Incomplete
+Command.java -- Needs Review
 
 Alec:
 
@@ -21,6 +20,7 @@ EventFactory -- Incomplete
 DieEvent -- Incomplete
 WinEvent -- Incomplete
 Event -- Incomplete
+CommandFactory.java -- Incomplete
 
 Ian:
 GameState.java -- Done|Review Marked 2 sections 
