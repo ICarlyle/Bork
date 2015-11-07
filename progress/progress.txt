@@ -6,6 +6,8 @@ Exit.java -- Needs Review
 Item.java -- Needs Review
 ItemSpecificCommand.java -- Needs Review
 SaveCommand.java -- Needs Review
+CommandFactory.java -- Incomplete
+Command.java -- Incomplete
 
 Alec:
 
@@ -18,8 +20,6 @@ Npc.java -- complete?
 EventFactory -- Incomplete
 DieEvent -- Incomplete
 WinEvent -- Incomplete
-CommandFactory.java -- Incomplete
-Command.java -- Incomplete
 Event -- Incomplete
 
 Ian:
