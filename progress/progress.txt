@@ -17,8 +17,8 @@ Dungeon.java -- complete?
 Interpreter.java -- complete?
 Npc.java -- complete?
 EventFactory -- complete?
-DieEvent -- Incomplete
-WinEvent -- Incomplete
+DieEvent -- complete?
+WinEvent -- complete?
 Event -- complete?
 CommandFactory.java -- complete?
 
