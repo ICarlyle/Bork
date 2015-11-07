@@ -64,7 +64,7 @@ Restores the dungeon to a previous save state with the passed parameter as the t
 @param filename name of file that is to be restored.
 @throws FileNotFoundException If there is no file by that filename.
 @throws IllegalSaveFormatException If the format of the save file it reads has bad syntax.
-@throws IllegalDungeonFormatException if the dungeon file it reads has bad syntax
+@throws Dungeon.IllegalDungeonFormatException if the dungeon file it reads has bad syntax
 */
     void restore(String filename) throws FileNotFoundException,
         IllegalSaveFormatException, Dungeon.IllegalDungeonFormatException {

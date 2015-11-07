@@ -39,7 +39,6 @@ Returns a string that tells the player what they dropped.  If the player doesn't
     }
 /**
 Returns a string that tells the player what item they dropped.`
-@throws NoItemException if the player doesn't have the item they are trying to drop.
 */
     private String dropItemNamed(String name) {
         try {

@@ -16,7 +16,7 @@ Constructs a new, fully fledged npc enemy.
 @param strength int that represents how much strength this Npc has
 @param defense int that represetns how much defense this Npc has
 @param description String that holds the desciption of this Npc
-@param dialog ArrayList<String> that holds onto all of the dialog that this Npc will say
+@param dialog An ArrayList of Strings that holds onto all of the dialog that this Npc will say
 @param isHostile boolean that stores whether this Npc is hostile or non-hostile
 */
 	Npc(String name, int points, int health, int strength, int defense, String description, ArrayList<String> dialog, boolean isHostile){

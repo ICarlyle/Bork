@@ -159,7 +159,7 @@ Initializes new variables for the dungeon object in a new/restored dungeon
      * Restore the (changeable) state of this dungeon to that reflected in the
      * reader passed.
 	@param s Scanner that reads from a .sav file in order to restore a dungeon object.
-	@throws GameState.IllegalDungeonFormatException if the .sav file format is inaccurate
+	@throws GameState.IllegalSaveFormatException if the .sav file format is inaccurate
      */
     void restoreState(Scanner s) throws GameState.IllegalSaveFormatException {
 

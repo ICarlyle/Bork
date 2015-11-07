@@ -40,7 +40,7 @@ public class Item {
         @throws NoItemException The reader object is not positioned at the
         start of an {@link edu.umw.cpsc240fall2015team3.zork.Item} entry. A side effect of this is the reader's cursor
         is now positioned one line past where it was.
-        @throws IllegalDungeonFormatException A structural problem with the
+        @throws Dungeon.IllegalDungeonFormatException A structural problem with the
         dungeon file itself, detected when trying to read this room.
 		*/
     Item(Scanner s) throws NoItemException,
