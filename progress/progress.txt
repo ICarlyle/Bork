@@ -34,4 +34,4 @@ Ian:
 [A][J]MovementCommand.java -- Done|Review
 [A][J]WaitCommand -- Done|Review
 [A][J]ShowHealthCommand -- Done|Review
-[A][J]AttackCommand -- Incomplete
+[A][J]AttackCommand -- Done|Review
