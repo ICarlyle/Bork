@@ -7,7 +7,6 @@ Item.java -- Needs Review
 ItemSpecificCommand.java -- Needs Review
 SaveCommand.java -- Needs Review
 Command.java -- Needs Review
-Event.java -- Incomplete
 LowerHealthEvent.java -- Incomplete
 TransformEvent.java -- Incomplete
 TeleportEvent.java -- Incomplete
@@ -39,15 +38,4 @@ ShowHealthCommand -- Incomplete
 
 NeedsDone:
 AttackCommand -- Incomplete
-<<<<<<< HEAD
 ShowHealthCommand -- Incomplete
-
-=======
-___________EVENTS_____________
-LowerHealthEvent -- Incomplete
-TransformEvent -- Incomplete
-TeleportEvent -- Incomplete
-UnlockEvent -- Incomplete
-AddScoreEvent -- Incomplete
-DisappearEvent -- Incomplete
->>>>>>> 4a97a35e8e8003a14174d4ec97dc106f204e87d3
