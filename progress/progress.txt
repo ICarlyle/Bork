@@ -16,11 +16,11 @@ InventoryCommand.java -- complete?
 Dungeon.java -- complete?
 Interpreter.java -- complete?
 Npc.java -- complete?
-EventFactory -- Incomplete
+EventFactory -- complete?
 DieEvent -- Incomplete
 WinEvent -- Incomplete
 Event -- Incomplete
-CommandFactory.java -- Incomplete
+CommandFactory.java -- complete?
 
 Ian:
 GameState.java -- Done|Review Marked 2 sections 
