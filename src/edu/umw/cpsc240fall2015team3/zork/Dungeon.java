@@ -11,7 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.PrintWriter;
 /**
-The Dungeon class represents the dungeon that the player will player through.  This class includes methods for adding/getting items, getting/adding rooms, storing and restoring the state of the dungeon.  The Dungeon object is read in from a .zork/.sav file. 
+The Dungeon class represents the dungeon that the player will play through.  This class includes methods for adding/getting items, getting/adding rooms, storing and restoring the state of the dungeon.  The Dungeon object is read in from a .zork/.sav file. 
 */
 public class Dungeon {
 

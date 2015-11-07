@@ -22,19 +22,16 @@ Dungeon.java -- complete?
 Interpreter.java -- complete?
 Npc.java -- complete?
 EventFactory -- complete?
-DieEvent -- Incomplete
-WinEvent -- Incomplete
+DieEvent -- complete?
+WinEvent -- complete?
 Event -- complete?
 CommandFactory.java -- complete?
 
 Ian:
-GameState.java -- Done|Review       2 Segments NEED review
-UnknownCommand.java -- Done|Review
-LookCommand.java -- Done|Review
-MovementCommand.java -- Done|Review
-WaitCommand -- Done|Review
-ShowHealthCommand -- Incomplete
-
-
-NeedsDone:
-AttackCommand -- Incomplete
+[J]GameState.java -- Done
+[A][J]UnknownCommand.java -- Done|Review
+[A][J]LookCommand.java -- Done|Review
+[A][J]MovementCommand.java -- Done|Review
+[A][J]WaitCommand -- Done|Review
+[A][J]ShowHealthCommand -- Done|Review
+[A][J]AttackCommand -- Incomplete
