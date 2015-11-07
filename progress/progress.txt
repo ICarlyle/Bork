@@ -23,7 +23,7 @@ Event -- complete?
 CommandFactory.java -- complete?
 
 Ian:
-GameState.java -- Done|Review Marked 2 sections 
+GameState.java -- Done|Review       2 Segments NEED review
 UnknownCommand.java -- Done|Review
 LookCommand.java -- Done|Review
 MovementCommand.java -- Done|Review
