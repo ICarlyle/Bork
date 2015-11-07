@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 @author Robert Jamal Washington
 */
 /**
-Represents the individual sections of a {@link edu.umw.cpsc240fall2015team3.zork.Dungeon that the player will traverse through.
+Represents the individual sections of a {@link edu.umw.cpsc240fall2015team3.zork.Dungeon} that the player will traverse through.
 */
 public class Room {
 
@@ -57,7 +57,7 @@ public class Room {
         @throws NoRoomException The reader object is not positioned at the
         start of a room entry. A side effect of this is the reader's cursor
         is now positioned one line past where it was.
-        @throws IllegalDungeonFormatException A structural problem with the
+        @throws Dungeon.IllegalDungeonFormatException A structural problem with the
         dungeon file itself, detected when trying to read this room.
      */
     Room(Scanner s, Dungeon d, boolean initState) throws NoRoomException,
@@ -139,10 +139,12 @@ public class Room {
         w.println(Dungeon.SECOND_LEVEL_DELIM);
     }
 
-		/**Initializes this {@link edu.umw.cpsc240fall2015team3.zork.Room} in a state specified by the contents of a .sav file. If the file read is not a valid .sav file, throws a {@link edu.umw.cpsc240fall2015team3.zork.GameState.IllegalSaveFormatException}.
+		/**Initializes this {@link edu.umw.cpsc240fall2015team3.zork.Room} in a state specified by the contents of a .sav file.
 
 		@param s The Scanner that reads the .sav file.
 		@param d The {@link edu.umw.cpsc240fall2015team3.zork.Dungeon} that contains this {@link edu.umw.cpsc240fall2015team3.zork.Room}.
+
+		@throws GameState.IllegalSaveFormatException The file read is not a valid .sav file.
 		*/
     void restoreState(Scanner s, Dungeon d) throws 
         GameState.IllegalSaveFormatException {
@@ -237,11 +239,11 @@ public class Room {
     }
 
 				
-		/**Returns the {@link edu.umw.cpsc240fall2015team3.zork.Item} present in the {@link edu.umw.cpsc240fall2015team3.zork.Room} that has the primary or secondary name given in the parameter. If there is no {@link edu.umw.cpsc240fall2015team3.zork.Item} that goes by that name present in the {@link edu.umw.cpsc240fall2015team3.zork.Room}, throws an {@link edu.umw.cpsc240fall2015team3.zork.Item.NoItemException}.
+		/**Returns the {@link edu.umw.cpsc240fall2015team3.zork.Item} present in the {@link edu.umw.cpsc240fall2015team3.zork.Room} that has the primary or secondary name given in the parameter. 	
 
 		@param name The identifier used to search for the {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 
-		@throws Item.NoItemException
+		@throws Item.NoItemException There is no {@link edu.umw.cpsc240fall2015team3.zork.Item} that goes by the specified name present in the {@link edu.umw.cpsc240fall2015team3.zork.Room}
 		*/
     Item getItemNamed(String name) throws Item.NoItemException {
         for (Item item : contents) {

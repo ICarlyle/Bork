@@ -3,7 +3,11 @@ Javadoc Progress:
 Jamal:
 Room.java -- Needs Review
 Exit.java -- Needs Review
-Item.java -- Incomplete
+Item.java -- Needs Review
+ItemSpecificCommand.java -- Needs Review
+SaveCommand.java -- Needs Review
+CommandFactory.java -- Incomplete
+Command.java -- Incomplete
 
 Alec:
 
@@ -16,19 +20,15 @@ Npc.java -- complete?
 EventFactory -- Incomplete
 DieEvent -- Incomplete
 WinEvent -- Incomplete
-CommandFactory.java -- Incomplete
-Command.java -- Incomplete
 Event -- Incomplete
 
 Ian:
-GameState.java -- Needs Review
-UnknownCommand.java -- Done/Review
-LookCommand.java -- Incomplete
+GameState.java -- Done|Review Marked 2 sections 
+UnknownCommand.java -- Done|Review
+LookCommand.java -- Done
 MovementCommand.java -- Incomplete
 
 NeedsDone:
-ItemSpecificCommand.java -- Incomplete
-SaveCommand.java -- Incomplete
 
 Events need to be changed in Organization before JavaDocing them
 WaitCommand -- Incomplete
