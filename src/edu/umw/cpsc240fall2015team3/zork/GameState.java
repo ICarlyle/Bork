@@ -266,6 +266,4 @@ Adds passed parameter to strength
 Adds passed parameter to defence
 */
     void upDef(int def){}
-    
-    
 }
