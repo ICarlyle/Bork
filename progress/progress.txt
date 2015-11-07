@@ -28,10 +28,10 @@ AddScoreEvent.java -- complete?
 DisappearEvent.java -- complete?
 
 Ian:
-[J]GameState.java -- Done
-[A][J]UnknownCommand.java -- Done|Review
-[A][J]LookCommand.java -- Done|Review
-[A][J]MovementCommand.java -- Done|Review
-[A][J]WaitCommand -- Done|Review
-[A][J]ShowHealthCommand -- Done|Review
-[A][J]AttackCommand -- Done|Review
+GameState.java -- Done
+UnknownCommand.java -- Done|Review
+LookCommand.java -- Done|Review
+MovementCommand.java -- Done|Review
+WaitCommand -- Done|Review
+ShowHealthCommand -- Done|Review
+AttackCommand -- Done|Review
