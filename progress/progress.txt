@@ -26,7 +26,7 @@ Ian:
 GameState.java -- Done|Review Marked 2 sections 
 UnknownCommand.java -- Done|Review
 LookCommand.java -- Done|Review
-MovementCommand.java -- Incomplete
+MovementCommand.java -- Done|Review
 
 NeedsDone:
 
