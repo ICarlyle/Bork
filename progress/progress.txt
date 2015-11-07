@@ -7,9 +7,14 @@ Item.java -- Needs Review
 ItemSpecificCommand.java -- Needs Review
 SaveCommand.java -- Needs Review
 Command.java -- Needs Review
+LowerHealthEvent.java -- Incomplete
+TransformEvent.java -- Incomplete
+TeleportEvent.java -- Incomplete
+UnlockEvent.java -- Incomplete
+AddScoreEvent.java -- Incomplete
+DisappearEvent.java -- Incomplete
 
 Alec:
-
 TakeCommand.java -- complete?
 DropCommand.java -- complete?
 InventoryCommand.java -- complete?
@@ -23,21 +28,10 @@ Event -- complete?
 CommandFactory.java -- complete?
 
 Ian:
-GameState.java -- Done|Review Marked 2 sections 
+GameState.java -- Done|Review       2 Segments NEED review
 UnknownCommand.java -- Done|Review
 LookCommand.java -- Done|Review
 MovementCommand.java -- Done|Review
-WaitCommand -- Incomplete
-
-NeedsDone:
-
-Events need to be changed in Organization before JavaDocing them
+WaitCommand -- Done|Review
+ShowHealthCommand -- Done|Review
 AttackCommand -- Incomplete
-ShowHealthCommand -- Incomplete
-
-LowerHealthEvent -- Incomplete
-TransformEvent -- Incomplete
-TeleportEvent -- Incomplete
-UnlockEvent -- Incomplete
-AddScoreEvent -- Incomplete
-DisappearEvent -- Incomplete
