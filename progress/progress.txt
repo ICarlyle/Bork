@@ -25,7 +25,7 @@ Event -- Incomplete
 Ian:
 GameState.java -- Done|Review Marked 2 sections 
 UnknownCommand.java -- Done|Review
-LookCommand.java -- Incomplete
+LookCommand.java -- Done
 MovementCommand.java -- Incomplete
 
 NeedsDone:
