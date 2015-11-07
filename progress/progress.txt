@@ -38,4 +38,3 @@ ShowHealthCommand -- Incomplete
 
 NeedsDone:
 AttackCommand -- Incomplete
-ShowHealthCommand -- Incomplete
