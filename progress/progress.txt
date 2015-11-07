@@ -4,8 +4,8 @@ Jamal:
 Room.java -- Needs Review
 Exit.java -- Needs Review
 Item.java -- Needs Review
-ItemSpecificCommand.java -- Incomplete
-SaveCommand.java -- Incomplete
+ItemSpecificCommand.java -- Needs Review
+SaveCommand.java -- Needs Review
 
 Alec:
 
