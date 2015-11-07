@@ -15,6 +15,8 @@ Represents objects that can be found in rooms and be interacted with by the play
 */
 public class Item {
 
+		/**Is called when there are no more {@link edu.umw.cpsc240fall2015team3.zork.Item} objects to be read from a .zork file.
+		*/
     static class NoItemException extends Exception {}
     static Random rng = new Random();
 
