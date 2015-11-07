@@ -23,7 +23,7 @@ Command.java -- Incomplete
 Event -- Incomplete
 
 Ian:
-GameState.java -- Done|Review
+GameState.java -- Done|Review Marked 2 sections 
 UnknownCommand.java -- Done|Review
 LookCommand.java -- Incomplete
 MovementCommand.java -- Incomplete
