@@ -14,7 +14,8 @@ import java.io.PrintWriter;
 The Dungeon class represents the dungeon that the player will play through.  This class includes methods for adding/getting items, getting/adding rooms, storing and restoring the state of the dungeon.  The Dungeon object is read in from a .zork/.sav file. 
 */
 public class Dungeon {
-
+		/**Is called when a {@link edu.umw.cpsc240fall2015team3.zork.Dungeon} is attempted to be read from an invalid .zork or .sav file.
+		*/
     public static class IllegalDungeonFormatException extends Exception {
         public IllegalDungeonFormatException(String e) {
             super(e);
