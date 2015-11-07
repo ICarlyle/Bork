@@ -27,11 +27,11 @@ GameState.java -- Done|Review Marked 2 sections
 UnknownCommand.java -- Done|Review
 LookCommand.java -- Done|Review
 MovementCommand.java -- Done|Review
+WaitCommand -- Incomplete
 
 NeedsDone:
 
 Events need to be changed in Organization before JavaDocing them
-WaitCommand -- Incomplete
 AttackCommand -- Incomplete
 ShowHealthCommand -- Incomplete
 LowerHealthEvent -- Incomplete
