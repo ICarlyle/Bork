@@ -22,7 +22,7 @@ These methods include the ability to save and restore the games state, the playe
 @param totalTime int that stores how much time has passed in the dungeon
 */
 public class GameState {
-/**$
+/**
 Prints the error message after being called.
 */
     public static class IllegalSaveFormatException extends Exception {
@@ -52,16 +52,18 @@ Prints the error message after being called.
         }
         return theInstance;
     }
-/**$
+/**
 Instantiates objects on creation of GameState
 */
     private GameState() {
         inventory = new ArrayList<Item>();
     }
-/**$(More)
+/**
 Restores the dungeon to a previous save state with the passed parameter as the title.
-If there is no file by that filename throw
-@param filename name of file that is to be restored
+@param filename name of file that is to be restored.
+@Throws FileNotFoundException If there is no file by that filename.
+@throws IllegalSaveFormatException If the format of the save file it reads has bad syntax.
+@throws IllegalDungeonFormatException if the dungeon file it reads has bad syntax
 */
     void restore(String filename) throws FileNotFoundException,
         IllegalSaveFormatException, Dungeon.IllegalDungeonFormatException {
@@ -109,7 +111,7 @@ Runs the store method with a default save title argument.
     void store() throws IOException {
         store(DEFAULT_SAVE_FILE);
     }
-/**$(Add throws)
+/**$(fix throws)
 Creates a new file with the title of the argument passed with a save file extension.
 @throws IOException if there is an error saving the file
 */
@@ -129,15 +131,15 @@ Creates a new file with the title of the argument passed with a save file extens
         }
         w.close();
     }
-/**$
+/**
 Stores the passed parameter as the current dungeon.
 */
     void initialize(Dungeon dungeon) {
         this.dungeon = dungeon;
         adventurersCurrentRoom = dungeon.getEntry();
     }
-/**$
-Instantiates and returns an arraylist of item names in the form of strings
+/**
+Instantiates and returns an arraylist of item names
 */
     ArrayList<String> getInventoryNames() {
         ArrayList<String> names = new ArrayList<String>();
@@ -146,14 +148,14 @@ Instantiates and returns an arraylist of item names in the form of strings
         }
         return names;
     }
-/**$
+/**
 Adds an item to the players inventory.
 @param item to be added to players inventory
 */
     void addToInventory(Item item) /* throws TooHeavyException */ {
         inventory.add(item);
     }
-/**$
+/**
 Removes an item from the players inventory.
 @param item to be removed from players inventory
 */
@@ -161,8 +163,8 @@ Removes an item from the players inventory.
         inventory.remove(item);
     }
 /**$
-Searches the player's inventory and the players current room for an item with the passed string name and returns the item by that name. 
-If no item was found throw NoItemException
+Searches the player's inventory and the players current room for an item by the passed string name and returns the item by that name. 
+@throws NoItemException if no item is found
 */
     Item getItemInVicinityNamed(String name) throws Item.NoItemException {
 
@@ -182,9 +184,9 @@ If no item was found throw NoItemException
 
         throw new Item.NoItemException();
     }
-/**$
+/**
 Searches the players current inventory for an item with the passed String name and returns the item by that name.
-If no item was found by that name throw NoItemException.
+@throws NoItemException If no item was found by that name.
 */
     Item getItemFromInventoryNamed(String name) throws Item.NoItemException {
 
@@ -195,8 +197,8 @@ If no item was found by that name throw NoItemException.
         }
         throw new Item.NoItemException();
     }
-/**$
-
+/**
+Returns the amount of weight in the player's inventory
 */
     int weightCarried() {
         int weight = 0;
@@ -205,56 +207,62 @@ If no item was found by that name throw NoItemException.
         }
         return weight;
     }
-/**$
+/**
 returns the player's current room.
 */
     Room getAdventurersCurrentRoom() {
         return adventurersCurrentRoom;
     }
-/**$
+/**
 Sets the player's current room to the room that is passed.
 */
     void setAdventurersCurrentRoom(Room room) {
         adventurersCurrentRoom = room;
     }
-/**$
+/**
 returns the current dungeon object.
 */
     Dungeon getDungeon() {
         return dungeon;
     }
-/**$
+/**
 Returns the player's current health.
 */
     void getAdventurersHealth(){}
-/**$
+/**
 Sets the players health to the players health minus the passed int
 */
     void subtractAdventurersHealthBy(int damage){}
-/**$
+/**
 Returns the player's current Score
 */
     void getAdventurersScore(){}
-/**$
-
+/**
+Adds the passed argument to the players score
 */
     void addToAdventurersScoreBy(int theScore){}
-/**$
+/**
+Returns the total game time played
 */
     void getTotalTime(){}
-/**$
+/**
+Adds the passed value to total time played
 */
     void addToTime(int time){}
-/**$
+/**
+Returns player strength
 */
     void getStr(){}
-/**$
+/**
+returns player defence
 */
     void getDef(){}
-/**$
+/**
+Adds passed parameter to strength
 */
     void upStr(int str){}
-/**$
+/**
+Adds passed parameter to defence
 */
     void upDef(int def){}
     
