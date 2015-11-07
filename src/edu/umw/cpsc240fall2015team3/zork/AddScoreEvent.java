@@ -16,7 +16,7 @@ class AddScoreEvent extends Event {
       		AddScoreEvent(int points){
 		}
 /**
-Raises the player's score by the specified ammount.
+Raises the player's score by the specified amount.
 @return a corresponding String message
 */	
     abstract String execute();
