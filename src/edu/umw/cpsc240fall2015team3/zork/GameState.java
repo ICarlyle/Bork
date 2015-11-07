@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 
 /**
 The GameState class represents the current state of the game and has methods that change the game's state.
-These methods include the ability to save and restore the games state, the player's status and inventory, and the current Dungeon and Room.
+These methods include the ability to save and restore the games state, the player's status and inventory, and access to the current Dungeon and Room.
 
 @param health int that is the player's current health
 @param score int that is the player's current score
@@ -61,7 +61,7 @@ Instantiates objects on creation of GameState
 /**
 Restores the dungeon to a previous save state with the passed parameter as the title.
 @param filename name of file that is to be restored.
-@Throws FileNotFoundException If there is no file by that filename.
+@throws FileNotFoundException If there is no file by that filename.
 @throws IllegalSaveFormatException If the format of the save file it reads has bad syntax.
 @throws IllegalDungeonFormatException if the dungeon file it reads has bad syntax
 */
@@ -139,7 +139,8 @@ Stores the passed parameter as the current dungeon.
         adventurersCurrentRoom = dungeon.getEntry();
     }
 /**
-Instantiates and returns an arraylist of item names
+Returns the current inventory of the player.  If the player has no items, then no items are returned.
+@return Arraylist containing every item in the player's inventory
 */
     ArrayList<String> getInventoryNames() {
         ArrayList<String> names = new ArrayList<String>();
@@ -162,8 +163,8 @@ Removes an item from the players inventory.
     void removeFromInventory(Item item) {
         inventory.remove(item);
     }
-/**$
-Searches the player's inventory and the players current room for an item by the passed string name and returns the item by that name. 
+/**
+Searches the player's inventory and the players current room for an item by the passed string name and returns the item by that name.  If no item is found, an exception is thrown. 
 @throws NoItemException if no item is found
 */
     Item getItemInVicinityNamed(String name) throws Item.NoItemException {
