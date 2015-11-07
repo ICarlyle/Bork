@@ -187,7 +187,7 @@ Searches the player's inventory and the players current room for an item by the 
     }
 /**
 Searches the players current inventory for an item with the passed String name and returns the item by that name.
-@throws NoItemException If no item was found by that name.
+@throws Item.NoItemException If no item was found by that name.
 */
     Item getItemFromInventoryNamed(String name) throws Item.NoItemException {
 
