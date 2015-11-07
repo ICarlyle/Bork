@@ -165,7 +165,7 @@ Removes an item from the players inventory.
     }
 /**
 Searches the player's inventory and the players current room for an item by the passed string name and returns the item by that name.  If no item is found, an exception is thrown. 
-@throws NoItemException if no item is found
+@throws Item.NoItemException if no item is found
 */
     Item getItemInVicinityNamed(String name) throws Item.NoItemException {
 
