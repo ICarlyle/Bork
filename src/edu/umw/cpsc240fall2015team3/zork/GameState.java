@@ -14,13 +14,14 @@ import java.io.PrintWriter;
 /**
 The GameState class represents the current state of the game and has methods that change the game's state.
 These methods include the ability to save and restore the games state, the player's status and inventory, and access to the current Dungeon and Room.
-
-@param health int that is the player's current health
-@param score int that is the player's current score
-@param str int that measures how strong the player is
-@param def int that measures how much damage the player can avoid
-@param totalTime int that stores how much time has passed in the dungeon
 */
+
+//health: int that is the player's current health
+//score: int that is the player's current score
+//str: int that measures how strong the player is
+//def: int that measures how much damage the player can avoid
+//totalTime: int that stores how much time has passed in the dungeon
+
 public class GameState {
 /**
 Prints the error message after being called.
