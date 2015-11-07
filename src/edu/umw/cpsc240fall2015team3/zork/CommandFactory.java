@@ -1,9 +1,13 @@
-
+/**
+@author
+*/
 package edu.umw.cpsc240fall2015team3.zork;
 
 import java.util.List;
 import java.util.Arrays;
-
+/**
+The Singleton CommandFactory class instantiates different Command objects based on the input read in in {@link Interpreter#promptUser}.  
+*/
 public class CommandFactory {
 
     private static CommandFactory theInstance;
@@ -19,7 +23,19 @@ public class CommandFactory {
 
     private CommandFactory() {
     }
+/**
+Returns a Command derived from the string that a user entered in {@link Interpreter#promptUser}.  The command or the actual item may be more than one word long, and tied with either an item or stand alone.
 
+E.G.: 
+
+Take MagicWand
+Score
+u [{@link MovementCommand}
+
+If a command is entered incorrectly or String command isn't actually a command, an UnknownCommand Command is returned. 
+@param command String that is the (multiple word) command read in {@link Interpreter#promptUser}
+@return Command object that corresponds to the input in {@link Interpreter#promptUser} 
+*/
     public Command parse(String command) {
         String parts[] = command.split(" ");
         String verb = parts[0];
@@ -47,7 +63,10 @@ public class CommandFactory {
         }
         return new UnknownCommand(command);
     }
-
+/**
+Returns a String for commands that interact with multi-word items
+@param parts Array that contains the input entered in 
+*/
     private String pasteSecondAndBeyond(String[] parts) {
         if (parts.length < 2) {
             return "";
