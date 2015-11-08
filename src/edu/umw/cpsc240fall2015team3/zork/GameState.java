@@ -47,6 +47,13 @@ Prints the error message after being called.
     private ArrayList<Item> inventory;
     private Room adventurersCurrentRoom;
 
+    private int health;
+    private int str;
+    private int def;
+    private int totalTime;
+    private int score;
+
+
     static synchronized GameState instance() {
         if (theInstance == null) {
             theInstance = new GameState();
@@ -230,7 +237,7 @@ returns the current dungeon object.
 /**
 Returns the player's current health.
 */
-    void getAdventurersHealth(){}
+    int getAdventurersHealth(){return health;}
 /**
 Sets the players health to the players health minus the passed int
 */
