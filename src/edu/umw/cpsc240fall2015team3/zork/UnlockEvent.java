@@ -22,7 +22,7 @@ class UnlockEvent extends Event{
 		/**Changes the status of a specified {@link edu.umw.cpsc240fall2015team3.zork.Room} from "locked" to "unlocked," allowing the player to traverse the {@link edu.umw.cpsc240fall2015team3.zork.Room}.
 		*/
     public String execute(){
-
+		return "";
 		}
 
 }

@@ -23,7 +23,7 @@ class TransformEvent extends Event{
 		/**Changes one {@link edu.umw.cpsc240fall2015team3.zork.Item} into a different {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 		*/
     public String execute(){
-
+		return "";
 		}
 
 }

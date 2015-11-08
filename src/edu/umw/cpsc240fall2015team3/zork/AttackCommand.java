@@ -14,5 +14,7 @@ Stores the name of enemy to attack
 /**
 Returns a string that states how much damage was done
 */
-    String execute() {}
+    String execute() {
+	return "";
+}
 }
