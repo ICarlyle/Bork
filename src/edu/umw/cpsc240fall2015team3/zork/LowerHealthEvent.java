@@ -19,7 +19,7 @@ class LowerHealthEvent extends Event{
 		/**Lowers the player's health by a specified amount. This simulatneously acts as a way to increase the player's health by passing in a positive value for the damage.
 		*/
     public String execute(){
-
-		}
+	return "";	
+	}
 
 }

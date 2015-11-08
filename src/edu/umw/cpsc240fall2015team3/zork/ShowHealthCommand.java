@@ -11,5 +11,7 @@ class ShowHealthCommand extends Command {
 /**
 Returns a String containing the desription of the player's current Health.
 */
-    public String execute(){}
+    public String execute(){
+	return "";
+	}
 }

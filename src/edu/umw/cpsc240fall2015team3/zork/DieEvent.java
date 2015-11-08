@@ -14,6 +14,6 @@ class DieEvent extends Event{
 Returns a String informing the player that they are dead.
 */
 	public String execute(){
-
+		return "";
 	}
 }

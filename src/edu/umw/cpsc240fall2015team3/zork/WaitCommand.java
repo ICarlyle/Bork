@@ -15,5 +15,7 @@ Stores how much time should pass
 /**
 Updates gametime by stored amount and returns a string that states the time entered has passed
 */
-    public String execute(){}
+    public String execute(){
+	return "";
+}
 }
