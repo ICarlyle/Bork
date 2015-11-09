@@ -40,6 +40,9 @@ If a command is entered incorrectly or String command isn't actually a command, 
         String parts[] = command.split(" ");
         String verb = parts[0];
         String noun = parts.length >= 2 ? parts[1] : "";
+	int numberVal = 0;
+	if(noun.contains("1")||noun.contains("2")||noun.contains("3")||noun.contains("4")||noun.contains("5")||noun.contains("6")||noun.contains("7")||noun.contains("8")||noun.contains("9")||noun.contains("0")){numberVal = Integer.parseInt(noun);}
+
         if (verb.equals("save")) {
             return new SaveCommand(noun);
         }
@@ -64,6 +67,9 @@ If a command is entered incorrectly or String command isn't actually a command, 
         if (MOVEMENT_COMMANDS.contains(verb)) {
             return new MovementCommand(verb);
         }
+	if (verb.equals("wait")){
+	    return new WaitCommand(numberVal);
+	}
         if (parts.length >= 2) {
             return new ItemSpecificCommand(command);
         }

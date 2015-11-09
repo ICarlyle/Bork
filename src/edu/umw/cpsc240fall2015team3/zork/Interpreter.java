@@ -32,7 +32,7 @@ Instantiates a new Dungeon object based on a .zork or a .sav file and continuous
             state = GameState.instance();
             if (args[0].endsWith(".bork")) {
                 state.initialize(new Dungeon(args[0]));
-                System.out.println("\nWelcome to " + 
+                System.out.println("\n\n\n\n\nWelcome to " + 
                     state.getDungeon().getName() + "!");
             } else if (args[0].endsWith(".sav")) {
                 state.restore(args[0]);
@@ -49,7 +49,7 @@ Instantiates a new Dungeon object based on a .zork or a .sav file and continuous
             command = promptUser(commandLine);
 
             while (!command.equals("q")) {
-
+		//System.out.print("\n\n\n"); 		//Spacer that makes it look cleaner
                 System.out.print(
                     CommandFactory.instance().parse(command).execute());
 

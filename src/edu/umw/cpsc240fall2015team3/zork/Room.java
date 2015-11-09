@@ -181,6 +181,7 @@ public class Room {
 		*/
     public String describe(boolean full) {
         String description;
+	//System.out.print("Time:["+GameState.instance().getTotalTime()+"]"); //Prints time
         if (beenHere && !full) {
             description = title;
         } else {
@@ -195,6 +196,8 @@ public class Room {
                 description += "\n" + exit.describe();
             }
         }
+        //if(beenHere || full){for (Exit exit : exits){description += "\n" + exit.describe();}}  //Enable to see Exits everytime
+
         beenHere = true;
         return description;
     }

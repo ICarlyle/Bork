@@ -11,11 +11,14 @@ int wait;
 /**
 Stores how much time should pass
 */
-    WaitCommand(int wait){}
+    WaitCommand(int waitVar){
+wait = waitVar;
+}
 /**
 Updates gametime by stored amount and returns a string that states the time entered has passed
 */
     public String execute(){
-	return "";
-}
+    GameState.instance().addToTime(wait);	
+    return wait+" turns pass";
+    }
 }
