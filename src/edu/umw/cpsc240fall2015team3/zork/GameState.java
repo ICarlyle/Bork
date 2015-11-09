@@ -245,35 +245,33 @@ Sets the players health to the players health minus the passed int
 /**
 Returns the player's current Score
 */
-    int getAdventurersScore(){
-	return score;
-}
+    int getAdventurersScore(){return score;}
 /**
 Adds the passed argument to the players score
 */
-    void addToAdventurersScoreBy(int theScore){}
+    void addToAdventurersScoreBy(int theScore){score = score + theScore;}
 /**
 Returns the total game time played
 */
-    void getTotalTime(){}
+    void getTotalTime(){return totalTime;}
 /**
 Adds the passed value to total time played
 */
-    void addToTime(int time){}
+    void addToTime(int time){totalTime = totalTime+time;}
 /**
 Returns player strength
 */
-    void getStr(){}
+    void getStr(){return Str;}
 /**
 returns player defence
 */
-    void getDef(){}
+    void getDef(){return Def}
 /**
 Adds passed parameter to strength
 */
-    void upStr(int str){}
+    void upStr(int strVar){str = str+strVar}
 /**
 Adds passed parameter to defence
 */
-    void upDef(int def){}
+    void upDef(int defVar){def = def+defVar}
 }
