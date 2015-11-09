@@ -43,6 +43,12 @@ If a command is entered incorrectly or String command isn't actually a command, 
         if (verb.equals("save")) {
             return new SaveCommand(noun);
         }
+	if (verb.equals("score")) {
+	    return new ShowScoreCommand();
+	}
+	if (verb.equals("health")) {
+	    return new ShowHealthCommand();
+	}
         if (verb.equals("take")) {
             return new TakeCommand(pasteSecondAndBeyond(parts));
         }
