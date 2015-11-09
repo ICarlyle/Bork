@@ -253,7 +253,7 @@ Adds the passed argument to the players score
 /**
 Returns the total game time played
 */
-    void getTotalTime(){return totalTime;}
+    int getTotalTime(){return totalTime;}
 /**
 Adds the passed value to total time played
 */
@@ -261,17 +261,17 @@ Adds the passed value to total time played
 /**
 Returns player strength
 */
-    void getStr(){return Str;}
+    int getStr(){return str;}
 /**
 returns player defence
 */
-    void getDef(){return Def}
+    int getDef(){return def;}
 /**
 Adds passed parameter to strength
 */
-    void upStr(int strVar){str = str+strVar}
+    void upStr(int strVar){str = str+strVar;}
 /**
 Adds passed parameter to defence
 */
-    void upDef(int defVar){def = def+defVar}
+    void upDef(int defVar){def = def+defVar;}
 }
