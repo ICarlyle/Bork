@@ -46,7 +46,6 @@ Prints the error message after being called.
     private Dungeon dungeon;
     private ArrayList<Item> inventory;
     private Room adventurersCurrentRoom;
-    private int score;
 
     private int health;
     private int str;
