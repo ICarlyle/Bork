@@ -47,7 +47,7 @@ Prints the error message after being called.
     private ArrayList<Item> inventory;
     private Room adventurersCurrentRoom;
 
-    private int health;
+    private int health = 100;
     private int str;
     private int def;
     private int totalTime;
