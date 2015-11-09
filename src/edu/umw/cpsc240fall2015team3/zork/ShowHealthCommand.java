@@ -14,11 +14,16 @@ Returns a String containing the desription of the player's current Health.
 */
     public String execute(){
 	//Can Edit later to check for specific levels of Health
-	health = state.getAdventurersHealth();
-	if(health <= 0){
-	    return "You are dead";
-	else {
-	    return "You are alive";
-	}
+	int health = state.getAdventurersHealth();
+	if(health > 100){return "You are beaming with energy";}
+	if(health > 90 && health <= 100){return "You feel energetic, ready to explore";}
+        if(health > 70 && health <= 90){return "You feel a bit tired";}
+        if(health > 50 && health <= 70){return "You feel out of breath";}
+        if(health > 30 && health <= 50){return "Its hard to keep a steady breathing pattern";}
+        if(health > 20 && health <= 30){return "Most of your effort is spent trying to stay on your feet";}
+        if(health > 10 && health <= 20){return "Your legs are twitching uncontrollably and it is hard to stay concious";}
+        if(health > 5 && health <= 10){return "It is a battle to stay concious at this point";}
+        if(health > 0 && health <= 5){return "You cant focus at all and feel very sleepy";}
+	else {return "You are dead";}
 	}
 }
