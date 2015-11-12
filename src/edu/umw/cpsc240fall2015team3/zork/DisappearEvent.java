@@ -8,17 +8,19 @@ package edu.umw.cpsc240fall2015team3.zork;
 /**
 Removes a certain item from the GameState and Dungeon.
 */
-abstract class DisappearEvent {
+class DisappearEvent extends Event{
 		
 		/**
 		Constructs a {@link edu.umw.cpsc240fall2015team3.zork.DisappearEvent} object that will remove a specified item from {@link edu.umw.cpsc240fall2015team3.zork.GameState} and the {@link edu.umw.cpsc240fall2015team3.zork.Dungeon} object.
 		*/
-		DisappearEvent(Item item){
+		DisappearEvent(String itemName){
 
 		}
 /**
 Completely removes the passed item from the current Dungeon and GameState.
 */
-    abstract String execute();
+    String execute(){
+    return "";
+    }
 
 }
