@@ -24,6 +24,7 @@ public class Item {
     private ArrayList<String> aliases;
     private int weight;
     private Hashtable<String,String[]> messages;
+    private ArrayList<String> events;
 
 
 		/**Initializes this {@link edu.umw.cpsc240fall2015team3.zork.Item}'s container variables.
@@ -31,6 +32,7 @@ public class Item {
     private void init() {
         messages = new Hashtable<String,String[]>();
         aliases = new ArrayList<String>();
+	events = new ArrayList<String>();
     }
 
 		
@@ -75,6 +77,22 @@ public class Item {
             String[] verbAliases = verbParts[0].split(",");
             String[] messageTexts = verbParts[1].split("\\|");
             for (String verbAlias : verbAliases) {
+		for (int i = 0; i < verbAliases.length; i++){
+		if (verbAliases[i].contains("[")){
+			int pos1 = verbAliases[i].indexOf("[");
+			int pos2 = verbAliases[i].indexOf("]");
+			String allEvents = verbAliases[i].substring(pos1, pos2);
+			//String[] vaTrunc = verbAliases.split("[");
+			
+			if (allEvents.contains(",")){
+				allEvents = allEvents.split(",");
+			}
+			for (int j = 0; j < allEvents.length(); j++){
+				this.events.add(allEvents[j]);
+			}
+				
+		}
+	}
                 messages.put(verbAlias, messageTexts);
             }
             
@@ -114,4 +132,8 @@ public class Item {
     public int getWeight() {
         return weight;
     }
+    	
+	public ArrayList<String> getEvents(){
+		return events;
+	}
 }
