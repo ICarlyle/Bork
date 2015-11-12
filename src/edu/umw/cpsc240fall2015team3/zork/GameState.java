@@ -134,7 +134,6 @@ Creates a new file with the title of the argument passed with a save file extens
             w.print(INVENTORY_LEADER);
             for (int i=0; i<inventory.size()-1; i++) {
                 w.print(inventory.get(i).getPrimaryName() + ",");
-            }
             w.println(inventory.get(inventory.size()-1).getPrimaryName());
         }
         w.close();
