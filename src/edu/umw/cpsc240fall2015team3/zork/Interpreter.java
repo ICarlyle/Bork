@@ -30,7 +30,7 @@ Instantiates a new Dungeon object based on a .zork or a .sav file and continuous
 
         try {
             state = GameState.instance();
-            if (args[0].endsWith(".bork")) {
+            if (args[0].endsWith(".zork")) {
                 state.initialize(new Dungeon(args[0]));
                 System.out.println("\n\n\n\n\nWelcome to " + 
                     state.getDungeon().getName() + "!");
