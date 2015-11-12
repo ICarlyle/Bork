@@ -138,6 +138,7 @@ Creates a new file with the title of the argument passed with a save file extens
         }
         w.close();
     }
+}
 /**
 Stores the passed parameter as the current dungeon.
 */

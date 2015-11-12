@@ -21,6 +21,8 @@ Returns a String informing the player that they are dead.
 		if(randNum.equals(1)){return "No more 1-ups";}
 		if(randNum.equals(2)){return "LAAAG";}
 */
+		System.out.println("YOU DIED");
+		System.exit(2);
 		return "YOU DIED";
 		
 	}
