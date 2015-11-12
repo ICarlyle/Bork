@@ -81,7 +81,7 @@ public class Item {
 		if (verbAliases[i].contains("[")){
 			int pos1 = verbAliases[i].indexOf("[");
 			int pos2 = verbAliases[i].indexOf("]");
-			String allEvents = verbAliases[i].substring(pos1, pos2);
+			String allEvents = verbAliases[i].substring(pos1+1, pos2-1);
 			//String[] vaTrunc = verbAliases.split("[");
 			
 			if (allEvents.contains(",")){
