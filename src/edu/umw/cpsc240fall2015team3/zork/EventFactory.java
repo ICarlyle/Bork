@@ -33,13 +33,13 @@ Returns an Event object based on the passed String that will directly influence 
 	int numberVal = 0;
 	if(noun.contains("1")||noun.contains("2")||noun.contains("3")||noun.contains("4")||noun.contains("5")||noun.contains("6")||noun.contains("7")||noun.contains("8")||noun.contains("9")||noun.contains("0")){numberVal = Integer.parseInt(noun);}
 	
-	if(eventName.equals("AddScoreEvent")){return new AddScoreEvent(numberVal);}
-	if(eventName.equals("DieEvent")){return new DieEvent();}
-	if(eventName.equals("DisappearEvent")){return new DisappearEvent(noun);}
-	if(eventName.equals("LowerHealthEvent")){return new LowerHealthEvent(numberVal);}
-	if(eventName.equals("TeleportEvent")){return new TeleportEvent();}
-	if(eventName.equals("TransformEvent")){return new TransformEvent(noun,noun);}
-	if(eventName.equals("WinEvent")){return new WinEvent();}
+	if(eventName.contains("AddScore")){return new AddScoreEvent(numberVal);}
+	if(eventName.contains("Die")){return new DieEvent();}
+	if(eventName.contains("Disappear")){return new DisappearEvent(noun);}
+	if(eventName.contains("LowerHealth")){return new LowerHealthEvent(numberVal);}
+	if(eventName.contains("Teleport")){return new TeleportEvent();}
+	if(eventName.contains("Transform")){return new TransformEvent(noun,noun);}
+	if(eventName.contains("Win")){return new WinEvent();}
 	return null;
 	}
 	
