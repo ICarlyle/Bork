@@ -90,10 +90,9 @@ public class Item {
 System.out.println("\nVERB:'"+verb+"' | EVENTS:'"+events+"'");
 		String[] eventList = events.split(",");
 		int eventNum = events.length()-events.replace(",","").length()+1;
-		System.out.println(eventNum);
 		int i=0;
 		while(i<eventNum){
-		System.out.println("While "+(i+1)+" "+eventList[i]);
+		System.out.println("Event:"+eventList[i]);
 		
 
 		//Here there is access to the variables:
