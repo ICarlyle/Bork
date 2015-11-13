@@ -88,7 +88,7 @@ public class Item {
 		verb = verb;
 	    }
 System.out.println(verb+" SPLIT "+verbMessage);
-	    String[] messageArray
+	    String[] messageArray = new String[1];
 	    messageArray[0] = verbMessage;
 	    messages.put(verb, messageArray);
 
