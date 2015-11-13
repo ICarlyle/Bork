@@ -219,7 +219,7 @@ Returns a room object with the same title as the passes String.  If there is no 
 /**
 Returns all of the Rooms contained in this Dungeon.
 */
-    public Hashtable getAllRooms() {
-        return rooms;
+    public ArrayList<Room> getAllRooms() {
+        return rooms.values();
     }
 }
