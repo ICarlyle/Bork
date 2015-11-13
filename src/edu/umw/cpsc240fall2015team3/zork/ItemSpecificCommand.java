@@ -1,6 +1,8 @@
 
 package edu.umw.cpsc240fall2015team3.zork;
 
+import java.util.ArrayList;
+
 /**
 @author Robert Jamal Washington
 */
@@ -47,8 +49,14 @@ class ItemSpecificCommand extends Command {
             } catch (Item.NoItemException e) {
                 continue;  // Just try the next split point.
             }
-
             String msg = itemReferredTo.getMessageForVerb(verb);
+            ArrayList<String> eventList = itemReferredTo.getEvents();
+	    for (int i = 0; i < eventList.size(); i++){ // EVENT PARSING
+		String currEvent = eventList.get(i);
+		if (currEvent != null){
+			System.out.println(EventFactory.instance().parse(currEvent).execute());
+	    	}		
+	    }
             return (msg == null ? 
                 "Sorry, you can't " + verb + " the " + noun + "." : msg) +
                 "\n";

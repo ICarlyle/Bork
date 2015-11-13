@@ -73,32 +73,40 @@ public class Item {
                 throw new Dungeon.IllegalDungeonFormatException("No '" +
                     Dungeon.SECOND_LEVEL_DELIM + "' after item.");
             }
+	System.out.println("baseString: " + verbLine);
             String[] verbParts = verbLine.split(":");
-            String[] verbAliases = verbParts[0].split(",");
-            String[] messageTexts = verbParts[1].split("\\|");
-            for (String verbAlias : verbAliases) {
-		for (int i = 0; i < verbAliases.length; i++){
-		if (verbAliases[i].contains("[")){
-			int pos1 = verbAliases[i].indexOf("[");
-			int pos2 = verbAliases[i].indexOf("]");
-			String allEvents = verbAliases[i].substring(pos1+1, pos2-1);
-			//String[] vaTrunc = verbAliases.split("[");
-			
-			if (allEvents.contains(",")){
-				allEvents = allEvents.split(",");
+	System.out.println("verbParts[0]: " + verbParts[0]);
+	System.out.println("verbparts[1]: " + verbParts[1]);
+	String[] messageTexts = null;
+	if (verbParts[0].contains("[")){ //event parsing
+		System.out.println("aaa");
+		String[] eventList = verbParts[0].split("[");
+		System.out.println("eventList[0]: " + eventList[0]);
+		System.out.println("eventList[1]: " + eventList[1]);
+		//messages.put(eventList[0], verbParts[1]);
+		String stringEvents = eventList[1].replace("]", "").trim();
+		if (stringEvents.contains(",")){
+			String[] allStringEvents = stringEvents.split(",");
+			for (int i = 0; i < allStringEvents.length; i++){
+				events.add(allStringEvents[i]);
 			}
-			for (int j = 0; j < allEvents.length(); j++){
-				this.events.add(allEvents[j]);
-			}
-				
+		}
+		else{
+			events.add(stringEvents);
 		}
 	}
-                messages.put(verbAlias, messageTexts);
+	else{
+		messageTexts = verbParts[1].split("\\|");
+	}
+            //String[] verbAliases = verbParts[0].split(",");
+	//System.out.println("verbAliases: " + verbAliases[0]);
+	//System.out.println("verbAlias 2: " + verbAliases[1]);
+	//System.out.println("MessagteTexts: " + messageTexts[0]);
+                //messages.put(eventList[0], verbParts[1]);
             }
             
             verbLine = s.nextLine();
         }
-    }
 
 		/**Returns whether or not this {@link edu.umw.cpsc240fall2015team3.zork.Item} has a certain primary or secondary name.
 
