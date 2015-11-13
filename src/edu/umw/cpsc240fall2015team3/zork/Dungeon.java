@@ -216,4 +216,10 @@ Returns a room object with the same title as the passes String.  If there is no 
         }
         return items.get(primaryItemName);
     }
+/**
+Returns all of the Rooms contained in this Dungeon.
+*/
+    public ArrayList<Room> getAllRooms() {
+        return rooms.values();
+    }
 }
