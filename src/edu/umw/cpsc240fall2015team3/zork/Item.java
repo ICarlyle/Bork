@@ -75,30 +75,37 @@ public class Item {
             }
 	    //System.out.println("baseString: " + verbLine);
             String[] verbParts = verbLine.split(":");
-	    //System.out.println("verbParts[0]: " + verbParts[0]);
-	    //System.out.println("verbparts[1]: " + verbParts[1]);
+	    System.out.println("verbParts[0]: " + verbParts[0]);
+	    System.out.println("verbparts[1]: " + verbParts[1]);
 	    String verbAndAct = verbParts[0];
 	    String verbMessage= verbParts[1];
 	    String[] messageTexts = null;
+	    String verb = verbAndAct; //Sets basic verb to left phrase
+	    if(verbAndAct.contains("[")){ //If have extras, shorten to base verb
+		String verbFormer = verbAndAct.replace("[","SPLIT");
+		String[] verbFormerSplit = verbFormer.split("SPLIT");
+		String newVerb = verbFormerSplit[0];
+		verb = verb;
+	    }
+System.out.println(verb+" SPLIT "+verbMessage);
+	    //messages.put(verb,verbMessage);
+
+
 	    if (verbAndAct.contains("[")){ //event parsing
 		verbAndAct = verbAndAct.replace("[","SPLIT");
 		verbAndAct = verbAndAct.replace("]","");
-//System.out.println("\nverbAndAct: "+verbAndAct);
+System.out.println("\nverbAndAct: "+verbAndAct);
 		String[] verbAndActSplit = verbAndAct.split("SPLIT");
-		String verb = verbAndActSplit[0];
 		String events = verbAndActSplit[1];
 System.out.println("\nVERB:'"+verb+"' | EVENTS:'"+events+"'");
 		String[] eventList = events.split(",");
 		int eventNum = events.length()-events.replace(",","").length()+1;
-		System.out.println(eventNum);
 		int i=0;
 		while(i<eventNum){
-		System.out.println("While "+(i+1)+" "+eventList[i]);
+		System.out.println("Event:"+eventList[i]);
 		
-
-		//Here there is access to the variables:
-		//the action name; EX=break
-		//the EventName+
+		//Add single element to an event list here
+		//I have separated The Strings:  [verb][actions][message]
 
 
 
