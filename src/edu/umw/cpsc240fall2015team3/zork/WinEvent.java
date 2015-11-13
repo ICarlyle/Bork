@@ -13,6 +13,8 @@ class WinEvent extends Event{
 Returns a String informing the player that they have won.
 */
 	public String execute(){
-		return "";	
+		System.out.println("You won");
+		System.exit(2);
+		return "YOU WIN";	
 	}
 }
