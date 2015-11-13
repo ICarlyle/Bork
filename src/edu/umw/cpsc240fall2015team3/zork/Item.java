@@ -77,7 +77,8 @@ public class Item {
             String[] verbAliases = verbParts[0].split(",");
             String[] messageTexts = verbParts[1].split("\\|");
             for (String verbAlias : verbAliases) {
-		for (int i = 0; i < verbAliases.length; i++){
+		
+		for (int i = -1; i < verbAliases.length; i++){
 		if (verbAliases[i].contains("[")){
 			int pos1 = verbAliases[i].indexOf("[");
 			int pos2 = verbAliases[i].indexOf("]");
