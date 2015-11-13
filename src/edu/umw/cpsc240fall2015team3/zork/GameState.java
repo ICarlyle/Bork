@@ -241,7 +241,7 @@ Returns the player's current health.
 /**
 Sets the players health to the players health minus the passed int
 */
-    void subtractAdventurersHealthBy(int damage){}
+    void subtractAdventurersHealthBy(int damage){health = health - damage;}
 /**
 Returns the player's current Score
 */

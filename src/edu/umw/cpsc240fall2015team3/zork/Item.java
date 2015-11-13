@@ -73,33 +73,53 @@ public class Item {
                 throw new Dungeon.IllegalDungeonFormatException("No '" +
                     Dungeon.SECOND_LEVEL_DELIM + "' after item.");
             }
-	System.out.println("baseString: " + verbLine);
+	    //System.out.println("baseString: " + verbLine);
             String[] verbParts = verbLine.split(":");
-	System.out.println("verbParts[0]: " + verbParts[0]);
-	System.out.println("verbparts[1]: " + verbParts[1]);
-	String[] messageTexts = null;
-	if (verbParts[0].contains("[")){ //event parsing
-		System.out.println("aaa");
-		String[] eventList = verbParts[0].split("[");
-		System.out.println("eventList[0]: " + eventList[0]);
-		System.out.println("eventList[1]: " + eventList[1]);
-		//messages.put(eventList[0], verbParts[1]);
-		String stringEvents = eventList[1].replace("]", "").trim();
-		if (stringEvents.contains(",")){
-			String[] allStringEvents = stringEvents.split(",");
-			for (int i = 0; i < allStringEvents.length; i++){
-				events.add(allStringEvents[i]);
+	    //System.out.println("verbParts[0]: " + verbParts[0]);
+	    //System.out.println("verbparts[1]: " + verbParts[1]);
+	    String verbAndAct = verbParts[0];
+	    String verbMessage= verbParts[1];
+	    String[] messageTexts = null;
+	    if (verbAndAct.contains("[")){ //event parsing
+		verbAndAct = verbAndAct.replace("[","SPLIT");
+		verbAndAct = verbAndAct.replace("]","");
+//System.out.println("\nverbAndAct: "+verbAndAct);
+		String[] verbAndActSplit = verbAndAct.split("SPLIT");
+		String verb = verbAndActSplit[0];
+		String events = verbAndActSplit[1];
+System.out.println("\nVERB:'"+verb+"' | EVENTS:'"+events+"'");
+		String[] eventList = events.split(",");
+		int eventNum = events.length()-events.replace(",","").length()+1;
+		System.out.println(eventNum);
+		int i=0;
+		while(i<eventNum){
+		System.out.println("While "+(i+1)+" "+eventList[i]);
+		
 
-	}
+		//Here there is access to the variables:
+		//the action name; EX=break
+		//the EventName+
+
+
+
+		i++;		
+		}
+		
+		//messages.put(eventList[0], verbParts[1]);
+//		if (stringEvents.contains(",")){
+//			String[] allStringEvents = stringEvents.split(",");
+//			for (int i = 0; i < allStringEvents.length; i++){
+//				events.add(allStringEvents[i]);
+//			}
             //String[] verbAliases = verbParts[0].split(",");
 	//System.out.println("verbAliases: " + verbAliases[0]);
 	//System.out.println("verbAlias 2: " + verbAliases[1]);
 	//System.out.println("MessagteTexts: " + messageTexts[0]);
                 //messages.put(eventList[0], verbParts[1]);
             }
-            
-            verbLine = s.nextLine();
-        }
+	    verbLine = s.nextLine();
+	}
+    }
 
 		/**Returns whether or not this {@link edu.umw.cpsc240fall2015team3.zork.Item} has a certain primary or secondary name.
 
@@ -121,20 +141,18 @@ public class Item {
         String[] possibleMessages = messages.get(verb);
         return possibleMessages[rng.nextInt(possibleMessages.length)];
     }
-
 		/**Returns a String that represents this {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 		*/
     public String toString() {
         return primaryName;
     }
-
 		/**Returns the carrying weight of this {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 		*/
     public int getWeight() {
         return weight;
     }
     	
-	public ArrayList<String> getEvents(){
-		return events;
-	}
+    public ArrayList<String> getEvents(){
+	return events;
+    }
 }
