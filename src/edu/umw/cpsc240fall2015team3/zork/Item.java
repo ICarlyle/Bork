@@ -75,7 +75,6 @@ public class Item {
             }
 	System.out.println("baseString: " + verbLine);
             String[] verbParts = verbLine.split(":");
-<<<<<<< HEAD
 	System.out.println("verbParts[0]: " + verbParts[0]);
 	System.out.println("verbparts[1]: " + verbParts[1]);
 	String[] messageTexts = null;
@@ -90,29 +89,7 @@ public class Item {
 			String[] allStringEvents = stringEvents.split(",");
 			for (int i = 0; i < allStringEvents.length; i++){
 				events.add(allStringEvents[i]);
-=======
-            String[] verbAliases = verbParts[0].split(",");
-            String[] messageTexts = verbParts[1].split("\\|");
-            for (String verbAlias : verbAliases) {
-		
-		for (int i = -1; i < verbAliases.length; i++){
-		if (verbAliases[i].contains("[")){
-			int pos1 = verbAliases[i].indexOf("[");
-			int pos2 = verbAliases[i].indexOf("]");
-			String allEvents = verbAliases[i].substring(pos1+1, pos2-1);
-			//String[] vaTrunc = verbAliases.split("[");
-			
-			if (allEvents.contains(",")){
-				allEvents = allEvents.split(",");
->>>>>>> e1904d079ff06a06b265a074eb9ff297a3c65837
-			}
-		}
-		else{
-			events.add(stringEvents);
-		}
-	}
-	else{
-		messageTexts = verbParts[1].split("\\|");
+
 	}
             //String[] verbAliases = verbParts[0].split(",");
 	//System.out.println("verbAliases: " + verbAliases[0]);
