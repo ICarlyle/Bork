@@ -88,7 +88,9 @@ public class Item {
 		verb = verb;
 	    }
 System.out.println(verb+" SPLIT "+verbMessage);
-	    //messages.put(verb,verbMessage);
+	    String[] messageArray
+	    messageArray[0] = verbMessage;
+	    messages.put(verb, messageArray);
 
 
 	    if (verbAndAct.contains("[")){ //event parsing
