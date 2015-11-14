@@ -25,7 +25,7 @@ public class Item {
     private int weight;
     private Hashtable<String,String[]> messages;
     //private ArrayList<String> events;
-    private Hashtable<String, String[]> events;
+    private Hashtable<String, ArrayList<String>> events;
 
 
 		/**Initializes this {@link edu.umw.cpsc240fall2015team3.zork.Item}'s container variables.
@@ -34,7 +34,7 @@ public class Item {
         messages = new Hashtable<String,String[]>();
         aliases = new ArrayList<String>();
 	//events = new ArrayList<String>();
-   	events = new Hashtable<String, String[]>();
+   	events = new Hashtable<String, ArrayList<String>>();
 	 }
 
 		
@@ -105,13 +105,15 @@ System.out.println("\nVERB:'"+verb+"' | EVENTS:'"+eventSegment+"'");
 		String[] eventList = eventSegment.split(",");
 		int eventNum = eventSegment.length()-eventSegment.replace(",","").length()+1;
 		int i=0;
+		ArrayList<String> eventArray = new ArrayList<String>();
 		while(i<eventNum){
-		System.out.println("Event:'"+eventList[i]+"' Added");
-		events.add(eventList[i]);
+		System.out.println("Event:'"+eventList[i]+"' Added to"+verb);
+		eventArray.add(eventList[i]);
 		//Add single element to an event list here
 		//I have separated The Strings:  [verb][actions][message]
 		i++;		
 		}
+		events.put(verb,eventArray);
 		
 		//messages.put(eventList[0], verbParts[1]);
 //		if (stringEvents.contains(",")){
@@ -160,8 +162,8 @@ System.out.println("\nVERB:'"+verb+"' | EVENTS:'"+eventSegment+"'");
         return weight;
     }
     	
-    public ArrayList<String> getEvents(){
-	return events;
+    public ArrayList<String> getEvents(String verb){
+	return events.get(verb);
     }
 		
 		public ArrayList<String> getAliases(){
