@@ -34,26 +34,24 @@ Returns an Event object based on the passed String that will directly influence 
 	String param = "";
 	String param1 = "";
 	String param2 = "";
-	String[] verb = event.split("\\(");
-	verb[1].replace(")", "");
-	/**
-	for (int i = 0; i < verb[1].length(); i++){
-		if (i == 0 && verb[1].charAt(i) == '-'){
-			if(verb[1].length() == 1){
-				break;
-			}
-			if(Character.digit(verb[1].charAt(i), 0) 
-		}
-	}
-	*/
+	//System.out.println("event: " + event);
+	String[] itemAndEvent = event.split(":");
+	String eventName = itemAndEvent[0];
+	String item = itemAndEvent[1];
+	if (eventName.contains("(")){
+		String[] verb = item.split("\\(");
+		System.out.println("verb[0] " + verb[0]);
+		System.out.println("verb[1] " + verb[1]);
+		verb[1].replace(")", "").trim();
+	
 	if (event.contains("1") || event.contains("2") || event.contains("3")
 	|| event.contains("4") || event.contains("5") || event.contains("6")
 	|| event.contains("7") || event.contains("8") || event.contains("9")
 	|| event.contains("0")){
 		numberVal = Integer.parseInt(verb[1]);
-	}
+		}
 	else{
-		param = verb[1];
+		param = eventName;
 		if (param.contains(",")){
 			String[] allNouns = param.split(",");
 			param1 = allNouns[0];
@@ -63,10 +61,11 @@ Returns an Event object based on the passed String that will directly influence 
 		param1 = verb[1];
 		}
 	}
+	}
 	
 	if(event.contains("Score")){return new AddScoreEvent(numberVal);}
 	if(event.contains("Die")){return new DieEvent();}
-	if(event.contains("Disappear")){return new DisappearEvent(param1);}
+	if(event.contains("Disappear")){return new DisappearEvent(item);}
 	if(event.contains("Wound")){return new LowerHealthEvent(numberVal);}
 	if(event.contains("Teleport")){return new TeleportEvent();}
 	if(event.contains("Transform")){return new TransformEvent(param1,param2);}

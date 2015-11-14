@@ -54,7 +54,8 @@ class ItemSpecificCommand extends Command {
 	    for (int i = 0; i < eventList.size(); i++){ // EVENT PARSING
 		String currEvent = eventList.get(i);
 		if (currEvent != null && currEvent.length() > 0){
-			System.out.println(EventFactory.instance().parse(currEvent).execute());
+			//System.out.println("CurrEvent: " + currEvent);
+			System.out.println(EventFactory.instance().parse(currEvent + ":" +  itemReferredTo.getPrimaryName()).execute());
 	    	}		
 	    }
             return (msg == null ? 
