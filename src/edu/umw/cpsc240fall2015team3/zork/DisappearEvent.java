@@ -22,9 +22,10 @@ Completely removes the passed item from the current Dungeon and GameState.
 */
     String execute(){
 	try{
-	    Item theItem = GameState.instance().getItemFromInventoryNamed(itemName);
+	    Item theItem = GameState.instance().getItemInVicinityNamed(itemName);
+	    GameState.instance().removeItemFromDungeon(theItem);
 	    GameState.instance().removeFromInventory(theItem);
-	    return itemName+" ";
+	    return itemName+" poof!";
 	}
 	catch(Item.NoItemException e) {
 	    return "You don't have a "+itemName+".\n";

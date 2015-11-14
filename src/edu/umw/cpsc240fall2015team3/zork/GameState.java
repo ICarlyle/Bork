@@ -171,6 +171,10 @@ Removes an item from the players inventory.
     void removeFromInventory(Item item) {
         inventory.remove(item);
     }
+
+    void removeItemFromDungeon(Item removeThis){
+		dungeon.removeItem(removeThis);
+	}
 /**
 Searches the player's inventory and the players current room for an item by the passed string name and returns the item by that name.  If no item is found, an exception is thrown. 
 @throws Item.NoItemException if no item is found
