@@ -10,6 +10,9 @@ import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.PrintWriter;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.ArrayList;
 /**
 The Dungeon class represents the dungeon that the player will play through.  This class includes methods for adding/getting items, getting/adding rooms, storing and restoring the state of the dungeon.  The Dungeon object is read in from a .zork/.sav file. 
 */
@@ -198,6 +201,21 @@ Stores a room object into this dungeon so that it can be retrieved later.  If th
 Stores an item object into this dungeon so that it can be retrieved later.  If the same item is added twice, no effect.  If the item is null, nothing happens.  If 2 items with the same name are added, the first item  is replaced with the second.
 */
     public void add(Item item) { items.put(item.getPrimaryName(),item); }
+    public void removeItem(Item theItem){
+		String key;
+		items.remove(theItem.getPrimaryName());
+		Set<String> keySet = rooms.keySet();
+		Iterator<String> it = keySet.iterator();
+		while (it.hasNext()){
+			key = it.next();
+			ArrayList<Item> items = getRoom(key).getContents();
+			for (int i = 0; i < items.size(); i++){
+				if (items.get(i).getPrimaryName().equals(theItem.getPrimaryName())){
+				entry.remove(theItem);
+				}
+			}
+		}
+	}
 /**
 Returns a room object with the same title as the passes String.  If there is no room with the passed title, returns null.
 */
@@ -217,9 +235,23 @@ Returns a room object with the same title as the passes String.  If there is no 
         return items.get(primaryItemName);
     }
 /**
+Returns Number of the Rooms contained in this Dungeon.
+*/
+public int getNumberRooms() {
+    return rooms.size();
+}
+/**
+Returns Hashtable of the Rooms contained in this Dungeon.
+*/
+public Hashtable<String,Room> getAllRooms() {
+    return rooms;
+}
+
+
+/**
 Returns all of the Rooms contained in this Dungeon.
 */
-    public ArrayList<Room> getAllRooms() {
-        return rooms.values();
-    }
+//    public ArrayList<Room> getAllRooms() { 
+//	 return rooms.values();
+//    }
 }
