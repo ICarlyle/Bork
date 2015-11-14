@@ -19,7 +19,7 @@ class TeleportEvent extends Event{
 		TeleportEvent(){
 			Random rand;
 			ArrayList<Room>	rooms = GameState.getDungeon().getAllRooms();
-			int randRoom = rand.nextInt((rooms.size() + 1);
+			int randRoom = rand.nextInt((rooms.size() + 1));
 
 			dest = rooms.get(randRoom);
 		}
