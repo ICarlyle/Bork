@@ -243,8 +243,10 @@ public int getNumberRooms() {
 /**
 Returns Hashtable of the Rooms contained in this Dungeon.
 */
-public Hashtable<String,Room> getAllRooms() {
-    return rooms;
+public Room getNumberedRoom(int randNum) {
+    Set<String> roomKeys = rooms.keySet();
+    String roomKey = "";
+    return rooms.get(roomKey);
 }
 
 

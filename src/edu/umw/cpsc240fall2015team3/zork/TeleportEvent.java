@@ -1,4 +1,3 @@
-
 package edu.umw.cpsc240fall2015team3.zork;
 
 /**
@@ -17,9 +16,10 @@ class TeleportEvent extends Event{
 	/**Returns a {@link edu.umw.cpsc240fall2015team3.zork.TeleportEvent} that uses a random {@link edu.umw.cpsc240fall2015team3.zork.Room} location.
 	*/
 	TeleportEvent(){
-//		Random rand = new Random();
-//		int numRoom = GameState.instance().getDungeon().getNumberRooms();
-//		GameState.instance().getDungeon().get
+	Random rand = new Random();
+	int numRoom = GameState.instance().getDungeon().getNumberRooms();
+	//Hashtable<String,Room> rooms = new Hashtable<String,Room>();
+	//rooms = GameState.instance().getDungeon().getRoomHash();
 //		int randNum = rand.nextInt((rooms.size() + 1));
 //		dest = rooms.get(randRoom);
 	}
@@ -38,7 +38,7 @@ class TeleportEvent extends Event{
 		// GameState.instance().addToTime(1);
 //		GameState.instance().setAdventurersCurrentRoom(dest);
 //		return "You were whisked away to " + dest.getTitle() + "\n.";
-	return "";
+	return "You feel LightHeadhed and dense grey mist appears";
 	}
 
 }
