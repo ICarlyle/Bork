@@ -50,10 +50,10 @@ class ItemSpecificCommand extends Command {
                 continue;  // Just try the next split point.
             }
             String msg = itemReferredTo.getMessageForVerb(verb);
-            ArrayList<String> eventList = itemReferredTo.getEvents();
+            ArrayList<String> eventList = itemReferredTo.getEvents(verb);
 	    for (int i = 0; i < eventList.size(); i++){ // EVENT PARSING
 		String currEvent = eventList.get(i);
-		if (currEvent != null){
+		if (currEvent != null && currEvent.length() > 0){
 			System.out.println(EventFactory.instance().parse(currEvent).execute());
 	    	}		
 	    }

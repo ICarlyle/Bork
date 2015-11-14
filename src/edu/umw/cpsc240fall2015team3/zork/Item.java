@@ -160,7 +160,7 @@ System.out.println("\nVERB:'"+verb+"' | EVENTS:'"+eventSegment+"'");
         return weight;
     }
     	
-    public ArrayList<String> getEvents(){
-	return events;
+    public ArrayList<String> getEvents(String verb){
+	return events.get(verb);
     }
 }
