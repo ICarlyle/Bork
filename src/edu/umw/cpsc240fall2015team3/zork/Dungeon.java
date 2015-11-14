@@ -235,9 +235,23 @@ Returns a room object with the same title as the passes String.  If there is no 
         return items.get(primaryItemName);
     }
 /**
+Returns Number of the Rooms contained in this Dungeon.
+*/
+public int getNumberRooms() {
+    return rooms.size();
+}
+/**
+Returns Hashtable of the Rooms contained in this Dungeon.
+*/
+public Hashtable<String,Room> getAllRooms() {
+    return rooms;
+}
+
+
+/**
 Returns all of the Rooms contained in this Dungeon.
 */
-    public ArrayList<Room> getAllRooms() {
-        return rooms.values();
-    }
+//    public ArrayList<Room> getAllRooms() { 
+//	 return rooms.values();
+//    }
 }
