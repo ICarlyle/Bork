@@ -13,6 +13,7 @@ import java.io.PrintWriter;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.ArrayList;
+import java.util.Random;
 /**
 The Dungeon class represents the dungeon that the player will play through.  This class includes methods for adding/getting items, getting/adding rooms, storing and restoring the state of the dungeon.  The Dungeon object is read in from a .zork/.sav file. 
 */
@@ -246,7 +247,9 @@ Returns Hashtable of the Rooms contained in this Dungeon.
 public Room getNumberedRoom(int randNum) {
     Set<String> roomKeys = rooms.keySet();
     String roomKey = "";
-    return rooms.get(roomKey);
+	Object[] keys = rooms.keySet().toArray();
+	Object key = keys[new Random().nextInt(keys.length)];
+    return rooms.get(key);
 }
 
 
