@@ -23,19 +23,19 @@ public class Item {
     private String primaryName;
     private ArrayList<String> aliases;
     private int weight;
-    private Hashtable<String,String[]> messages;
+    private ArrayList<String> MessageArrayList;
+    private Hashtable<String,ArrayList<String>> messages;
     //private ArrayList<String> events;
     private Hashtable<String, ArrayList<String>> events;
-
 
 		/**Initializes this {@link edu.umw.cpsc240fall2015team3.zork.Item}'s container variables.
 		*/
     private void init() {
-        messages = new Hashtable<String,String[]>();
+        messages = new Hashtable<String,ArrayList<String>>();
         aliases = new ArrayList<String>();
 	//events = new ArrayList<String>();
    	events = new Hashtable<String, ArrayList<String>>();
-	 }
+	}
 
 		
     /** Returns an {@link edu.umw.cpsc240fall2015team3.zork.Item} object read from the "Items" section of a .zork file by a Scanner.
@@ -67,6 +67,7 @@ public class Item {
 
         // Read item weight.
         weight = Integer.valueOf(s.nextLine());
+	ArrayList<String> messageHolder = new ArrayList<String>();
 
         // Read and parse verbs lines, as long as there are more.
         String verbLine = s.nextLine();
@@ -81,18 +82,16 @@ public class Item {
 	    //System.out.println("verbparts[1]: " + verbParts[1]);
 	    String verbAndAct = verbParts[0];
 	    String verbMessage= verbParts[1];
-	    String[] messageTexts = null;
 	    String verb = verbAndAct; //Sets basic verb to left phrase
 	    if(verbAndAct.contains("[")){ //If have extras, shorten to base verb
 		String verbFormer = verbAndAct.replace("[","SPLIT");
 		String[] verbFormerSplit = verbFormer.split("SPLIT");
 		String newVerb = verbFormerSplit[0];
-		verb = verb;
+		verb = newVerb;
 	    }
-System.out.println(verb+" SPLIT "+verbMessage);
-	    String[] messageArray = new String[1];
-	    messageArray[0] = verbMessage;
-	    messages.put(verb, messageArray);
+//System.out.println(verb+" SPLIT "+verbMessage);
+	    messageHolder.add(verbMessage);
+	    messages.put(verb, messageHolder);
 
 
 	    if (verbAndAct.contains("[")){ //event parsing
@@ -101,13 +100,13 @@ System.out.println(verb+" SPLIT "+verbMessage);
 //System.out.println("\nverbAndAct: "+verbAndAct);
 		String[] verbAndActSplit = verbAndAct.split("SPLIT");
 		String eventSegment = verbAndActSplit[1];
-System.out.println("\nVERB:'"+verb+"' | EVENTS:'"+eventSegment+"'");
+//System.out.println("\nVERB:'"+verb+"' | EVENTS:'"+eventSegment+"'");
 		String[] eventList = eventSegment.split(",");
 		int eventNum = eventSegment.length()-eventSegment.replace(",","").length()+1;
 		int i=0;
 		ArrayList<String> eventArray = new ArrayList<String>();
 		while(i<eventNum){
-		System.out.println("Event:'"+eventList[i]+"' Added to"+verb);
+		//System.out.println("Event:'"+eventList[i]+"' Added to"+verb);
 		eventArray.add(eventList[i]);
 		//Add single element to an event list here
 		//I have separated The Strings:  [verb][actions][message]
@@ -148,8 +147,9 @@ System.out.println("\nVERB:'"+verb+"' | EVENTS:'"+eventSegment+"'");
 		@param verb The action the player uses with this {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 		*/
     public String getMessageForVerb(String verb) {
-        String[] possibleMessages = messages.get(verb);
-        return possibleMessages[rng.nextInt(possibleMessages.length)];
+	return messages.get(verb).get(1);
+	//String[] possibleMessages = messages.get(verb);
+        //return possibleMessages[rng.nextInt(possibleMessages.length())];
     }
 		/**Returns a String that represents this {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 		*/
