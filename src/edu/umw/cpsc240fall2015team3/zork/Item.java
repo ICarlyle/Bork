@@ -164,6 +164,14 @@ System.out.println("\nVERB:'"+verb+"' | EVENTS:'"+eventSegment+"'");
 	return events;
     }
 		
+		public ArrayList<String> getAliases(){
+			return aliases;
+		}
+
+		public Hashtable<String, String> getMessages(){
+			return messages;
+		}
+
 		public void setAliases(ArrayList<String> theAliases){
 			aliases = theAliases;
 		}
