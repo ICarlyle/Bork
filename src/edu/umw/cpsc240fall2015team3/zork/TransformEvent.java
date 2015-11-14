@@ -24,7 +24,15 @@ class TransformEvent extends Event{
 		/**Changes one {@link edu.umw.cpsc240fall2015team3.zork.Item} into a different {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 		*/
     public String execute(){
-			return "";
+			Item oldItem = GameState.instance().getItemInVicinityNamed(oldItemName);
+			Item newItem = GameState.instance().getDungeon.getItem(newItemName);
+
+			oldItem.setAliases(newItem.getAliases());
+			oldItem.setEvents(newItem.getEvents());
+			oldItem.setMessages(newItem.getMessages());
+			oldItem.setPrimaryName(newItem.getPrimaryName());
+			oldItem.setWeight(newItem.getWeight());
+			return "The " + oldItemName + "has become " + newItemName + ".\n";
 		}
 
 }
