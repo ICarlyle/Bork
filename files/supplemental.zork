@@ -11,10 +11,26 @@ Health:20
 Strength:15
 Defense:10
 Points:2
-Inventory:Rope,Candle,SwoleEmber
+Inventory:Candle
 ***
 "Ever been 'weast?"
-"Argh"
+"Too much"
+***
+---
+Fountain
+***
+"Looks hungry"
+***
+isHostile
+Health:200
+Strength:50
+Defense:100
+Points:3
+***
+"Glub glub glub"
+"GlUB GLuB GLub"
+"GLuB Glub"
+"GLuB"
 ***
 ---
 ===
@@ -27,30 +43,45 @@ read[AddScore(3)]:Welcome
 examine:It appears to be a readable piece of paper
 ---
 Candle
-Weight:1
+Weight:3
 Str:0
 Def:0
 wave[Unlock(Moon Hall)]:You make spooky
 ---
 SwoleEmber
 Weight:0
-Str:5
-Def:5
+Str:10
+Def:-2
 ---
 ===
 Rooms:
 Cell
-Contents: Candle
 Enemies: Bad Man
 You are in a small, windowless room.  There is an empty mattress resting
 on the floor.  A flickering candle is illuminating the cell door, which
 is hanging ajar.
 ---
 Moon Hall
-Contents:
-Enemies:
-ADD LATER
+A black walkway streches out on either side of you.  A hastilly-assembled 
+railing is the only thing keeping you from falling down into the pitch dark.
+Beneath the metal grating you can make out the mural of a shimmering moon
+shrouded by red clouds.
 ---
+West Moon Hall
+You run your hand along the bars until you reach the end of the walkway.
+A padded room is here.
+---
+White Room
+Contents: CrumpledPieceOfPaper,SwoleEmber
+A dimming lightbulb is collecting duct above your head.  The bottom of a
+crumpled piece of manilla paper is lodged into the corner.  You don't
+like this room.
+---
+Fountain Room
+Enemies: Fountain
+Your legs give out as you collapse onto the top of the mural.  A rounded
+fountain etched of marble is your only companion.  You think you can make
+out something slumped over the base of the marble... 
 ===
 Exits:
 Cell
@@ -60,5 +91,29 @@ Moon Hall
 Moon Hall
 s
 Cell
+---
+Moon Hall
+w
+West Moon Hall
+---
+West Moon Hall
+w
+White Room
+---
+West Moon Hall
+e
+Moon Hall
+---
+White Room
+e
+West Moon Hall
+---
+West Moon Hall
+d
+Fountain Room
+---
+Moon Hall
+d
+Fountain Room
 ---
 ===
