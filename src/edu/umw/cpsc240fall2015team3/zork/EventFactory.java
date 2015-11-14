@@ -34,10 +34,14 @@ Returns an Event object based on the passed String that will directly influence 
 	String param = "";
 	String param1 = "";
 	String param2 = "";
+	String item= "";
+	String eventName = "";
 	//System.out.println("event: " + event);
+	if (event.contains(":")){
 	String[] itemAndEvent = event.split(":");
-	String eventName = itemAndEvent[0];
-	String item = itemAndEvent[1];
+	eventName = itemAndEvent[0];
+	item = itemAndEvent[1];
+	}
 	if (eventName.contains("(")){
 		String[] verb = item.split("\\(");
 		System.out.println("verb[0] " + verb[0]);
