@@ -14,8 +14,8 @@ Returns a String containing the desription of the player's current Health.
     public String execute(){
 	//Can Edit later to check for specific levels of Health
 	int health = GameState.instance().getAdventurersHealth();
-	if(health > 100){return "You are beaming with energy\n";}
-	if(health > 90 && health <= 100){return "You feel energetic, ready to explore\n";}
+	if(health > 100){return "You are beaming with energy\n" + health;}
+	if(health > 90 && health <= 100){return "You feel energetic, ready to explore\n" + health;}
         if(health > 70 && health <= 90){return "You feel a bit tired\n";}
         if(health > 50 && health <= 70){return "You feel out of breath\n";}
         if(health > 30 && health <= 50){return "Its hard to keep a steady breathing pattern\n";}

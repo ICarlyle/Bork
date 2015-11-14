@@ -15,13 +15,15 @@ class LowerHealthEvent extends Event{
 		@param damage The amount that the player's health should be lowered by.
 		*/	
 		LowerHealthEvent(int damage){
+			this.damage = damage;
 		}
 	
 		/**Lowers the player's health by a specified amount. This simulatneously acts as a way to increase the player's health by passing in a positive value for the damage.
 		*/
     public String execute(){
 	GameState.instance().subtractAdventurersHealthBy(damage);
-	return "ouch";	
+	System.out.println("damage: " + damage + "\n");
+	return "ouch\n" + GameState.instance().getAdventurersHealth();	
 	}
 
 }

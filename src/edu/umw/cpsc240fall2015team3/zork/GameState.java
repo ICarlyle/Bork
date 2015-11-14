@@ -47,7 +47,7 @@ Prints the error message after being called.
     private ArrayList<Item> inventory;
     private Room adventurersCurrentRoom;
 
-    private int health = 100;
+    private int health;
     private int str;
     private int def;
     private int totalTime;
@@ -65,6 +65,7 @@ Instantiates objects on creation of GameState
 */
     private GameState() {
         inventory = new ArrayList<Item>();
+	health = 100;
     }
 /**
 Restores the dungeon to a previous save state with the passed parameter as the title.
