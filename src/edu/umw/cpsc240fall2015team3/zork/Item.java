@@ -170,13 +170,13 @@ System.out.println("\nVERB:'"+verb+"' | EVENTS:'"+eventSegment+"'");
 			aliases = theAliases;
 		}
 
-		public void setEvents(ArrayList<String> theEvents){
-			events = theEvents;
-		}
+//		public void setEvents(ArrayList<String> theEvents){
+//			events = theEvents;
+//		}
 
-		public void setMessages(Hashtable<String,String> theMessages){
-			messages = theMessages;
-		}
+//		public void setMessages(Hashtable<String,String> theMessages){
+//			messages = theMessages;
+//		}
 
 		public void setPrimaryName(String thePrimaryName){
 			primaryName = thePrimaryName;

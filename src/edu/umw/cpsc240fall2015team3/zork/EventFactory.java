@@ -40,7 +40,7 @@ Returns an Event object based on the passed String that will directly influence 
 	if(eventName.contains("Teleport")){return new TeleportEvent();}
 	if(eventName.contains("Transform")){return new TransformEvent(noun,noun);}
 	if(eventName.contains("Win")){return new WinEvent();}
-	else{return new DieEvent();}
+	else{return new AddScoreEvent(0);}
 	}
 	
 }
