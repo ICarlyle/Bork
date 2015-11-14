@@ -23,7 +23,8 @@ class TransformEvent extends Event{
 	
 		/**Changes one {@link edu.umw.cpsc240fall2015team3.zork.Item} into a different {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 		*/
-    public String execute(){
+/**
+    public String execute(){/
 			Item oldItem = GameState.instance().getItemInVicinityNamed(oldItemName);
 			Item newItem = GameState.instance().getDungeon.getItem(newItemName);
 
@@ -34,5 +35,8 @@ class TransformEvent extends Event{
 			oldItem.setWeight(newItem.getWeight());
 			return "The " + oldItemName + "has become " + newItemName + ".\n";
 		}
-
+*/
+	public String execute(){
+		return "";
+	}
 }
