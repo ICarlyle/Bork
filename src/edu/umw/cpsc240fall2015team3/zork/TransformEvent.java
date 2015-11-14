@@ -17,13 +17,14 @@ class TransformEvent extends Event{
 		@param newItemName The {@link edu.umw.cpsc240fall2015team3.zork.Item} that the old {@link edu.umw.cpsc240fall2015team3.zork.Item} is being transformed into.
 		*/	
 		TransformEvent(String oldItemName, String newItemName){
-		
+			this.oldItemName = oldItemName;
+			this.newItemName = newItemName;	
 		}
 	
 		/**Changes one {@link edu.umw.cpsc240fall2015team3.zork.Item} into a different {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 		*/
     public String execute(){
-		return "";
+			return "";
 		}
 
 }
