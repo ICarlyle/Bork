@@ -1,0 +1,64 @@
+Doghouse
+Zork v1.0
+===
+Enemies:
+Bad Man
+***
+"Definitely not goodman."
+***
+isHostile
+Health:20
+Strength:15
+Defense:10
+Points:2
+Inventory:Rope,Candle,SwoleEmber
+***
+"Ever been 'weast?"
+"Argh"
+***
+---
+===
+Items:
+CrumpledPieceOfPaper
+Weight:1
+Str:0
+Def:0
+read[AddScore(3)]:Welcome
+examine:It appears to be a readable piece of paper
+---
+Candle
+Weight:1
+Str:0
+Def:0
+wave[Unlock(Moon Hall)]:You make spooky
+---
+SwoleEmber
+Weight:0
+Str:5
+Def:5
+---
+===
+Rooms:
+Cell
+Contents: Candle
+Enemies: Bad Man
+You are in a small, windowless room.  There is an empty mattress resting
+on the floor.  A flickering candle is illuminating the cell door, which
+is hanging ajar.
+---
+Moon Hall
+Contents:
+Enemies:
+ADD LATER
+---
+===
+Exits:
+Cell
+n
+Moon Hall
+---
+Moon Hall
+s
+Cell
+---
+===
