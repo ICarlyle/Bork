@@ -165,4 +165,23 @@ System.out.println("\nVERB:'"+verb+"' | EVENTS:'"+eventSegment+"'");
     public Hashtable<String,ArrayList<String>> getEvents(){
 	return events;
     }
+		
+		public void setAliases(ArrayList<String> theAliases){
+			aliases = theAliases;
+		}
+
+		public void setEvents(ArrayList<String> theEvents){
+			events = theEvents;
+		}
+
+		public void setMessages(Hashtable<String,String> theMessages){
+			messages = theMessages;
+		}
+
+		public void setPrimaryName(String thePrimaryName){
+			primaryName = thePrimaryName;
+		}
+		public void setWeight(int theWeight){
+			weight = theWeight;
+		}
 }
