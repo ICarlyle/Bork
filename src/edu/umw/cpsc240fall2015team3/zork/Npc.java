@@ -19,49 +19,73 @@ Constructs a new, fully fledged npc enemy.
 @param dialog An ArrayList of Strings that holds onto all of the dialog that this Npc will say
 @param isHostile boolean that stores whether this Npc is hostile or non-hostile
 */
-	Npc(String name, int points, int health, int strength, int defense, String description, ArrayList<String> dialog, boolean isHostile){
+	private String name, description;
+	private int points, health, strength, defense;
+	private ArrayList<String> dialog;
+	private ArrayList<Item> inventory;
+	private boolean isHostile; 
+	Npc(String name, int points, int health, int strength, int defense, String description, ArrayList<String> dialog, ArrayList<Item> inventory, boolean isHostile){
+	this.name = name;
+	this.description = description;
+	this.points = points;
+	this.health = health;
+	this.strength = strength;
+	this.defense = defense;
+	this.dialog = dialog;
+	this.inventory = inventory;
+	this.isHostile = isHostile;
 	}
 /**
 Returns a string that describes this Npc.
 */
 	public String describe(){
-		return "";
+		return description;
 	}	
 /**
 Returns a string that displays which items have been dropped by this Npc on death.  The items will be "dropped" into the room where the NPC died.  If the NPC has no items, no items will be dropped.
 */
 	public String drop(){
-		return "";
+		String dropMessage = "The " + name + " has dropped:\n ";
+		for (int i = 0; i < inventory.size(); i++){
+			Item currItem = inventory.get(i);
+			Room currRoom = GameState.instance().getAdventurersCurrentRoom();
+			currRoom.add(currItem);
+			dropMessage += "A " + currItem.getPrimaryName() + " \n";                        inventory.remove(i);	
+		}
+		GameState.instance().addToAdventurersScoreBy(this.points);
+		return dropMessage + "You earned " + this.points + " points.\n";
 	}
 /**
 Returns a string that contains one of the lines of dialog that the Npc has.  The line of dialog is randomly selected every combat turn.  
 */
 	public String talk(){
-		return "";
+		String lineOfDialog = dialog.get((int)(Math.round((Math.random() * dialog.size())-1)));
+		return lineOfDialog + "\n";
 	}
 /**
 Returns a string that displays how much this Npc has been hurt.  If the Npc is now dead, the String will say as such.
 @param health int that is how much health the enemy is going to loose.
 */
 	public String wound(int health){
-		return "";
+		this.health -= health;
+		return "You whack the " + name + " for " + " hp.\n";
 	}
 /**
 Returns an int that is equal to how much defense this Npc has.
 */
 	public int defense(){
-		return 0;
+		return defense;
 	}
 /**
 Returns an int that is equal to how much strength this Npc has.
 */
 	public int strength(){
-		return 0;
+		return strength;
 	}
 /**
 Returns a boolean value that corresponds to whether this Npc is hostile or friendly.
 */
 	public boolean isHostile(){
-		return true;
+		return isHostile;
 	}
 }	
