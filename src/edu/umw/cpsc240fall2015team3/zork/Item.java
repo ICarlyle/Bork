@@ -75,8 +75,8 @@ public class Item {
             }
 	    //System.out.println("baseString: " + verbLine);
             String[] verbParts = verbLine.split(":");
-	    System.out.println("verbParts[0]: " + verbParts[0]);
-	    System.out.println("verbparts[1]: " + verbParts[1]);
+	    //System.out.println("verbParts[0]: " + verbParts[0]);
+	    //System.out.println("verbparts[1]: " + verbParts[1]);
 	    String verbAndAct = verbParts[0];
 	    String verbMessage= verbParts[1];
 	    String[] messageTexts = null;
@@ -96,21 +96,18 @@ System.out.println(verb+" SPLIT "+verbMessage);
 	    if (verbAndAct.contains("[")){ //event parsing
 		verbAndAct = verbAndAct.replace("[","SPLIT");
 		verbAndAct = verbAndAct.replace("]","");
-System.out.println("\nverbAndAct: "+verbAndAct);
+//System.out.println("\nverbAndAct: "+verbAndAct);
 		String[] verbAndActSplit = verbAndAct.split("SPLIT");
-		String events = verbAndActSplit[1];
-System.out.println("\nVERB:'"+verb+"' | EVENTS:'"+events+"'");
-		String[] eventList = events.split(",");
-		int eventNum = events.length()-events.replace(",","").length()+1;
+		String eventSegment = verbAndActSplit[1];
+System.out.println("\nVERB:'"+verb+"' | EVENTS:'"+eventSegment+"'");
+		String[] eventList = eventSegment.split(",");
+		int eventNum = eventSegment.length()-eventSegment.replace(",","").length()+1;
 		int i=0;
 		while(i<eventNum){
-		System.out.println("Event:"+eventList[i]);
-		
+		System.out.println("Event:'"+eventList[i]+"' Added");
+		events.add(eventList[i]);
 		//Add single element to an event list here
 		//I have separated The Strings:  [verb][actions][message]
-
-
-
 		i++;		
 		}
 		

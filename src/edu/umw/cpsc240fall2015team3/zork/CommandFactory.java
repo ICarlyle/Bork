@@ -58,7 +58,7 @@ If a command is entered incorrectly or String command isn't actually a command, 
         if (verb.equals("drop")) {
             return new DropCommand(pasteSecondAndBeyond(parts));
         }
-        if (verb.equals("look")) {
+        if (verb.equals("look")||verb.equals("l")) {
             return new LookCommand();
         }
         if (verb.equals("i") || verb.equals("inventory")) {
