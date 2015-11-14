@@ -34,7 +34,7 @@ Returns an Event object based on the passed String that will directly influence 
 	String param = "";
 	String param1 = "";
 	String param2 = "";
-	String[] verb = event.split("(");
+	String[] verb = event.split("\\(");
 	verb[1].replace(")", "");
 	/**
 	for (int i = 0; i < verb[1].length(); i++){
