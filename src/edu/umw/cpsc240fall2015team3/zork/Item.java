@@ -24,7 +24,8 @@ public class Item {
     private ArrayList<String> aliases;
     private int weight;
     private Hashtable<String,String[]> messages;
-    private ArrayList<String> events;
+    //private ArrayList<String> events;
+    private Hashtable<String, String[]> events;
 
 
 		/**Initializes this {@link edu.umw.cpsc240fall2015team3.zork.Item}'s container variables.
@@ -32,8 +33,9 @@ public class Item {
     private void init() {
         messages = new Hashtable<String,String[]>();
         aliases = new ArrayList<String>();
-	events = new ArrayList<String>();
-    }
+	//events = new ArrayList<String>();
+   	events = new Hashtable<String, String[]>();
+	 }
 
 		
     /** Returns an {@link edu.umw.cpsc240fall2015team3.zork.Item} object read from the "Items" section of a .zork file by a Scanner.
