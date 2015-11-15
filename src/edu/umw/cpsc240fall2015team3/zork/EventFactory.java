@@ -43,7 +43,7 @@ Returns an Event object based on the passed String that will directly influence 
 	item = itemAndEvent[1];
 	}
 	if (event.contains("(")){
-		String[] verb = event.split("\\(");
+		String[] verb = eventName.split("\\(");
 		//System.out.println("verb[0] " + verb[0]);
 		//System.out.println("verb[1] " + verb[1]);
 		verb[1].replace(")", "").trim();
