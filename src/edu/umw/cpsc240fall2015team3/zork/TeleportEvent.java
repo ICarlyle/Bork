@@ -16,12 +16,6 @@ class TeleportEvent extends Event{
 	/**Returns a {@link edu.umw.cpsc240fall2015team3.zork.TeleportEvent} that uses a random {@link edu.umw.cpsc240fall2015team3.zork.Room} location.
 	*/
 	TeleportEvent(){
-	Random rand = new Random();
-	int numRoom = GameState.instance().getDungeon().getNumberRooms();
-	//Hashtable<String,Room> rooms = new Hashtable<String,Room>();
-	//rooms = GameState.instance().getDungeon().getRoomHash();
-//		int randNum = rand.nextInt((rooms.size() + 1));
-//		dest = rooms.get(randRoom);
 	}
 
 	/**Returns a {@link edu.umw.cpsc240fall2015team3.zork.TeleportEvent} that uses a specific {@link edu.umw.cpsc240fall2015team3.zork.Room} location.
@@ -35,7 +29,10 @@ class TeleportEvent extends Event{
 	/**Transports the player to specified {@link edu.umw.cpsc240fall2015team3.zork.Room}, or if no {@link edu.umw.cpsc240fall2015team3.zork.Room} is specified, to a random {@link edu.umw.cpsc240fall2015team3.zork.Room} in the {@link edu.umw.cpsc240fall2015team3.zork.Dungeon}.
 		*/
 	public String execute(){
-		// GameState.instance().addToTime(1);
+	Random rand = new Random();
+	Room nextRoom = GameState.instance().getDungeon().getNumberedRoom(rand.nextInt());
+	GameState.instance().setAdventurersCurrentRoom(nextRoom);
+	GameState.instance().addToTime(1);
 //		GameState.instance().setAdventurersCurrentRoom(dest);
 //		return "You were whisked away to " + dest.getTitle() + "\n.";
 	return "You feel LightHeadhed and dense grey mist appears";

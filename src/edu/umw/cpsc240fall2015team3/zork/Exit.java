@@ -1,4 +1,3 @@
-
 package edu.umw.cpsc240fall2015team3.zork;
 
 import java.util.Scanner;
@@ -7,7 +6,7 @@ import java.util.Scanner;
 @author Robert Jamal Washington
 */
 /**
-Connects one {@link edu.umw.cpsc240fall2015team3.zork.Room} object to another {@link edu.umw.cpsc240fall2015team3.zork.Room} object.
+Connects one {@link edu.umw.cpsc240fall2015team3.zork.Room} object to another {@link edu.umw.cpsc240fall2015team3.zork.Room} object. Each exit onbject is unidirectional.
 */
 public class Exit {
 
