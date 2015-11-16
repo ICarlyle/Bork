@@ -3,16 +3,18 @@
 */
 package edu.umw.cpsc240fall2015team3.zork;
 /**
-This class will search a room for an enemy named the passed argument then call methods to simulate fighting.
+Searches a hlnkRoom} for a specific enemy hlnkNpc}, and administers damage to that enemy if it is found.
 */
 class  AttackCommand extends Command {
     private String enemy;
 /**
-Stores the name of enemy to attack
+Constructs an hlnkAttackCommand} object that will be used on a specific enemy hlnkNpc}.
+
+@param Enemy The name of the hlnkNpc} that will be attacked.
 */
     AttackCommand(String Enemy){}
 /**
-Returns a string that states how much damage was done
+Lowers the health of an enemy hlnkNpc} and returns a message stating how much damage the enemy took from the attack. 
 */
     String execute() {
 	return "";

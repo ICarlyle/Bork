@@ -14,6 +14,8 @@ class AddScoreEvent extends Event {
 		
 		/**
 		Constructs a {@link edu.umw.cpsc240fall2015team3.zork.AddScoreEvent} object that uses the passed score value.
+
+		@param points The value to change the score by.
 		*/
       		AddScoreEvent(int points){
 			this.points = points;
@@ -23,8 +25,7 @@ class AddScoreEvent extends Event {
 			this.points = 0;
 		}
 /**
-Raises the player's score by the specified amount.
-@return a corresponding String message
+Raises the player's score by the specified amount and returns a String message that says the score has been changed. If the amount passed to the method is negative, this will have the effect of lowering the player's score.
 */	
 	String execute(){
 		GameState.instance().addToAdventurersScoreBy(points);
