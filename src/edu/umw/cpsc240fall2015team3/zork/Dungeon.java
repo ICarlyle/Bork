@@ -254,7 +254,6 @@ Returns a room object with the same title as the passes String.  If there is no 
 	@throws Item.NoItemException if the passed string does not match any items
      */
     public Item getItem(String primaryItemName) throws Item.NoItemException {
-        
         if (items.get(primaryItemName) == null) {
             throw new Item.NoItemException();
         }

@@ -172,6 +172,9 @@ Removes an item from the players inventory.
     void removeFromInventory(Item item) {
         inventory.remove(item);
     }
+    void removeFromCurrentRoom(Item item) {
+	adventurersCurrentRoom.remove(item);
+    }
 
     void removeItemFromDungeon(Item removeThis){
 		dungeon.removeItem(removeThis);
