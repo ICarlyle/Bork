@@ -50,7 +50,7 @@ Instantiates a new Dungeon object based on a .zork or a .sav file and continuous
 
             while (!command.equals("q")) {
 		if(command.equals("EVENT")){
-		    System.out.println("Welcome, hacker. These hacks may be gameBreaking and or dangerous to your health if typed wrong, be warned. Enter the Event classname CAPS matters.");
+		    System.out.println("Welcome, hacker. These hacks may be gameBreaking and or dangerous to your health if typed wrong, be warned. Enter the Event name CAPS matters.");
 		    command = promptUser(commandLine);
 		    System.out.print(EventFactory.instance().parse(command).execute());
 		    

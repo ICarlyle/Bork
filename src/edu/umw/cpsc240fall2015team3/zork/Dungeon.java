@@ -267,16 +267,24 @@ public int getNumberRooms() {
     return rooms.size();
 }
 /**
-Returns Hashtable of the Rooms contained in this Dungeon.
+Returns a Random Room contained in this Dungeon.
 */
-public Room getNumberedRoom(int randNum) {
-    Set<String> roomKeys = rooms.keySet();
-    String roomKey = "";
-	Object[] keys = rooms.keySet().toArray();
-	Object key = keys[new Random().nextInt(keys.length)];
+public Room getNumberedRoom() {
+System.out.println("Stan TELEPORT");
+    Object[] keys = rooms.keySet().toArray();
+    Object key = keys[new Random().nextInt(keys.length)];
     return rooms.get(key);
 }
-
+/**
+Returns a specific Room contained in this Dungeon.
+*/
+public Room getSpecRoom(int roomNum) {
+System.out.println("Spec Tele ACTIVATE");
+    Object[] keys = rooms.keySet().toArray();
+    while(roomNum > keys.length){roomNum = roomNum - keys.length;}
+    Object key = keys[roomNum];
+    return rooms.get(key);
+}
 
 /**
 Returns all of the Rooms contained in this Dungeon.
