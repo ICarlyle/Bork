@@ -270,7 +270,7 @@ public int getNumberRooms() {
 Returns a Random Room contained in this Dungeon.
 */
 public Room getNumberedRoom() {
-System.out.println("Stan TELEPORT");
+//System.out.println("Stan TELEPORT");
     Object[] keys = rooms.keySet().toArray();
     Object key = keys[new Random().nextInt(keys.length)];
     return rooms.get(key);
@@ -279,7 +279,7 @@ System.out.println("Stan TELEPORT");
 Returns a specific Room contained in this Dungeon.
 */
 public Room getSpecRoom(int roomNum) {
-System.out.println("Spec Tele ACTIVATE");
+//System.out.println("Spec Tele ACTIVATE");
     Object[] keys = rooms.keySet().toArray();
     while(roomNum > keys.length){roomNum = roomNum - keys.length;}
     Object key = keys[roomNum];

@@ -48,6 +48,13 @@ Str:0
 Def:0
 wave[Unlock(Moon Hall)]:You make spooky
 ---
+CreepyDoll
+Weight:1
+Str:4
+Def:1
+examine:A creepy looking porcelain doll, its eyes follow your movements
+shake[Teleport(1)]:You feel uneasy
+---
 SwoleEmber
 Weight:0
 Str:10
@@ -57,6 +64,7 @@ Def:-2
 Rooms:
 Cell
 Enemies: Bad Man
+Contents: CreepyDoll
 You are in a small, windowless room.  There is an empty mattress resting
 on the floor.  A flickering candle is illuminating the cell door, which
 is hanging ajar.

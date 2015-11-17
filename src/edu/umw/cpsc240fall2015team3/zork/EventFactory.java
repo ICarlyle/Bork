@@ -72,8 +72,8 @@ Returns an Event object based on the passed String that will directly influence 
 	if(event.contains("Wound")){
 	System.out.println(numberVal);
 	return new LowerHealthEvent(numberVal);}
+        if(event.contains("Teleport(")){return new TeleportEvent(numberVal);}
 	if(event.contains("Teleport")){return new TeleportEvent();}
-	//if(event.contains("Teleport(")){return new TeleportEvent(numberVal);}
 	if(event.contains("Transform")){return new TransformEvent(param1,param2);}
 	if(event.contains("Win")){return new WinEvent();}
 	else{return new AddScoreEvent(0);}

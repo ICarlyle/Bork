@@ -23,6 +23,9 @@ class LowerHealthEvent extends Event{
     public String execute(){
 	GameState.instance().subtractAdventurersHealthBy(damage);
 	//System.out.println("damage: " + damage + "\n");
+	if(GameState.instance().getAdventurersHealth() <= 0){
+System.out.print(EventFactory.instance().parse("Die").execute());
+}
 	return "";//"ouch\n";	
 	}
 
