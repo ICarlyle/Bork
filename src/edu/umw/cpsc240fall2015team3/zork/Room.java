@@ -23,6 +23,7 @@ public class Room {
     private boolean beenHere;
     private ArrayList<Item> contents;
     private ArrayList<Exit> exits;
+    private ArrayList<Npc> enemies;
 
 		/**Returns an empty {@link edu.umw.cpsc240fall2015team3.zork.Room} with the specificied title.
 
@@ -72,6 +73,21 @@ public class Room {
         }
         
         String lineOfDesc = s.nextLine();
+	
+	if (lineOfDesc.contains("Enemies: ")){
+		String[] enemiesLine = lineOfDesc.split(":");
+		if (enemiesLine[1].contains(",")){
+			String[] allEnemies = enemiesLine[1].split(",");
+			for (int i = 0; i < allEnemies.length; i++){
+				this.enemies.add(d.getNpc(allEnemies[i]));
+			}
+		}
+		else{
+			this.enemies.add(d.getNpc(enemiesLine[1]));
+		}
+		lineOfDesc = s.nextLine(); // Room descrption
+	}
+	System.out.println("Post Enemies:");
         while (!lineOfDesc.equals(Dungeon.SECOND_LEVEL_DELIM) &&
                !lineOfDesc.equals(Dungeon.TOP_LEVEL_DELIM)) {
 
@@ -82,6 +98,7 @@ public class Room {
                     try {
                         if (initState) {
                             add(d.getItem(itemName));
+				System.out.println(itemName);
                         }
                     } catch (Item.NoItemException e) {
                         throw new Dungeon.IllegalDungeonFormatException(
@@ -107,6 +124,7 @@ public class Room {
     private void init() {
         contents = new ArrayList<Item>();
         exits = new ArrayList<Exit>();
+	enemies = new ArrayList<Npc>();
         beenHere = false;
     }
 

@@ -1,5 +1,6 @@
 package edu.umw.cpsc240fall2015team3.zork;
 import java.util.ArrayList;
+import java.util.Scanner;
 /**
 @author Alec
 */
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 The Npc class represents a hostile/nonhostile enemy in the Zork dungeon.  These NPCs cannot move on their own and are tied to specific rooms.  They have their own dialogue that they will say every combat "turn" and have their own description, inventory, stats, and a number of points that they are worth when killed.  The NPC will award a number of points and drop its "inventory" on death. 
 */
 public class Npc{
+	static class NoNpcException extends Exception {}
 /**
 Constructs a new, fully fledged npc enemy.
 @param name String that is the name of this Npc
@@ -22,18 +24,78 @@ Constructs a new, fully fledged npc enemy.
 	private String name, description;
 	private int points, health, strength, defense;
 	private ArrayList<String> dialog;
-	private ArrayList<Item> inventory;
-	private boolean isHostile; 
-	Npc(String name, int points, int health, int strength, int defense, String description, ArrayList<String> dialog, ArrayList<Item> inventory, boolean isHostile){
-	this.name = name;
-	this.description = description;
-	this.points = points;
-	this.health = health;
-	this.strength = strength;
-	this.defense = defense;
-	this.dialog = dialog;
-	this.inventory = inventory;
-	this.isHostile = isHostile;
+	private ArrayList<String> inventory;
+	private boolean isHostile;
+	
+	private void init() {
+		dialog = new ArrayList<String>();
+		inventory = new ArrayList<String>();
+	 }
+	
+	Npc(Scanner s) throws NoNpcException, 
+		Dungeon.IllegalDungeonFormatException{
+	String currLine = "";
+	System.out.println("START OF NPC CONSTRCUTOR");
+	init();
+	
+	currLine = s.nextLine();
+	if (currLine.equals("===")){
+		System.out.println("Npc parsing fin");
+		throw new Npc.NoNpcException();
+	}
+	this.name = currLine;
+	
+	System.out.println(name);
+	currLine = s.nextLine(); // ***
+	while (!s.hasNext("\\*\\*\\*")){
+		this.dialog.add(s.nextLine());
+	}
+	System.out.println(s.nextLine()); // ***
+	String isHostile = s.nextLine();
+	if (isHostile.equals("isHostile")){
+		this.isHostile = true;
+	}
+	else if (isHostile.equals("isNotHostile")){
+		this.isHostile = false;
+	}
+	String[] healthLine = s.nextLine().split(":");
+	this.health = Integer.parseInt(healthLine[1]); 
+	String[] strLine = s.nextLine().split(":");
+	this.strength = Integer.parseInt(strLine[1]);
+	String[] defLine = s.nextLine().split(":");
+	this.defense = Integer.parseInt(defLine[1]);
+	String[] ptsLine = s.nextLine().split(":");
+	this.points = Integer.parseInt(ptsLine[1]);
+	currLine = s.nextLine();
+	System.out.println("inventoryLine: " + currLine);
+	if (currLine.contains("Inventory")){
+		String[] inven = currLine.split(":");
+		String allItems = inven[1];
+		System.out.println("allItems: " + allItems);
+		if (allItems.contains(",")){
+			String[] allItemsArray = allItems.split(",");
+			for (int i = 0; i < allItemsArray.length; i++){
+				this.inventory.add(allItemsArray[i]);
+			}
+		}
+		else {
+			this.inventory.add(allItems);
+		}
+	currLine = s.nextLine(); // ***
+	System.out.println("Shld be *** " + currLine);
+	}
+	if (currLine.equals("***")){
+		System.out.println("ye");
+		while(!s.hasNext("\\*\\*\\*")){
+			this.dialog.add(s.nextLine());
+		}
+	}
+	System.out.println("before ===" + s.nextLine()); // ---
+	currLine = s.nextLine(); // ---
+	System.out.println("at the end: " + currLine);
+	//if (s.hasNext("===")){
+	//	currLine = s.nextLine(); // ===
+	//}
 	}
 /**
 Returns a string that describes this Npc.
@@ -44,17 +106,17 @@ Returns a string that describes this Npc.
 /**
 Returns a string that displays which items have been dropped by this Npc on death.  The items will be "dropped" into the room where the NPC died.  If the NPC has no items, no items will be dropped.
 */
-	public String drop(){
+	/**public String drop(){
 		String dropMessage = "The " + name + " has dropped:\n ";
 		for (int i = 0; i < inventory.size(); i++){
-			Item currItem = inventory.get(i);
+			Item currItem = GameState.instance().getDungeon().getItem(inventory.get(i));
 			Room currRoom = GameState.instance().getAdventurersCurrentRoom();
 			currRoom.add(currItem);
 			dropMessage += "A " + currItem.getPrimaryName() + " \n";                        inventory.remove(i);	
 		}
 		GameState.instance().addToAdventurersScoreBy(this.points);
 		return dropMessage + "You earned " + this.points + " points.\n";
-	}
+	}*/
 /**
 Returns a string that contains one of the lines of dialog that the Npc has.  The line of dialog is randomly selected every combat turn.  
 */
@@ -88,4 +150,6 @@ Returns a boolean value that corresponds to whether this Npc is hostile or frien
 	public boolean isHostile(){
 		return isHostile;
 	}
+	
+	public String getName(){ return name;}
 }	

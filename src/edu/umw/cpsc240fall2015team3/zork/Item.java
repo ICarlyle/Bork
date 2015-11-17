@@ -22,7 +22,7 @@ public class Item {
 
     private String primaryName;
     private ArrayList<String> aliases;
-    private int weight;
+    private int weight, str, def;
     private ArrayList<String> MessageArrayList;
     private Hashtable<String,ArrayList<String>> messages;
     //private ArrayList<String> events;
@@ -66,7 +66,12 @@ public class Item {
         
 
         // Read item weight.
-        weight = Integer.valueOf(s.nextLine());
+	String[] weightLine = s.nextLine().split(":");
+        this.weight = Integer.valueOf(weightLine[1]);
+	String[] strLine = s.nextLine().split(":");
+	this.str = Integer.valueOf(strLine[1]);
+	String[] defLine = s.nextLine().split(":");
+	this.def = Integer.valueOf(defLine[1]);
 	ArrayList<String> messageHolder = new ArrayList<String>();
 
         // Read and parse verbs lines, as long as there are more.

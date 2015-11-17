@@ -31,6 +31,7 @@ public class Dungeon {
     public static String SECOND_LEVEL_DELIM = "---";
 
     // Variables relating to dungeon file (.bork) storage.
+    public static String ENEMIES_MARKER = "Enemies:";
     public static String ROOMS_MARKER = "Rooms:";
     public static String EXITS_MARKER = "Exits:";
     public static String ITEMS_MARKER = "Items:";
@@ -43,6 +44,7 @@ public class Dungeon {
     private Room entry;
     private Hashtable<String,Room> rooms;
     private Hashtable<String,Item> items;
+    private Hashtable<String,Npc> enemies;
     private String filename;
 /**
 @param name String that represents the name of this dungeon
@@ -54,6 +56,7 @@ public class Dungeon {
         this.name = name;
         this.entry = entry;
         rooms = new Hashtable<String,Room>();
+	//enemies = new Hashtable<String,Npc>();
     }
 
 /**
@@ -90,7 +93,19 @@ Reads from the file passed and instantiates a new dungeon based on it.
             throw new IllegalDungeonFormatException("No '" +
                 TOP_LEVEL_DELIM + "' after version indicator.");
         }
-
+	// Throw away Enemies Starter
+	if (!s.nextLine().equals(ENEMIES_MARKER)) {
+		throw new IllegalDungeonFormatException("No '" +
+			ENEMIES_MARKER + "' line where expected.");
+	}
+	try {
+		while(true){
+			//add(new Npc(s));
+			add(new Npc(s));
+			//System.out.println("NpcNameFromDung: " + npc.getName());
+			//System.out.println("DungNpcName: " + npc.getName());
+		}
+	} catch (Npc.NoNpcException e){} // end of enemies section
         // Throw away Items starter.
         if (!s.nextLine().equals(ITEMS_MARKER)) {
             throw new IllegalDungeonFormatException("No '" +
@@ -103,7 +118,7 @@ Reads from the file passed and instantiates a new dungeon based on it.
                 add(new Item(s));
             }
         } catch (Item.NoItemException e) {  /* end of items */ }
-
+	System.out.println("Item parsing fin");
         // Throw away Rooms starter.
         if (!s.nextLine().equals(ROOMS_MARKER)) {
             throw new IllegalDungeonFormatException("No '" +
@@ -143,6 +158,7 @@ Initializes new variables for the dungeon object in a new/restored dungeon
     private void init() {
         rooms = new Hashtable<String,Room>();
         items = new Hashtable<String,Item>();
+	enemies = new Hashtable<String,Npc>();
     }
 
     /**
@@ -197,7 +213,16 @@ Returns the string that is the filename of this dungeon.
 Stores a room object into this dungeon so that it can be retrieved later.  If the same room is added twice, no effect.  If room is null, nothing happens.  If 2 rooms with the same name are added, the first room is replaced with the second.
 @param room the room to be added
 */
-    public void add(Room room) { rooms.put(room.getTitle(),room); }
+    public void add(Room room) { 
+	this.rooms.put(room.getTitle(),room); }
+    public void add(Npc npc) {
+	System.out.println("[enemiesPut]: " + npc.getName());
+	System.out.println("enemies: " + this.enemies);
+	this.enemies.put(npc.getName(),npc);  }
+
+    public Npc getNpc(String npc){
+	return enemies.get(npc);
+    }
 /**
 Stores an item object into this dungeon so that it can be retrieved later.  If the same item is added twice, no effect.  If the item is null, nothing happens.  If 2 items with the same name are added, the first item  is replaced with the second.
 */
