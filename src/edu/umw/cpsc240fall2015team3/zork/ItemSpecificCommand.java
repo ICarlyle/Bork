@@ -50,7 +50,13 @@ class ItemSpecificCommand extends Command {
                 continue;  // Just try the next split point.
             }
             String msg = itemReferredTo.getMessageForVerb(verb);
+	    if(msg==null){System.out.println("[WARNING] ItmSpc Messago Problemo");}
             ArrayList<String> eventList = itemReferredTo.getEvents(verb);
+	    if(eventList==null){
+		//System.out.println("[WARNING] ItmSpc Evento Problemo");
+		System.out.println("Do what to what? Please use a different verb.");
+		return "";
+	    }
 	    for (int i = 0; i < eventList.size(); i++){ // EVENT PARSING
 		String currEvent = eventList.get(i);
 		if (currEvent != null && currEvent.length() > 0){

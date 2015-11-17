@@ -22,21 +22,19 @@ public class Item {
 
     private String primaryName;
     private ArrayList<String> aliases;
-    private int weight, str, def;
+    private int weight;
     private ArrayList<String> MessageArrayList;
-    private Hashtable<String,String> messages;
+    private Hashtable<String,ArrayList<String>> messages;
     //private ArrayList<String> events;
     private Hashtable<String, ArrayList<String>> events;
-    private ArrayList<String> eventArray;
 
 		/**Initializes this {@link edu.umw.cpsc240fall2015team3.zork.Item}'s container variables.
 		*/
     private void init() {
-        messages = new Hashtable<String,String>();
+        messages = new Hashtable<String,ArrayList<String>>();
         aliases = new ArrayList<String>();
 	//events = new ArrayList<String>();
    	events = new Hashtable<String, ArrayList<String>>();
-	eventArray = new ArrayList<String>();
 	}
 
 		
@@ -68,12 +66,7 @@ public class Item {
         
 
         // Read item weight.
-	String[] weightLine = s.nextLine().split(":");
-        this.weight = Integer.valueOf(weightLine[1]);
-	String[] strLine = s.nextLine().split(":");
-	this.str = Integer.valueOf(strLine[1]);
-	String[] defLine = s.nextLine().split(":");
-	this.def = Integer.valueOf(defLine[1]);
+        weight = Integer.valueOf(s.nextLine());
 	ArrayList<String> messageHolder = new ArrayList<String>();
 
         // Read and parse verbs lines, as long as there are more.
@@ -97,7 +90,8 @@ public class Item {
 		verb = newVerb;
 	    }
 //System.out.println(verb+" SPLIT "+verbMessage);
-	    messages.put(verb, verbMessage);
+	    messageHolder.add(verbMessage);
+	    messages.put(verb, messageHolder);
 
 
 	    if (verbAndAct.contains("[")){ //event parsing
@@ -110,7 +104,7 @@ public class Item {
 		String[] eventList = eventSegment.split(",");
 		int eventNum = eventSegment.length()-eventSegment.replace(",","").length()+1;
 		int i=0;
-		//ArrayList<String> eventArray = new ArrayList<String>();
+		ArrayList<String> eventArray = new ArrayList<String>();
 		while(i<eventNum){
 		//System.out.println("Event:'"+eventList[i]+"' Added to"+verb);
 		eventArray.add(eventList[i]);
@@ -152,9 +146,8 @@ public class Item {
 
 		@param verb The action the player uses with this {@link edu.umw.cpsc240fall2015team3.zork.Item}.
 		*/
-    public String getMessageForVerb(String verbVar) {
-	if(messages.get(verbVar)==null){return "";}
-	else{return messages.get(verbVar);}
+    public String getMessageForVerb(String verb) {
+	return messages.get(verb).get(1);
 	//String[] possibleMessages = messages.get(verb);
         //return possibleMessages[rng.nextInt(possibleMessages.length())];
     }
@@ -169,8 +162,8 @@ public class Item {
         return weight;
     }
     	
-    public ArrayList<String> getEvents(String verbVar){
-	return events.get(verbVar);
+    public ArrayList<String> getEvents(String verb){
+	return events.get(verb);
     }
 		
 		public ArrayList<String> getAliases(){

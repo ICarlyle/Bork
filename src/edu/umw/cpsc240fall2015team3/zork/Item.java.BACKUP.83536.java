@@ -68,6 +68,7 @@ public class Item {
         
 
         // Read item weight.
+<<<<<<< HEAD
 	String[] weightLine = s.nextLine().split(":");
         this.weight = Integer.valueOf(weightLine[1]);
 	String[] strLine = s.nextLine().split(":");
@@ -75,6 +76,9 @@ public class Item {
 	String[] defLine = s.nextLine().split(":");
 	this.def = Integer.valueOf(defLine[1]);
 	ArrayList<String> messageHolder = new ArrayList<String>();
+=======
+        weight = Integer.valueOf(s.nextLine());
+>>>>>>> bac032d2656af8eaec2ad815c9942d253d9b45aa
 
         // Read and parse verbs lines, as long as there are more.
         String verbLine = s.nextLine();

@@ -5,17 +5,22 @@ import java.util.ArrayList;
 @author Alec
 */
 /**
-Extends the command class; comes into effect when a player or potentially an Npc wishes to drop a certain (or all) item(s).  
+Removes items from a player's inventory.  
 */
 class DropCommand extends Command {
 
     private String itemName;
+	
+		/**Returns a {@link edu.umw.cpsc240fall2015team3.zork.DropCommand} that uses a specific {@link edu.umw.cpsc240fall2015team3.zork.Item} called by the player.
+
+		@param itemName The name of the {@link edu.umw.cpsc240fall2015team3.zork.Item} to be removed from the player's inventory.
+		*/
 
     DropCommand(String itemName) {
         this.itemName = itemName;
     }
 /**
-Returns a string that tells the player what they dropped.  If the player doesn't have any items or they don't say what they are dropping, a corresponding String is returned.
+Removes an {@link edu.umw.cpsc240fall2015team3.zork.Item} from the player's inventory and returns a String that says what was removed. If the itemName parameter from the constuctor has the value of "all," then every item in the inventory is removed. If the player doesn't have any items or they don't say what they are dropping, a corresponding String is returned.
 */
     public String execute() {
         if (itemName == null || itemName.trim().length() == 0) {
