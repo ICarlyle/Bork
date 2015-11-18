@@ -23,7 +23,8 @@ Completely removes the passed item from the current Dungeon and GameState.
     String execute(){
 	try{
 	    Item theItem = GameState.instance().getItemInVicinityNamed(itemName);
-	    GameState.instance().removeItemFromDungeon(theItem);
+	    //GameState.instance().removeItemFromDungeon(theItem);
+	    GameState.instance().removeFromCurrentRoom(theItem);
 	    GameState.instance().removeFromInventory(theItem);
 	    return itemName+" poof!";
 	}

@@ -42,6 +42,7 @@ Prints the error message after being called.
     static String CURRENT_ROOM_LEADER = "Current room: ";
     static String INVENTORY_LEADER = "Inventory: ";
 
+
     private static GameState theInstance;
     private Dungeon dungeon;
     private ArrayList<Item> inventory;
@@ -171,6 +172,9 @@ Removes an item from the players inventory.
 */
     void removeFromInventory(Item item) {
         inventory.remove(item);
+    }
+    void removeFromCurrentRoom(Item item) {
+	adventurersCurrentRoom.remove(item);
     }
 
     void removeItemFromDungeon(Item removeThis){

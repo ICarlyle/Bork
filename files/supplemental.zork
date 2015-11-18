@@ -41,6 +41,7 @@ Str:0
 Def:0
 read[AddScore(3)]:Welcome
 examine:It appears to be a readable piece of paper
+destroy[Disappear]:vanish!
 ---
 DeathJuice
 Weight:0
@@ -57,15 +58,35 @@ wave[Unlock(Moon Hall)]:You make spooky
 ---
 CreepyDoll
 Weight:1
-Str:4
-Def:1
+Str:0
+Def:0
 examine:A creepy looking porcelain doll, its eyes follow your movements
 shake[Teleport(1)]:You feel uneasy
+lick[Die]:As you lick the doll, its eyes twitch and an overwhelming dread reaches you. Your heart gives out and you fall down.
+---
+RedHerring
+Weight:0
+Str:0
+Def:0
 ---
 SwoleEmber
 Weight:0
 Str:10
 Def:-2
+---
+T
+weight:5
+Str:0
+Def:0
+examine:A large Letter T, you can see strange liquid inside. There also appears to be an opening on the side.
+shake:You can hear the liquid splash around inside.
+drink[Wound(-20),Transform(Empty-T)]:You chug down the strange liquid, it is filling and bitter.
+---
+Empty-T
+weight:1
+Str:0
+Def:0
+examine:It appears you have drained the T of every last drop, it is now just a hollow shell of what it was.
 ---
 ===
 Rooms:
