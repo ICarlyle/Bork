@@ -55,6 +55,7 @@ Str:0
 Def:0
 examine:A creepy looking porcelain doll, its eyes follow your movements
 shake[Teleport(1)]:You feel uneasy
+lick[Die]:As you lick the doll, its eyes twitch and an overwhelming dread reaches you. Your heart gives out and you fall down.
 ---
 RedHerring
 Weight:0

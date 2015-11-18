@@ -42,6 +42,7 @@ Prints the error message after being called.
     static String CURRENT_ROOM_LEADER = "Current room: ";
     static String INVENTORY_LEADER = "Inventory: ";
 
+
     private static GameState theInstance;
     private Dungeon dungeon;
     private ArrayList<Item> inventory;
