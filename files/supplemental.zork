@@ -42,6 +42,13 @@ Def:0
 read[AddScore(3)]:Welcome
 examine:It appears to be a readable piece of paper
 ---
+DeathJuice
+Weight:0
+Str:0
+Def:0
+drink[Wound(100)]:Blargh
+down[Die]:Ooof
+---
 Candle
 Weight:3
 Str:0
@@ -63,8 +70,8 @@ Def:-2
 ===
 Rooms:
 Cell
-Enemies: Bad Man
-Contents: CreepyDoll
+Enemies:Bad Man
+Contents: CreepyDoll,DeathJuice
 You are in a small, windowless room.  There is an empty mattress resting
 on the floor.  A flickering candle is illuminating the cell door, which
 is hanging ajar.
@@ -86,7 +93,7 @@ crumpled piece of manilla paper is lodged into the corner.  You don't
 like this room.
 ---
 Fountain Room
-Enemies: Fountain
+Enemies:Fountain
 Your legs give out as you collapse onto the top of the mural.  A rounded
 fountain etched of marble is your only companion.  You think you can make
 out something slumped over the base of the marble... 

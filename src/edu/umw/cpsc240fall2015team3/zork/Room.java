@@ -74,7 +74,7 @@ public class Room {
         
         String lineOfDesc = s.nextLine();
 	
-	if (lineOfDesc.contains("Enemies: ")){
+	if (lineOfDesc.contains("Enemies:")){
 		String[] enemiesLine = lineOfDesc.split(":");
 		if (enemiesLine[1].contains(",")){
 			String[] allEnemies = enemiesLine[1].split(",");
@@ -214,6 +214,11 @@ public class Room {
                 description += "\n" + exit.describe();
             }
         }
+	if (enemies.size() > 0){
+	for (int i = 0; i < enemies.size(); i++){
+		description += "\nArgh! There is a " + enemies.get(i).getName() + " here!";
+	}
+	}
         //if(beenHere || full){for (Exit exit : exits){description += "\n" + exit.describe();}}  //Enable to see Exits everytime
 
         beenHere = true;
