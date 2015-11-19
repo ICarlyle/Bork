@@ -4,10 +4,12 @@ Zork v1.0
 Enemies:
 Bad Man
 ***
-"Definitely not goodman."
+There appears to be a man here who is definitely not a good man.
+(One might say he's a Bad Man.)
+The fiend is snoring in the corner of your cell.
 ***
 isHostile
-Health:20
+Health:1
 Strength:15
 Defense:10
 Points:2
@@ -19,7 +21,7 @@ Inventory:Candle
 ---
 Fountain
 ***
-"Looks hungry"
+There is a giant Fountain snoring loudly, best not to wake it.
 ***
 isHostile
 Health:200

@@ -64,6 +64,9 @@ If a command is entered incorrectly or String command isn't actually a command, 
         if (verb.equals("i") || verb.equals("inventory")) {
             return new InventoryCommand();
         }
+	if (verb.equals("attack")){
+	    return new AttackCommand(pasteSecondAndBeyond(parts));
+	}
         if (MOVEMENT_COMMANDS.contains(verb)) {
             return new MovementCommand(verb);
         }

@@ -21,15 +21,17 @@ Constructs a new, fully fledged npc enemy.
 @param dialog An ArrayList of Strings that holds onto all of the dialog that this Npc will say
 @param isHostile boolean that stores whether this Npc is hostile or non-hostile
 */
-	private String name, description;
+	private String name;
 	private int points, health, strength, defense;
 	private ArrayList<String> dialog;
 	private ArrayList<String> inventory;
+	private ArrayList<String> description;
 	private boolean isHostile;
 	
 	private void init() {
 		dialog = new ArrayList<String>();
 		inventory = new ArrayList<String>();
+		description = new ArrayList<String>();
 	 }
 	
 	Npc(Scanner s) throws NoNpcException, 
@@ -48,7 +50,7 @@ Constructs a new, fully fledged npc enemy.
 	System.out.println(name);
 	currLine = s.nextLine(); // ***
 	while (!s.hasNext("\\*\\*\\*")){
-		this.dialog.add(s.nextLine());
+		this.description.add(s.nextLine());
 	}
 	System.out.println(s.nextLine()); // ***
 	String isHostile = s.nextLine();
@@ -101,7 +103,11 @@ Constructs a new, fully fledged npc enemy.
 Returns a string that describes this Npc.
 */
 	public String describe(){
-		return description;
+		String stringDesc = "";
+		for (int i = 0; i < description.size(); i++){
+			stringDesc += description.get(i) + "\n";
+		}
+		return stringDesc;
 	}	
 /**
 Returns a string that displays which items have been dropped by this Npc on death.  The items will be "dropped" into the room where the NPC died.  If the NPC has no items, no items will be dropped.
@@ -121,7 +127,8 @@ Returns a string that displays which items have been dropped by this Npc on deat
 Returns a string that contains one of the lines of dialog that the Npc has.  The line of dialog is randomly selected every combat turn.  
 */
 	public String talk(){
-		String lineOfDialog = dialog.get((int)(Math.round((Math.random() * dialog.size())-1)));
+		//String lineOfDialog = dialog.get((int)(Math.round((Math.random() * dialog.size())-1)));
+		String lineOfDialog = dialog.get(0);
 		return lineOfDialog + "\n";
 	}
 /**

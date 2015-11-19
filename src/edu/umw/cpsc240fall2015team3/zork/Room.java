@@ -204,17 +204,26 @@ public class Room {
             description = title;
         } else {
             description = title + "\n" + desc;
+	    if (!enemies.isEmpty()){
+		for (int i = 0; i < enemies.size(); i++){
+			description += enemies.get(i).describe();
+		}	
+            }
         }
         for (Item item : contents) {
             description += "\nThere is a " + item.getPrimaryName() + " here.";
         }
+	for (Npc npc : enemies){
+	    description += "\nArghh!  There is a " + npc.getName() + " here!";
+	}
         if (contents.size() > 0) { description += "\n"; }
         if (!beenHere || full) {
+	int i = -1;
             for (Exit exit : exits) {
                 description += "\n" + exit.describe();
             }
         }
-	if (enemies.size() > 0){
+	if (enemies.size() > 0 && beenHere){
 	for (int i = 0; i < enemies.size(); i++){
 		description += "\nArgh! There is a " + enemies.get(i).getName() + " here!";
 	}
@@ -282,5 +291,8 @@ public class Room {
 		*/
     ArrayList<Item> getContents() {
         return contents;
+    }
+    ArrayList<Npc> getEnemies() {
+	return enemies;
     }
 }
