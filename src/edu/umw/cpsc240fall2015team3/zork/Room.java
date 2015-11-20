@@ -199,7 +199,11 @@ public class Room {
 		*/
     public String describe(boolean full) {
         String description;
-	//System.out.print("Time:["+GameState.instance().getTotalTime()+"]"); //Prints time
+	int time = GameState.instance().getTotalTime();
+	int timeSeg = (time%100);
+	if(timeSeg >= 0 && timeSeg < 50){System.out.print("\n\n[☼]");}
+	if(timeSeg >=50 && timeSeg < 100){System.out.print("\n\n[Ç]");}
+	System.out.print("Time:["+GameState.instance().getTotalTime()+"]"); //Prints time
         if (beenHere && !full) {
             description = title;
         } else {
