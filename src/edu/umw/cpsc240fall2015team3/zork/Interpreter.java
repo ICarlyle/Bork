@@ -56,7 +56,7 @@ Instantiates a new Dungeon object based on a .zork or a .sav file and continuous
 		    
 		} else {
 		//System.out.print("\n\n\n"); 		//Spacer that makes it look cleaner
-                System.out.print(
+		System.out.print(
                     CommandFactory.instance().parse(command).execute());
 
                 command = promptUser(commandLine);

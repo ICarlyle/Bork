@@ -14,16 +14,18 @@ class DieEvent extends Event{
 Returns a String informing the player that they are dead.
 */
 	public String execute(){
-		/**static Random rand = new Random();
-		randNum = rand.nextInt(2);
-		System.out.println("Death message "+randNum);
-		if(randNum.equals(0)){return "Your body falls apart";}
-		if(randNum.equals(1)){return "No more 1-ups";}
-		if(randNum.equals(2)){return "LAAAG";}
-*/
-		System.out.println("YOU DIED");
+		Random rand = new Random();
+		int randNum = rand.nextInt(2)+1;
+		//System.out.println("Death message "+randNum);
+		System.out.println("\n");
+		//ENTER ENFGAME MESSAGE HERE
+		System.out.print(CommandFactory.instance().parse("score").execute());
+		if(randNum==1){System.out.print("Your body falls apart");}
+		if(randNum==2){System.out.print("No more 1-ups");}
+		if(randNum==3){System.out.print("LAAAG");}
+ 		System.out.println(", You Died.");
 		System.exit(2);
-		return "YOU DIED";
+		return "";
 		
 	}
 }
