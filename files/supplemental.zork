@@ -89,13 +89,13 @@ Empty-T
 weight:1
 Str:0
 Def:0
-examine:It appears you have drained the T of every last drop, it is now just a hollow shell of what it was.
+examine:It appears you have drained the T of every last drop, it is now just a hollow shell of what it once was.
 ---
 ===
 Rooms:
 Cell
 Enemies:Bad Man
-Contents: CreepyDoll,DeathJuice
+Contents: CreepyDoll,DeathJuice,T
 You are in a small, windowless room.  There is an empty mattress resting
 on the floor.  A flickering candle is illuminating the cell door, which
 is hanging ajar.
