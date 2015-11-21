@@ -66,8 +66,9 @@ Returns an Event object based on the passed String that will directly influence 
 		}
 	}
 	}
+	System.out.println("EventFactory");
 	if(event.contains("Score")){return new AddScoreEvent(numberVal);}
-	if(event.contains("Die")){return new DieEvent();}
+	if(event.contains("Die")){return new DieEvent(event);}
 	if(event.contains("Disappear")){return new DisappearEvent(item);}
 	if(event.contains("Wound")){
 	System.out.println(numberVal);
