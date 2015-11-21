@@ -270,6 +270,10 @@ public class Room {
     void remove(Item item) {
         contents.remove(item);
     }
+	
+    void remove(Npc npc){
+	enemies.remove(npc);
+    }
 
 				
 		/**Returns the {@link edu.umw.cpsc240fall2015team3.zork.Item} present in the {@link edu.umw.cpsc240fall2015team3.zork.Room} that has the primary or secondary name given in the parameter. 	

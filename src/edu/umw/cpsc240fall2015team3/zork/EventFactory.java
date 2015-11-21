@@ -66,8 +66,9 @@ Returns an Event object based on the passed String that will directly influence 
 		}
 	}
 	}
+	System.out.println("EventFactory");
 	if(event.contains("Score")){return new AddScoreEvent(numberVal);}
-	if(event.contains("Die")){return new DieEvent();}
+	if(event.contains("Die")){return new DieEvent(event);}
 	if(event.contains("Disappear")){return new DisappearEvent(item);}
 	if(event.contains("Wound")){
 	System.out.println(numberVal);
@@ -75,7 +76,7 @@ Returns an Event object based on the passed String that will directly influence 
         if(event.contains("Teleport(")){return new TeleportEvent(numberVal);}
 	if(event.contains("Teleport")){return new TeleportEvent();}
 	if(event.contains("Transform")){return new TransformEvent(param1,param2);}
-	if(event.contains("Win")){return new WinEvent();}
+	if(event.contains("Win")){return new WinEvent(event);}
 	else{return new AddScoreEvent(0);}
 	}
 	

@@ -50,6 +50,8 @@ Returns a string that tells the player what item they dropped.`
                 name);
             GameState.instance().removeFromInventory(theItem);
             GameState.instance().getAdventurersCurrentRoom().add(theItem);
+	    GameState.instance().lowerStr(theItem.getStr());
+	    GameState.instance().lowerDef(theItem.getDef());
             return TakeCommand.capitalize(name) + " dropped.\n";
         } catch (Item.NoItemException e) {
             return "You don't have a " + name + ".\n";

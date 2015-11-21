@@ -283,4 +283,6 @@ Adds passed parameter to strength
 Adds passed parameter to defence
 */
     void upDef(int defVar){def = def+defVar;}
+    void lowerStr(int lowerBy){str -= lowerBy;}
+    void lowerDef(int lowerBy){def -= lowerBy;}
 }

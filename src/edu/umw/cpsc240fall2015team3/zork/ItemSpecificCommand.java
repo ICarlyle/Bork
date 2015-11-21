@@ -24,7 +24,7 @@ class ItemSpecificCommand extends Command {
 		/**Performs an action using an {@link edu.umw.cpsc240fall2015team3.zork.Item} that is determined by the player's input, and returns a message describing the action taken. If the player's chosen action cannot be performed on their chosen {@link edu.umw.cpsc240fall2015team3.zork.Item}, return a message that that action cannot be performed on that item. If the player's chosen action is completely unrecognized by the system, return a message that the program cannot interpret the command.
 		*/
     public String execute() {
-        
+        //System.out.println("Commands: " + command);
         String[] words = command.split(" ");
 
         // Consider every possible split point in the multi-word command. If
