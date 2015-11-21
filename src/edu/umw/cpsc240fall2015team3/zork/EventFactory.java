@@ -83,7 +83,7 @@ Returns an Event object based on the passed String that will directly influence 
 	if(event.contains("Transform")){System.out.println("§TransformEventTriggered");
 	return new TransformEvent(param1,param2);}
 	if(event.contains("Win")){System.out.println("§WinEventTriggered");
-	return new WinEvent();}
+	return new WinEvent(event);}
 	else{ System.out.println("§ElseEventTriggered");
 	return new AddScoreEvent(0);}
 	}

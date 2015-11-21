@@ -112,23 +112,28 @@ Returns a string that describes this Npc.
 /**
 Returns a string that displays which items have been dropped by this Npc on death.  The items will be "dropped" into the room where the NPC died.  If the NPC has no items, no items will be dropped.
 */
-	/**public String drop(){
-		String dropMessage = "The " + name + " has dropped:\n ";
+	public String drop(){
+		String dropMessage = "The " + name + " has dropped:\n";
 		for (int i = 0; i < inventory.size(); i++){
+		try{
 			Item currItem = GameState.instance().getDungeon().getItem(inventory.get(i));
 			Room currRoom = GameState.instance().getAdventurersCurrentRoom();
 			currRoom.add(currItem);
 			dropMessage += "A " + currItem.getPrimaryName() + " \n";                        inventory.remove(i);	
+		}catch (Item.NoItemException e){}
 		}
 		GameState.instance().addToAdventurersScoreBy(this.points);
 		return dropMessage + "You earned " + this.points + " points.\n";
-	}*/
+	}
 /**
 Returns a string that contains one of the lines of dialog that the Npc has.  The line of dialog is randomly selected every combat turn.  
 */
 	public String talk(){
-		String lineOfDialog = dialog.get((int)(Math.round((Math.random() * dialog.size())-1)));
-		//String lineOfDialog = dialog.get(0);
+		int numberedDialog = (int)(Math.round((Math.random() * dialog.size())-1));
+		if (numberedDialog == -1){
+			numberedDialog = 0;
+		}
+		String lineOfDialog = dialog.get(numberedDialog);
 		return lineOfDialog + "\n";
 	}
 /**
@@ -150,6 +155,10 @@ Returns an int that is equal to how much strength this Npc has.
 */
 	public int strength(){
 		return strength;
+	}
+
+	public int health(){
+		return health;
 	}
 /**
 Returns a boolean value that corresponds to whether this Npc is hostile or friendly.

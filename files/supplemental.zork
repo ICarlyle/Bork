@@ -48,10 +48,11 @@ destroy[Disappear]:vanish!
 ---
 DeathJuice
 Weight:0
-Str:0
-Def:0
+Str:10
+Def:10
 drink[Wound(100)]:Blargh
 down[Die]:Ooof
+ignore[Win]:Congratulations, by not drinking the death juice you did not die.
 ---
 Candle
 Weight:3

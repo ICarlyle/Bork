@@ -51,7 +51,8 @@ Returns a string that tells the player 1) if they can take the item in the vicin
                 > GameState.MAX_CARRY_WEIGHT) {
                 return "Your load is too heavy.\n";
             }
-
+	    GameState.instance().upStr(theItem.getStr());
+	    GameState.instance().upDef(theItem.getDef());
             GameState.instance().addToInventory(theItem);
             currentRoom.remove(theItem);
             return capitalize(name) + " taken.\n";

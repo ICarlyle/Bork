@@ -67,6 +67,9 @@ If a command is entered incorrectly or String command isn't actually a command, 
 	if (verb.equals("attack")){
 	    return new AttackCommand(pasteSecondAndBeyond(parts));
 	}
+	if (verb.equals("stats")){
+		return new StatsCommand();
+	}
         if (MOVEMENT_COMMANDS.contains(verb)) {
             return new MovementCommand(verb);
         }

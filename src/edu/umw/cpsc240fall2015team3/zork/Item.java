@@ -73,6 +73,9 @@ public class Item {
 	this.str = Integer.valueOf(strLine[1]);
 	String[] defLine = s.nextLine().split(":");
 	this.def = Integer.valueOf(defLine[1]);
+	//GameState.instance().upStr(str);
+	//GameState.instance().upDef(def);
+	
 	ArrayList<String> messageHolder = new ArrayList<String>();
 
         // Read and parse verbs lines, as long as there are more.
@@ -166,6 +169,14 @@ public class Item {
 		*/
     public int getWeight() {
         return weight;
+    }
+
+    public int getStr(){
+	return str;
+    }
+
+    public int getDef(){
+	return def;
     }
     	
     public ArrayList<String> getEvents(String verbVar){
