@@ -9,7 +9,8 @@ Changes an {@link edu.umw.cpsc240fall2015team3.zork.Item} into a different {@lin
 */
 class TransformEvent extends Event{
 
-	private String oldItemName, newItemName;
+	private String oldItemName;
+	private String newItemName;
 
 	/**Returns a {@link edu.umw.cpsc240fall2015team3.zork.TransformEvent} that uses two specific {@link edu.umw.cpsc240fall2015team3.zork.Item}s.
 
@@ -37,9 +38,17 @@ class TransformEvent extends Event{
 	}*/
 	
 	//Need to fix getItem in Dungeon
-	public String execute(){
-                //Item oldItem = GameState.instance().getItemInVicinityNamed(oldItemName);
-                //Item newItem = GameState.instance().getDungeon().getItem(newItemName);
-		return "";
-	}
+public String execute(){
+    try{
+System.out.println(oldItemName + newItemName);
+    Item oldItem = GameState.instance().getItemInVicinityNamed(oldItemName);
+    Item newItem = GameState.instance().getDungeon().getItem(newItemName);
+    GameState.instance().removeFromInventory(oldItem);
+    GameState.instance().removeFromCurrentRoom(oldItem);
+    System.out.print(CommandFactory.instance().parse("take "+oldItemName).execute());
+    return "";
+    }catch(Item.NoItemException e) {
+	return "No item found, "+oldItemName+" cannot convert to "+newItemName+"\n";
+    }
+    }
 }
