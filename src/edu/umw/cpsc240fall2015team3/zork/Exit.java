@@ -14,6 +14,7 @@ public class Exit {
 
     private String dir;
     private Room src, dest;
+    private boolean isLocked;
 
 		/**Returns an {@link edu.umw.cpsc240fall2015team3.zork.Exit} object that connects a source {@link edu.umw.cpsc240fall2015team3.zork.Room} with a destination {@link edu.umw.cpsc240fall2015team3.zork.Room} in a specific direction.
 
@@ -50,12 +51,15 @@ public class Exit {
         src = d.getRoom(srcTitle);
         dir = s.nextLine();
         dest = d.getRoom(s.nextLine());
+	if (s.hasNext("isLocked"){
+		this.isLocked = s.nextLine();
+	}
         
         // I'm an Exit object. Great. Add me as an exit to my source Room too,
         // though.
         src.addExit(this);
 
-        // throw away delimiter
+        // throw away delimiter:
         if (!s.nextLine().equals(Dungeon.SECOND_LEVEL_DELIM)) {
             throw new Dungeon.IllegalDungeonFormatException("No '" +
                 Dungeon.SECOND_LEVEL_DELIM + "' after exit.");
