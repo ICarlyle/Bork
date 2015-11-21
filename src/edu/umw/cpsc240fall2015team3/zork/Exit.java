@@ -51,8 +51,8 @@ public class Exit {
         src = d.getRoom(srcTitle);
         dir = s.nextLine();
         dest = d.getRoom(s.nextLine());
-	if (s.hasNext("isLocked"){
-		this.isLocked = s.nextLine();
+	if (s.hasNext("isLocked")){
+		this.isLocked = Boolean.valueOf(s.nextLine());
 	}
         
         // I'm an Exit object. Great. Add me as an exit to my source Room too,
