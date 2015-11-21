@@ -66,18 +66,18 @@ Returns an Event object based on the passed String that will directly influence 
 		}
 	}
 	}
-	System.out.println("EventFactory");
-	if(event.contains("Score")){return new AddScoreEvent(numberVal);}
-	if(event.contains("Die")){return new DieEvent(event);}
-	if(event.contains("Disappear")){return new DisappearEvent(item);}
-	if(event.contains("Wound")){
+	System.out.println("===>-<===>-<EventFactory>-<===>-<===\n\n\n");
+	if(event.contains("Score")){System.out.println("§ScoreEventTriggered");return new AddScoreEvent(numberVal);}
+	if(event.contains("Die")){System.out.println("§DieEventTriggered");return new DieEvent(event);}
+	if(event.contains("Disappear")){System.out.println("§DisappearEventTriggered");return new DisappearEvent(item);}
+	if(event.contains("Wound")){System.out.println("§WoundEventTriggered");
 	System.out.println(numberVal);
 	return new LowerHealthEvent(numberVal);}
-        if(event.contains("Teleport(")){return new TeleportEvent(numberVal);}
-	if(event.contains("Teleport")){return new TeleportEvent();}
-	if(event.contains("Transform")){return new TransformEvent(param1,param2);}
-	if(event.contains("Win")){return new WinEvent(event);}
-	else{return new AddScoreEvent(0);}
+        if(event.contains("Teleport(")){System.out.println("§TeleportSPECEventTriggered");return new TeleportEvent(numberVal);}
+	if(event.contains("Teleport")){System.out.println("§TeleportEventTriggered");return new TeleportEvent();}
+	if(event.contains("Transform")){System.out.println("§TransformEventTriggered");return new TransformEvent(param1,param2);}
+	if(event.contains("Win")){System.out.println("§WinEventTriggered");return new WinEvent(event);}
+	else{System.out.println("§ElseEventTriggered");return new AddScoreEvent(0);}
 	}
 	
 }
