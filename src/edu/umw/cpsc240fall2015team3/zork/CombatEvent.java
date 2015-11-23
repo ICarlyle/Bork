@@ -33,12 +33,14 @@ class CombatEvent extends Event {
 				int npcHp = npc.health();
 				//System.out.println(npc.drop());
 				npc.talk();
+				npc.wound(10000000);
 				if (npc.health() <= 0){
+					System.out.println("kill");
 					System.out.println(npc.drop());
-					enemies.remove(npc);
-					GameState.instance().removeNpc(npc);
+					//enemies.remove(npc);
+					currRoom.remove(npc);
+					//GameState.instance().removeNpc(npc);
 				}
-				break;
 			}	
 			break;	
 		}

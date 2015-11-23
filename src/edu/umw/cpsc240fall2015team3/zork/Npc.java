@@ -140,9 +140,9 @@ Returns a string that contains one of the lines of dialog that the Npc has.  The
 Returns a string that displays how much this Npc has been hurt.  If the Npc is now dead, the String will say as such.
 @param health int that is how much health the enemy is going to loose.
 */
-	public String wound(int health){
-		this.health -= health;
-		return "You whack the " + name + " for " + " hp.\n";
+	public String wound(int hp){
+		this.health -= hp;
+		return "You whack " + name + " for " + hp + " hp.\n";
 	}
 /**
 Returns an int that is equal to how much defense this Npc has.
