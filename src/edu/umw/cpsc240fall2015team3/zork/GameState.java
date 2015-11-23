@@ -279,6 +279,9 @@ returns player defence
 Adds passed parameter to strength
 */
     void upStr(int strVar){str = str+strVar;}
+    void removeNpc(Npc npc){
+    	adventurersCurrentRoom.remove(npc);
+    }
 /**
 Adds passed parameter to defence
 */

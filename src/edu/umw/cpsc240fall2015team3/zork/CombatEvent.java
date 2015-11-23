@@ -19,6 +19,9 @@ class CombatEvent extends Event {
 		Room currRoom = GameState.instance().getAdventurersCurrentRoom();
 		enemies = currRoom.getEnemies();
 		Npc chosenEnemy = GameState.instance().getDungeon().getNpc(enemyName);
+		if (chosenEnemy == null){
+			return "There is no " + enemyName + " here!\n";
+		}
 		System.out.println(chosenEnemy.talk());
 		int playerStr = GameState.instance().getStr();
 		int playerDef = GameState.instance().getDef();
@@ -28,12 +31,12 @@ class CombatEvent extends Event {
 				int npcStr = npc.strength();
 				int npcDef = npc.defense();
 				int npcHp = npc.health();
-				System.out.println(npc.drop());
+				//System.out.println(npc.drop());
 				npc.talk();
 				if (npc.health() <= 0){
 					System.out.println(npc.drop());
 					enemies.remove(npc);
-					currRoom.remove(npc);
+					GameState.instance().removeNpc(npc);
 				}
 				break;
 			}	
