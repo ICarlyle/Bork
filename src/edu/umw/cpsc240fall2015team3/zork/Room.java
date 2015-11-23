@@ -225,6 +225,9 @@ public class Room {
 	int i = -1;
             for (Exit exit : exits) {
                 description += "\n" + exit.describe();
+		if (exit.isLocked()){
+			description += ", but it's locked!";
+		}
             }
         }
 	if (enemies.size() > 0 && beenHere){
@@ -244,6 +247,9 @@ public class Room {
 		*/
     public Room leaveBy(String dir) {
         for (Exit exit : exits) {
+	    if (exit.isLocked()){
+		return null;
+		}
             if (exit.getDir().equals(dir)) {
                 return exit.getDest();
             }
