@@ -86,6 +86,14 @@ examine:A large Letter T, you can see strange liquid inside. There also appears 
 shake:You can hear the liquid splash around inside.
 drink[Wound(-20),Transform(Empty-T)]:You chug down the strange liquid, it is filling and bitter.
 ---
+Test
+weight:0
+Str:0
+Def:0
+qq[Wound(1)]:Phase 1.
+ww[Wound(2),Wound(3)]:Phase 2.
+ee:Try 3.
+---
 Empty-T
 weight:1
 Str:0
@@ -96,7 +104,7 @@ examine:It appears you have drained the T of every last drop, it is now just a h
 Rooms:
 Cell
 Enemies:Bad Man
-Contents: CreepyDoll,DeathJuice,T
+Contents: CreepyDoll,DeathJuice,T,Test
 You are in a small, windowless room.  There is an empty mattress resting
 on the floor.  A flickering candle is illuminating the cell door, which
 is hanging ajar.
