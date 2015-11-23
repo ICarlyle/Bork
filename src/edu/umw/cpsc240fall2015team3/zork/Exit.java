@@ -52,9 +52,18 @@ public class Exit {
         dir = s.nextLine();
         dest = d.getRoom(s.nextLine());
 	if (s.hasNext("isLocked")){
-		this.isLocked = Boolean.valueOf(s.nextLine());
+		//System.out.println(isLocked);
+		this.isLocked = true;
+		//System.out.println(isLocked);
+		if (isLocked){
+		//System.out.println("isLocked! for " + dir + " to " + dest.getTitle());
+		s.nextLine();
 	}
-        
+	}
+	else{
+		isLocked = false;
+	}
+   
         // I'm an Exit object. Great. Add me as an exit to my source Room too,
         // though.
         src.addExit(this);
@@ -68,14 +77,15 @@ public class Exit {
 
     // Common object initialization tasks.
     private void init() {
+	this.isLocked = false;
     }
 
 
 		/**Returns information about the direction this {@link edu.umw.cpsc240fall2015team3.zork.Exit} faces and which {@link edu.umw.cpsc240fall2015team3.zork.Room} it leads to.
 		*/
     String describe() {
-        return "You can go " + dir + " to " + dest.getTitle() + ".";
-    }
+        	return "You can go " + dir + " to " + dest.getTitle();
+    	}
 
 		/**Returns the direction that this {@link edu.umw.cpsc240fall2015team3.zork.Exit} faces.
 		*/
@@ -88,4 +98,9 @@ public class Exit {
 		/**Returns the {@link edu.umw.cpsc240fall2015team3.zork.Room} that this {@link edu.umw.cpsc240fall2015team3.zork.Exit} connects to.
 		*/
     Room getDest() { return dest; }
+    boolean isLocked(){ return isLocked; }
+
+    void unlock(){
+	isLocked = false;
+    }
 }
