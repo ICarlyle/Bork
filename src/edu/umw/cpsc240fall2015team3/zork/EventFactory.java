@@ -1,9 +1,7 @@
 /**
 @author Alec
 */
-
 package edu.umw.cpsc240fall2015team3.zork;
-
 import java.util.Scanner;
 /**
 The singleton EventFactory class instantiates unique Event objects that are derived from item-tied Commands.  New event objects can be instantiated inside of Commands.  Events are directly tied with {@link edu.umw.cpsc240fall2015team3.zork.GameState} as they directly affect a player's interaction with the dungeon.   
@@ -29,8 +27,8 @@ Returns an Event object based on the passed String that will directly influence 
 //action is any string after the type
 //numberVal is action converted to number
 	public Event parse(String event){
-System.out.println("===>-<===>-<EventFactory>-<===>-<===");
-System.out.println("STARTER: "+event);
+//System.out.println("===>-<===>-<EventFactory>-<===>-<===");
+//System.out.println("STARTER: "+event);
 	int numberVal = 0;
 	String param = "";
 	String param1 = "";
@@ -68,7 +66,7 @@ System.out.println("STARTER: "+event);
 	}
 	}
 
-	System.out.println(eventName);
+	//System.out.println(eventName);
 	if(event.contains("Score")){
 System.out.println("§ScoreEventTriggered");return new AddScoreEvent(numberVal);}
 	if(event.contains("Die")){

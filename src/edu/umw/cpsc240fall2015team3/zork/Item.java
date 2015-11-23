@@ -121,7 +121,7 @@ public class Item {
 		i++;		
 		}
 		events.put(verb,eventArray);
-		
+		eventArray = new ArrayList<String>();
 		//messages.put(eventList[0], verbParts[1]);
 //		if (stringEvents.contains(",")){
 //			String[] allStringEvents = stringEvents.split(",");

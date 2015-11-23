@@ -1,8 +1,5 @@
-
 package edu.umw.cpsc240fall2015team3.zork;
-
 import java.util.ArrayList;
-
 /**
 @author Robert Jamal Washington
 */
@@ -59,6 +56,7 @@ class ItemSpecificCommand extends Command {
 	    }
 	    for (int i = 0; i < eventList.size(); i++){ // EVENT PARSING
 		String currEvent = eventList.get(i);
+		//System.out.println("EventList size: "+eventList.size());
 		if (currEvent != null && currEvent.length() > 0){
 			//System.out.println("CurrEvent: " + currEvent);
 			System.out.println(EventFactory.instance().parse(currEvent + ":" +  itemReferredTo.getPrimaryName()).execute());
