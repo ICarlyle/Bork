@@ -99,4 +99,8 @@ public class Exit {
 		*/
     Room getDest() { return dest; }
     boolean isLocked(){ return isLocked; }
+
+    void unlock(){
+	isLocked = false;
+    }
 }

@@ -309,4 +309,7 @@ public class Room {
     ArrayList<Npc> getEnemies() {
 	return enemies;
     }
+    ArrayList<Exit> getExits() {
+	return exits;
+    }
 }
