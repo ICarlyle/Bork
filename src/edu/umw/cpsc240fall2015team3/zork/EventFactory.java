@@ -68,7 +68,7 @@ System.out.println("STARTER: "+event);
 	}
 	}
 
-	System.out.println(eventName);
+	System.out.println("EVentName: " + eventName);
 	if(event.contains("Score")){
 System.out.println("§ScoreEventTriggered");return new AddScoreEvent(numberVal);}
 	if(event.contains("Die")){
@@ -86,6 +86,13 @@ System.out.println("§TeleportEventTriggered");return new TeleportEvent();}
 System.out.println("§TransformEventTriggered");return new TransformEvent(param1,param2);}
 	if(event.contains("Win")){
 System.out.println("§WinEventTriggered");return new WinEvent(event);}
+	if (event.contains("Unlock")){
+		System.out.println("Unlock event triggered");
+		String[] eventNameParts = eventName.split("\\(");
+		String unlockRoomName = eventNameParts[1].replace(")", "");
+		System.out.println(unlockRoomName);
+		return new UnlockEvent(unlockRoomName);
+	}
 	else{
 System.out.println("§ElseEventTriggered");return new AddScoreEvent(0);}
 }	
