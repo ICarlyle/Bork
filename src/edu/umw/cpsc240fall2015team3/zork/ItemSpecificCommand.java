@@ -51,7 +51,11 @@ class ItemSpecificCommand extends Command {
             ArrayList<String> eventList = itemReferredTo.getEvents(verb);
 	    if(eventList==null){
 		//System.out.println("[WARNING] ItmSpc Evento Problemo");
-		System.out.println("Do what to what? Please use a different verb.");
+		if(msg==null||msg.equals("")){
+		    System.out.println("Do what to what? Please use a different verb or object.");
+		    return "";
+		}
+		System.out.println(msg);
 		return "";
 	    }
 	    for (int i = 0; i < eventList.size(); i++){ // EVENT PARSING
