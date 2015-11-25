@@ -22,18 +22,18 @@ class CombatEvent extends Event {
 		if (chosenEnemy == null){
 			return "There is no " + enemyName + " here!\n";
 		}
-		System.out.println(chosenEnemy.talk());
 		int playerStr = GameState.instance().getStr();
 		int playerDef = GameState.instance().getDef();
 		int npcStr;int npcDef;int npcHp;
 		while (!enemies.isEmpty()){
+			enemies = currRoom.getEnemies();
 			int enemyNum = enemies.size();
 			for (int i =0; i<enemyNum;){
                                 npcStr = enemies.get(i).strength();
                                 npcDef = enemies.get(i).defense();
                                 npcHp = enemies.get(i).health();
                                 //System.out.println(npc.drop());
-                                enemies.get(i).talk();
+                                System.out.println(enemies.get(i).talk());
                                 enemies.get(i).wound(10000000);
                                 if (enemies.get(i).health() <= 0){
                                         System.out.println("kill");
@@ -57,9 +57,10 @@ class CombatEvent extends Event {
 //					//GameState.instance().removeNpc(npc);
 //				}
 			}	
-			break;	
+			//break;
+			return "YOU DEFEATED\n";
 		}
-		return "YOU DEFEATED\n";
+		return "There is no " + enemyName + " here!\n";
 	}
 
 }
