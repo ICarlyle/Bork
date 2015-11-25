@@ -40,6 +40,7 @@ Returns an Event object based on the passed String that will directly influence 
 	String[] itemAndEvent = event.split(":");
 	eventName = itemAndEvent[0];
 	item = itemAndEvent[1];
+	System.out.println(eventName+"'"+item);
 	}
 	if (event.contains("(")){
 		String[] verb = eventName.split("\\(");
@@ -61,7 +62,7 @@ Returns an Event object based on the passed String that will directly influence 
 			param2 = allNouns[1];
 		}
 		else{
-		param1 = verb[1];
+		param1 = verb[1].replace(")","").trim();
 		}
 	}
 	}
@@ -81,7 +82,7 @@ System.out.println("§TeleportSPECEventTriggered");return new TeleportEvent(numb
 	if(event.contains("Teleport")){
 System.out.println("§TeleportEventTriggered");return new TeleportEvent();}
 	if(event.contains("Transform")){
-System.out.println("§TransformEventTriggered");return new TransformEvent(param1,param2);}
+System.out.println("§TransformEventTriggered");return new TransformEvent(item,param1);}
 	if(event.contains("Win")){
 System.out.println("§WinEventTriggered");return new WinEvent(event);}
 	if (event.contains("Unlock")){

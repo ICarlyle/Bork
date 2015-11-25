@@ -40,12 +40,13 @@ class TransformEvent extends Event{
 	//Need to fix getItem in Dungeon
 public String execute(){
     try{
-System.out.println(oldItemName + newItemName);
+System.out.println("'"+oldItemName+"'"+newItemName+"'");
     Item oldItem = GameState.instance().getItemInVicinityNamed(oldItemName);
     Item newItem = GameState.instance().getDungeon().getItem(newItemName);
-    GameState.instance().removeFromInventory(oldItem);
-    GameState.instance().removeFromCurrentRoom(oldItem);
     System.out.print(CommandFactory.instance().parse("take "+oldItemName).execute());
+    GameState.instance().removeFromInventory(oldItem);
+    //GameState.instance().removeFromCurrentRoom(oldItem);
+    GameState.instance().addToInventory(newItem);
     return "";
     }catch(Item.NoItemException e) {
 	return "No item found, "+oldItemName+" cannot convert to "+newItemName+"\n";
