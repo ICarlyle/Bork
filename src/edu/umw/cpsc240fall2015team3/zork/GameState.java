@@ -135,9 +135,16 @@ Creates a new file with the title of the argument passed with a save file extens
         w.println(CURRENT_ROOM_LEADER + adventurersCurrentRoom.getTitle());
         if (inventory.size() > 0) {
             w.print(INVENTORY_LEADER);
-            for (int i=0; i<inventory.size()-1; i++) {
+	    	//System.out.println(INVENTORY_LEADER);
+            for (int i=0; i<inventory.size(); ++i) {
+		//System.out.println("inventory is >0");
+		if (i == inventory.size()-1){
+			w.print(inventory.get(i).getPrimaryName());
+		}
+		else{
                 w.print(inventory.get(i).getPrimaryName() + ",");
-            w.println(inventory.get(inventory.size()-1).getPrimaryName());
+		}
+            	//System.out.println(inventory.get(i).getPrimaryName());
         }
         w.close();
     }
