@@ -169,6 +169,7 @@ Initializes new variables for the dungeon object in a new/restored dungeon
     void storeState(PrintWriter w) throws IOException {
         w.println(FILENAME_LEADER + getFilename());
         w.println(ROOM_STATES_MARKER);
+	//System.out.println("Dung Store: " + ROOM_STATES_MARKER);
         for (Room room : rooms.values()) {
             room.storeState(w);
         }

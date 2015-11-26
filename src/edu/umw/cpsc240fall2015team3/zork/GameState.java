@@ -129,6 +129,7 @@ Creates a new file with the title of the argument passed with a save file extens
         String filename = saveName + SAVE_FILE_EXTENSION;
         PrintWriter w = new PrintWriter(new FileWriter(filename));
         w.println(SAVE_FILE_VERSION);
+	//System.out.println(SAVE_FILE_VERSION);
         dungeon.storeState(w);
         w.println(ADVENTURER_MARKER);
         w.println(CURRENT_ROOM_LEADER + adventurersCurrentRoom.getTitle());

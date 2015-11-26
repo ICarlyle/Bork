@@ -145,6 +145,12 @@ public class Room {
     void storeState(PrintWriter w) throws IOException {
         w.println(title + ":");
         w.println("beenHere=" + beenHere);
+	if (enemies.size() > 0){
+		w.print("Enemies:");
+		for (int i = 0; i < enemies.size()-1; i++){
+			w.print(enemies.get(i).getName() + ",");
+		}
+	}
         if (contents.size() > 0) {
             w.print(CONTENTS_STARTER);
             for (int i=0; i<contents.size()-1; i++) {

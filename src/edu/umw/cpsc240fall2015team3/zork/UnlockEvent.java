@@ -30,11 +30,11 @@ class UnlockEvent extends Event{
 					Room dest = exit.getDest();
 					if (dest.getTitle().equals(lockedRoomName)){
 						exit.unlock();
-						returnMsg = "Should be the actual unlock message here!";	
+						//returnMsg = "Should be the actual unlock message here!";	
 					}
 				}
 			}
-			return returnMsg;
+			return "";
 		}
 	
 		/**Changes the status of a specified {@link edu.umw.cpsc240fall2015team3.zork.Room} from "locked" to "unlocked," allowing the player to traverse the {@link edu.umw.cpsc240fall2015team3.zork.Room}.

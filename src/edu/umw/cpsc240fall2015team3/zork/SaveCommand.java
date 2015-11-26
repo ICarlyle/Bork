@@ -9,7 +9,7 @@ A {@link edu.umw.cpsc240fall2015team3.zork.Command} that saves the {@link edu.um
 */
 class SaveCommand extends Command {
 
-    private static String DEFAULT_SAVE_FILENAME = "bork";
+    private static String DEFAULT_SAVE_FILENAME = "zork";
 
     private String saveFilename;
 
