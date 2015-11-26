@@ -19,46 +19,46 @@ class CombatEvent extends Event {
 		Room currRoom = GameState.instance().getAdventurersCurrentRoom();
 		enemies = currRoom.getEnemies();
 		Npc chosenEnemy = GameState.instance().getDungeon().getNpc(enemyName);
-		if (chosenEnemy == null){
+		if (chosenEnemy == null||!chosenEnemy.getName().equals(enemyName)){
 			return "There is no " + enemyName + " here!\n";
 		}
 		int playerStr = GameState.instance().getStr();
 		int playerDef = GameState.instance().getDef();
-		int npcStr;int npcDef;int npcHp;
-		while (!enemies.isEmpty()){
+		playerStr=20;
+		int npcStr;int npcDef;int npcHp;int npcDam=0;
+		if (!enemies.isEmpty()){
 			enemies = currRoom.getEnemies();
 			int enemyNum = enemies.size();
-			for (int i =0; i<enemyNum;){
-                                npcStr = enemies.get(i).strength();
-                                npcDef = enemies.get(i).defense();
-                                npcHp = enemies.get(i).health();
-                                //System.out.println(npc.drop());
-                                System.out.println(enemies.get(i).talk());
-                                enemies.get(i).wound(10000000);
-                                if (enemies.get(i).health() <= 0){
-                                        System.out.println("kill");
-                                        System.out.println(enemies.get(i).drop());
-                                        //enemies.remove(enemies.get(i));
-                                        currRoom.remove(enemies.get(i));
-                                        //GameState.instance().removeNpc(npc);
-                                i++;
+			for(Npc npc : enemies){
+				npcStr = npc.strength();
+				npcDef = npc.defense()+1;
+				npcHp = npc.health();
+System.out.println("ENEMY ENCOUNTER: "+npc.getName());
+System.out.println("     HP: "+npcHp+" Def: "+npcDef+" Str: "+npcStr);
+				System.out.println(npc.talk());
+/*Enemy Attack*/ 		
+				npcDam = npcStr;
+GameState.instance().subtractAdventurersHealthBy(npcDam);
+EventFactory.instance().parse("Wound").execute();
+
+/*Attack the Enemy */		if(npc.getName().equals(enemyName)){
+				npc.wound(playerStr);
+				
+					if (npc.health() <= 0){
+					System.out.println(enemyName+" killed");
+					System.out.println(npc.drop());
+					//enemies.remove(npc);
+					currRoom.remove(npc);
+					//GameState.instance().removeNpc(npc);
 				}
-//				int npcStr = npc.strength();
-//				int npcDef = npc.defense();
-//				int npcHp = npc.health();
-//				//System.out.println(npc.drop());
-//				npc.talk();
-//				npc.wound(10000000);
-//				if (npc.health() <= 0){
-//					System.out.println("kill");
-//					System.out.println(npc.drop());
-//					//enemies.remove(npc);
-//					currRoom.remove(npc);
-//					//GameState.instance().removeNpc(npc);
-//				}
+				}
+
 			}	
 			//break;
-			return "YOU DEFEATED\n";
+			//return "YOU DEFEATED\n";
+System.out.println("The Player takes "+npcDam+" damage.");
+System.out.println("The "+enemyName+" takes "+playerStr+" damage.");
+			return "";
 		}
 		return "There is no " + enemyName + " here!\n";
 	}
