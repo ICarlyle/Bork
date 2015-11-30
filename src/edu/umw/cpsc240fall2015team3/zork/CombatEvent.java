@@ -45,8 +45,8 @@ System.out.println("The Player takes "+npcAtt+" damage.");
 GameState.instance().subtractAdventurersHealthBy(npcAtt);
 EventFactory.instance().parse("Wound").execute();
 /*Attack the Enemy */		if(npc.getName().equals(enemyName)){
-				npc.wound(playerStr);
 				playerAtt = (playerStr*10)/npcDef;
+				npc.wound(playerAtt);
 
 					if (npc.health() <= 0){
 					
