@@ -50,11 +50,11 @@ EventFactory.instance().parse("Wound").execute();
 
 					if (npc.health() <= 0){
 					
-//					System.out.println(enemyName+" killed");
-//					System.out.println(npc.drop());
-//					//enemies.remove(npc);
-//					currRoom.remove(npc);
-//					//GameState.instance().removeNpc(npc);
+					System.out.println(enemyName+" killed");
+					System.out.println(npc.drop());
+					//enemies.remove(npc);
+					currRoom.remove(npc);
+					//GameState.instance().removeNpc(npc);
 					}
 				}
 			}	
