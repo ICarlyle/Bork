@@ -250,6 +250,16 @@ Returns a room object with the same title as the passes String.  If there is no 
         return rooms.get(roomTitle);
     }
 
+
+		public Npc getEnemy(String enemyName) throws Npc.NoNpcException {
+			if(enemies.get(enemyName)==null){
+				throw new Npc.NoNpcException();
+			}
+			return enemies.get(enemyName);
+		}
+
+
+
     /**
      * Returns the Item object whose primary name is passed.  
 	@throws Item.NoItemException if the passed string does not match any items

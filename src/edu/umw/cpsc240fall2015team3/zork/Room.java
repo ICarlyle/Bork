@@ -155,7 +155,7 @@ public class Room {
 
 			for(Exit exit : exits){
 				if( exit.isLocked())
-					w.println("Locked:" + exit.getDir() + "," + exit.getDest().getTitle());
+					w.println("Locked:" + exit.getDir());
 			}			
 
         if (contents.size() > 0) {
@@ -186,7 +186,34 @@ public class Room {
 
         line = s.nextLine();
         
-	//			if (line.startsWith("Locked:")
+				
+				if (line.startsWith("Enemies")) {
+            String enemiesList = line.substring(line.indexOf(":")+1);
+            String[] enemyNames = enemiesList.split(",");
+            for (String enemyName : enemyNames) {
+                try {
+                    add(d.getEnemy(enemyName));
+                } catch (Npc.NoNpcException e) {
+                    throw new GameState.IllegalSaveFormatException(
+                        "No such enemy '" + enemyName + "'");
+                }
+            }
+           line = s.nextLine();  // Consume "---".
+        }
+
+
+
+
+
+				String lockedDir = "";
+				while(line.startsWith("Locked")){
+					lockedDir = line.substring(line.indexOf(":")+1);
+					for(Exit exit : exits){
+						if(exit.getDir() == lockedDir)
+							exit.lock();
+					}
+					line = s.nextLine();
+				}
 
 				if (line.startsWith(CONTENTS_STARTER)) {
             String itemsList = line.substring(CONTENTS_STARTER.length());
@@ -288,6 +315,10 @@ public class Room {
     void add(Item item) {
         contents.add(item);
     }
+
+		void add(Npc enemy){
+				enemies.add(enemy);
+		}
 
 		/**Deletes an {@link edu.umw.cpsc240fall2015team3.zork.Item} from this {@link edu.umw.cpsc240fall2015team3.zork.Room}.
 
