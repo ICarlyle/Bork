@@ -147,7 +147,7 @@ public class Room {
         w.println("beenHere=" + beenHere);
 			if (enemies.size() > 0){
 				w.print("Enemies:");
-				for (int i = 0; i < enemies.size()-1; i++){
+				for (int i = 0; i <= enemies.size()-1; i++){
 					w.print(enemies.get(i).getName() + ",");
 				}
 				w.println("");
