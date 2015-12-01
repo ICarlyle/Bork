@@ -92,6 +92,6 @@ return new WinEvent(event);}
 		return new UnlockEvent(unlockRoomName);
 	}
 	else{
-System.out.println("§ElseEventTriggered");return new AddScoreEvent(0);}
+System.out.println("§ElseEventTriggered");return new LowerHealthEvent(0);}
 }	
 }
