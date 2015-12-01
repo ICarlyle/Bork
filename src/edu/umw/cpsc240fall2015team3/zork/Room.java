@@ -198,7 +198,7 @@ public class Room {
                         "No such enemy '" + enemyName + "'");
                 }
             }
-            s.nextLine();  // Consume "---".
+           line = s.nextLine();  // Consume "---".
         }
 
 
