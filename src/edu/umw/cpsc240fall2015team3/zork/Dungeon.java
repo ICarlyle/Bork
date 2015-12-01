@@ -166,8 +166,8 @@ Initializes new variables for the dungeon object in a new/restored dungeon
      * passed.
 	@param w PrintWriter that will save the state of this dungeon.
      */
-    void storeState(PrintWriter w) throws IOException {
-        w.println(FILENAME_LEADER + getFilename());
+    void storeState(PrintWriter w) throws IOException {   
+     w.println(FILENAME_LEADER + getFilename());
         w.println(ROOM_STATES_MARKER);
 	//System.out.println("Dung Store: " + ROOM_STATES_MARKER);
         for (Room room : rooms.values()) {

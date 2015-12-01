@@ -145,12 +145,19 @@ public class Room {
     void storeState(PrintWriter w) throws IOException {
         w.println(title + ":");
         w.println("beenHere=" + beenHere);
-	if (enemies.size() > 0){
-		w.print("Enemies:");
-		for (int i = 0; i < enemies.size()-1; i++){
-			w.print(enemies.get(i).getName() + ",");
-		}
-	}
+			if (enemies.size() > 0){
+				w.print("Enemies:");
+				for (int i = 0; i < enemies.size()-1; i++){
+					w.print(enemies.get(i).getName() + ",");
+				}
+				w.println("");
+			}
+
+			for(Exit exit : exits){
+				if( exit.isLocked())
+					w.println("Locked:" + exit.getDir() + "," + exit.getDest().getTitle());
+			}			
+
         if (contents.size() > 0) {
             w.print(CONTENTS_STARTER);
             for (int i=0; i<contents.size()-1; i++) {
@@ -178,7 +185,10 @@ public class Room {
         beenHere = Boolean.valueOf(line.substring(line.indexOf("=")+1));
 
         line = s.nextLine();
-        if (line.startsWith(CONTENTS_STARTER)) {
+        
+	//			if (line.startsWith("Locked:")
+
+				if (line.startsWith(CONTENTS_STARTER)) {
             String itemsList = line.substring(CONTENTS_STARTER.length());
             String[] itemNames = itemsList.split(",");
             for (String itemName : itemNames) {

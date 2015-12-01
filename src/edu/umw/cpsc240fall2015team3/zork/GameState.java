@@ -36,7 +36,7 @@ Prints the error message after being called.
 
     static String DEFAULT_SAVE_FILE = "bork_save";
     static String SAVE_FILE_EXTENSION = ".sav";
-    static String SAVE_FILE_VERSION = "Bork v3.0 save data";
+    static String SAVE_FILE_VERSION = "Zork v1 save data";
 
     static String ADVENTURER_MARKER = "Adventurer:";
     static String CURRENT_ROOM_LEADER = "Current room: ";
@@ -127,10 +127,10 @@ Creates a new file with the title of the argument passed with a save file extens
 */
     void store(String saveName) throws IOException {
         String filename = saveName + SAVE_FILE_EXTENSION;
-        PrintWriter w = new PrintWriter(new FileWriter(filename));
+        PrintWriter w = new PrintWriter(filename);
         w.println(SAVE_FILE_VERSION);
 	//System.out.println(SAVE_FILE_VERSION);
-        dungeon.storeState(w);
+        getDungeon().storeState(w);
         w.println(ADVENTURER_MARKER);
         w.println(CURRENT_ROOM_LEADER + adventurersCurrentRoom.getTitle());
         if (inventory.size() > 0) {
@@ -146,8 +146,8 @@ Creates a new file with the title of the argument passed with a save file extens
 		}
             	//System.out.println(inventory.get(i).getPrimaryName());
         }
-        w.close();
     }
+		w.close();
 }
 /**
 Stores the passed parameter as the current dungeon.
