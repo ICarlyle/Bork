@@ -146,7 +146,9 @@ Creates a new file with the title of the argument passed with a save file extens
 		}
             	//System.out.println(inventory.get(i).getPrimaryName());
         }
+	
     }
+		w.write("Health: " + getAdventurersHealth());
 		w.close();
 }
 /**
