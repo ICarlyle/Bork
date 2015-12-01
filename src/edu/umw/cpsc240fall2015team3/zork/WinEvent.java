@@ -12,7 +12,7 @@ class WinEvent extends Event{
 	String verb;
 
 	WinEvent(String eventAndItem){
-		System.out.println("WinEvent: " + eventAndItem);
+		//System.out.println("WinEvent: " + eventAndItem);
 		/**if (eventAndItem.contains(":")){
 			String[] itemAndEvent = eventAndItem.split(":");
 			this.verb = eventAndItem[0];
@@ -27,7 +27,7 @@ Returns a String informing the player that they have won.
 		
 	//	String WinMessage = item.getMessageForVerb(verb);
 	//	System.out.println(WinMessage);
-		System.out.println("Winner winner");
+		//System.out.println("Winner winner");
 		System.exit(2);
 		return "YOU WIN";	
 	}

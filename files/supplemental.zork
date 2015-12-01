@@ -36,6 +36,50 @@ Points:3
 "GLuB"
 ***
 ---
+Red Globe
+***
+There is a Red Globe Looming in the horizon, it looks dense.
+***
+isHostile
+Health:250
+Strength:0
+Defence:30
+Points:4
+***
+"whirrrrr"
+"whirrr"
+"whirrrrrrr"
+***
+---
+Tiny SpaceCraft
+***
+There is a tiny SpaceCraft floating here, it seems to let out multicolored laser beams every once in a while.
+***
+isHostile
+Health:120
+Strength:10
+Defence:40
+Points:2
+***
+"♪Star wars theme♪"
+"Beep Boop"
+"Bleeep"
+***
+---
+Tiny Alien
+***
+There is a small alien here. It looks angry at you.
+***
+isHostile
+health:80
+Strength:10
+Defence:5
+Points:6
+***
+"I'm lean mean and will make you scream"
+"Don't mock my size!
+***
+---
 ===
 Items:
 CrumpledPieceOfPaper
@@ -58,7 +102,7 @@ Candle
 Weight:3
 Str:0
 Def:0
-wave[Unlock(Moon Hall)]:You make spooky
+wave[Unlock(Moon Hall)]:You make spooky.  The cell door rumbles. . .
 ---
 CreepyDoll
 Weight:1
@@ -103,13 +147,14 @@ examine:It appears you have drained the T of every last drop, it is now just a h
 ===
 Rooms:
 Cell
-Enemies:Bad Man,Fountain
+Enemies:Bad Man
 Contents: CreepyDoll,DeathJuice,T,Test
 You are in a small, windowless room.  There is an empty mattress resting
 on the floor.  A flickering candle is illuminating the cell door, which
 is hanging ajar.
 ---
 Moon Hall
+Enemies:Red Globe,Tiny SpaceCraft,Tiny Alien
 A black walkway streches out on either side of you.  A hastilly-assembled 
 railing is the only thing keeping you from falling down into the pitch dark.
 Beneath the metal grating you can make out the mural of a shimmering moon
