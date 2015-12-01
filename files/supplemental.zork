@@ -102,7 +102,7 @@ Candle
 Weight:3
 Str:0
 Def:0
-wave[Unlock(Moon Hall)]:You make spooky
+wave[Unlock(Moon Hall)]:You make spooky.  The cell door rumbles. . .
 ---
 CreepyDoll
 Weight:1

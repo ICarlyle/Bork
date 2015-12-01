@@ -1,0 +1,29 @@
+Locked Doors (15xp): 
+The dungeon engine allows for dungeons to be designed with rooms with locked exits, and corresponding 'key' items to unlock those exits.
+The Unlock Event is triggered when a user types in a specific Item command.
+To test Locked Doors, try to go (n) from the starting cell and Oh no!  You 
+can't.  Instead, you have to Attack Bad Man and Wave the candle he drops on
+death in order to unlock the next room and press on.
+
+Npcs (20xp):
+In our zork dungeon Npcs only function as enemies to destroy.  They are read
+in the zork file in the same way that items are read in.  Each Npc is placed
+inside of fixed rooms and cannot leave.  In addition to a description that 
+prints on first encounter, every Npc has their own randomly-selected dialogue 
+that they will gargle at you every combat turn.  They drop their inventory 
+of items on death and award the player points on kill.  Additionally, Npcs have stats for health, strength, and defense.
+
+Combat (25xp):
+Upon entering a room of the dungeon, a message will be displayed notifying the
+player that he is not alone.  The player initiates combat using the 
+AttackCommand such as "Attack Bad Man" where Bad Man is the enemy.
+In combat, the player attacks a single enemy per turn.  If the enemy dies,
+the enemy cannot attack.  After the player moves, every enemy gets to attack
+the poor player.  The combat system is designed around aquiring more strength
+and defense that the player can find from various items in the dungeon.
+
+To test combat we reccomend that you first "take DeathJuice" because it grants
+you 10 str/def that you need in order to survive the more vicious enemies.
+You cannot kill the fountain or the space ship.
+
+You can defeat the Bad Man, who drops an item that is required to progress.
