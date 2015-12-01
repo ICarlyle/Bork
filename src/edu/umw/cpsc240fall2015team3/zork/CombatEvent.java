@@ -34,6 +34,7 @@ class CombatEvent extends Event {
 			while(i<=enemyNum){
 				if(enemies.get(i).getName().equals(enemyName)){
 					playerAtt = (playerStr*10)/enemies.get(i).defense();
+					System.out.println("The "+enemyName+" takes "+playerAtt+" damage.\n");
 					enemies.get(i).wound(playerAtt);
 					if(enemies.get(i).health() <= 0){
 						System.out.println(enemyName+" killed");
@@ -65,7 +66,6 @@ class CombatEvent extends Event {
 			//break;
 			//return "YOU DEFEATED\n";
 //System.out.println("The Player takes "+npcAtt+" damage.");
-System.out.println("The "+enemyName+" takes "+playerAtt+" damage.");
 			return "";
 		}
 		return "There is no " + enemyName + " here!\n";
