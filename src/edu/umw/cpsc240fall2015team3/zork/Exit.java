@@ -103,4 +103,9 @@ public class Exit {
     void unlock(){
 	isLocked = false;
     }
+
+		void lock(){
+			isLocked = true;
+		}
+
 }
