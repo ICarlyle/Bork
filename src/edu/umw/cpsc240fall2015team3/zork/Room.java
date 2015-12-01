@@ -150,11 +150,12 @@ public class Room {
 				for (int i = 0; i < enemies.size()-1; i++){
 					w.print(enemies.get(i).getName() + ",");
 				}
+				w.println("");
 			}
 
 			for(Exit exit : exits){
 				if( exit.isLocked())
-					w.print("Locked:" + exit.getDir() + "," + exit.getDest().getTitle());
+					w.println("Locked:" + exit.getDir() + "," + exit.getDest().getTitle());
 			}			
 
         if (contents.size() > 0) {
