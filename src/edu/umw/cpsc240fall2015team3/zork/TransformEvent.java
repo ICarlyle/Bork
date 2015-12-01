@@ -40,7 +40,7 @@ class TransformEvent extends Event{
 	//Need to fix getItem in Dungeon
 public String execute(){
     try{
-System.out.println("'"+oldItemName+"'"+newItemName+"'");
+//System.out.println("'"+oldItemName+"'"+newItemName+"'");
     Item oldItem = GameState.instance().getItemInVicinityNamed(oldItemName);
     Item newItem = GameState.instance().getDungeon().getItem(newItemName);
     System.out.print(CommandFactory.instance().parse("take "+oldItemName).execute());

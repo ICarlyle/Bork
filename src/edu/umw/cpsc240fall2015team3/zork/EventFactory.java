@@ -40,7 +40,7 @@ Returns an Event object based on the passed String that will directly influence 
 	String[] itemAndEvent = event.split(":");
 	eventName = itemAndEvent[0];
 	item = itemAndEvent[1];
-	System.out.println(eventName+"'"+item);
+//System.out.println(eventName+"'"+item);
 	}
 	if (event.contains("(")){
 		String[] verb = eventName.split("\\(");
@@ -68,25 +68,24 @@ Returns an Event object based on the passed String that will directly influence 
 	}
 
 	//System.out.println("EventName: " + eventName);
-	if(event.contains("Score")){
-System.out.println("§ScoreEventTriggered");return new AddScoreEvent(numberVal);}
-	if(event.contains("Die")){
-System.out.println("§DieEventTriggered");return new DieEvent(event);}
-	if(event.contains("Disappear")){
-System.out.println("§DisappearEventTriggered");return new DisappearEvent(item);}
-	if(event.contains("Wound")){
-System.out.println("§WoundEventTriggered");
-System.out.println(numberVal);return new LowerHealthEvent(numberVal);}
-        if(event.contains("Teleport(")){
-System.out.println("§TeleportSPECEventTriggered");return new TeleportEvent(numberVal);}
-	if(event.contains("Teleport")){
-System.out.println("§TeleportEventTriggered");return new TeleportEvent();}
-	if(event.contains("Transform")){
-System.out.println("§TransformEventTriggered");return new TransformEvent(item,param1);}
-	if(event.contains("Win")){
-System.out.println("§WinEventTriggered");return new WinEvent(event);}
-	if (event.contains("Unlock")){
-		System.out.println("Unlock event triggered");
+	if(event.contains("Score")){//System.out.println("§ScoreEventTriggered");
+return new AddScoreEvent(numberVal);}
+	if(event.contains("Die")){//System.out.println("§DieEventTriggered");
+return new DieEvent(event);}
+	if(event.contains("Disappear")){//System.out.println("§DisappearEventTriggered");
+return new DisappearEvent(item);}
+	if(event.contains("Wound")){//System.out.println("§WoundEventTriggered");
+//System.out.println(numberVal);
+return new LowerHealthEvent(numberVal);}
+        if(event.contains("Teleport(")){//System.out.println("§TeleportSPECEventTriggered");
+return new TeleportEvent(numberVal);}
+	if(event.contains("Teleport")){//System.out.println("§TeleportEventTriggered");
+return new TeleportEvent();}
+	if(event.contains("Transform")){//System.out.println("§TransformEventTriggered");
+return new TransformEvent(item,param1);}
+	if(event.contains("Win")){//System.out.println("§WinEventTriggered");
+return new WinEvent(event);}
+	if(event.contains("Unlock")){//System.out.println("Unlock event triggered");
 		String[] eventNameParts = eventName.split("\\(");
 		String unlockRoomName = eventNameParts[1].replace(")", "");
 		System.out.println(unlockRoomName);
