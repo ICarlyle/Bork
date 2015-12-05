@@ -1,0 +1,615 @@
+PortalDungeon
+Zork v1.0
+===
+Enemies:
+Final Boss OverMad Scientist
+This creature appears 10x your height. !
+***
+isHostile
+Health:2000
+Strength:40
+Defense:5
+Points:5
+***
+"I am more than angry!"
+"This is the end."
+"Oh now i'm OverMad"
+***
+---
+Angry ScienFist
+This creature appears to be a large hand half of your size. It still looks like it could pack a punch.
+***
+isHostile
+Health:80
+Strength:30
+Defense:10
+Points:10
+***
+"*Crunch"
+***
+---
+Angry Herboligist
+This creature appears the same height as you. Hes got a dentist toolkit! Run for the hills!
+***
+isHostile
+Health:150
+Strength:10
+Defense:5
+Points:5
+***
+"Im Gonna give you an imPLANT"
+***
+---
+Angry Dentist
+This creature appears the same height as you. Hes got a dentist toolkit! Run for the hills!
+***
+isHostile
+Health:120
+Strength:15
+Defense:5
+Points:5
+***
+"Open that smile"
+"Let me see you smile"
+"Show me those teeth"
+***
+---
+Angry Doctor
+This creature appears the same height as you. Hes got a PHD in killing!
+***
+isHostile
+Health:160
+Strength:20
+Defense:10
+Points:10
+***
+"9/10 doctors agree, that you will be dead from me"
+"Doctor"
+"Doctor Doctor"
+***
+---
+Angry Surgeon
+This creature appears the same height as you. Hes got a dentist toolkit! Run for the hills!
+***
+isHostile
+Health:120
+Strength:15
+Defense:5
+Points:5
+***
+"Operation Time!"
+"Lets open you up"
+"Ill fix your insides"
+***
+---
+Cithpin Larva
+This creature appears 1 meter long. its pinsors look undeveloped leading to it being defenceless.
+***
+isHostile
+Health:20
+Strength:0
+Defense:1
+Points:1
+***
+"cii"
+"ciiciicii"
+"ciiciicii"
+***
+---
+Cithpin Drone
+***
+There appears to be a creature here half your size. It has 1/2 meter pinsors and moves quickly but appears to be defenceless.
+***
+isHostile
+Health:200
+Strength:5
+Defense:1
+Points:2
+***
+"cip"
+"cipcip"
+"cipcipcip"
+***
+---
+Cithpin Worker
+***
+There appears to be a creature here 2/3's your size. It has 2 meter pinsors it appears to have a shell as hard as a softcover book.
+***
+isHostile
+Health:100
+Strength:10
+Defense:10
+Points:4
+***
+"chip"
+"chipchip"
+"chipchipchip"
+***
+---
+Cithpin Manager
+***
+There appears to be a creature here your size. It has 3 meter pinsors it appears to have a shell as hard as a paperback book.
+***
+isHostile
+Health:100
+Strength:10
+Defense:10
+Points:4
+***
+"cho"
+"chocho"
+"chochocho"
+***
+---
+Cithpin Soldier
+***
+There appears to be a creature here twice your size. It has 2 meter claws and appears to have a shell that is as hard as a textbook. It appears agressive and activly searches its surroundings
+***
+isHostile
+Health:250
+Strength:40
+Defense:10
+Points:10
+***
+"chch"
+"chchchch"
+"chchchchch"
+***
+---
+Cithpin Queen
+***
+There appears to be a creature here five times your size. This monstrosoty seems to be organizing the Cithpin colony. It looks like it would take a lot of effort to bring it down.
+***
+isHostile
+Health:1000
+Strength:10
+Defense:20
+Points:10
+Inventory:CithpinCrown
+***
+"cheep"
+"cheepcheep"
+"cheepcheepcheeep"
+***
+---
+Hippy
+***
+There appears to be protesters here against hippo violence, They are using picket fences!
+***
+isHostile
+Health:80
+Strength:0
+Defence:5
+Points:-2
+Inventory:HippoKey
+***
+"Nature"
+"Yeeeaaah"
+***
+---
+Hippo
+***
+There appears to be a large Hippo here 3 times times your size. This loner seems to be gaurding something important. It looks like it would take a lot of effort to bring it down.
+***
+isHostile
+Health:500
+Strength:30
+Defense:20
+Points:20
+Inventory:HippoStatue
+***
+"huuugh"
+"huuuuugh"
+"huuuuuuugh"
+***
+---
+===
+Items:
+ViceCommander
+Weight:100
+Str:0
+Def:0
+examine:I should probably "talk" to him.
+talk:Hello, y'all may have killed me' crew but they did go berserk. Thanks fo' the help anyway. If yer busy how about joining my expidition crew. I wont rush you into it. If yer up fo' it just say the magic word and well wrap things up. (Say "yes ViceCommander")
+yes[Win]:Very good, welcome to the team.
+---
+ContentScientist
+Weight:100
+Str:0
+Def:0
+examine:Just a passive scientist.
+---
+Brick
+Weight:5
+Str:8
+Def:0
+---
+IronSword
+Weight:5
+Str:10
+Def:2
+examine:Dull Iron Blade
+---
+SteelSword
+Weight:8
+Str:15
+Def:3
+examine:Shiny Steel Sword
+---
+CithpinCrown
+Weight:5
+Str:15
+Def:20
+examine:FOR THE HOARD FOR THE QUEEN, WE HAVE THE STRENGTH OF THE CITHPIN!
+---
+IronChainmail
+Weight:15
+Str:0
+Def:20
+examine:Its a fairly Durable and Lightweight armour.
+---
+SteelChainmail
+Weight:20
+Str:0
+Def:30
+examine:Its durable medium weight armour.
+---
+Yellow Goo Pile
+Weight:100
+Str:0
+Def:0
+examine:Looks like a lump of maggots rolling in cheese sauce. I think I can "scrape" some of this Yellow Goo.
+scrape[Transform(Yellow Goo)]:You scrape some Yellow goo into your bag
+---
+Yellow Goo
+Weight:5
+Str:0
+Def:0
+examine:Looks the opposite of tasty.
+eat[Wound(-5),Disappear]:It tastes bad but feels pretty good.
+---
+Furnace
+Weight:1000
+Str:0
+Def:0
+examine:Its hot to stand around!
+enter[Die]:You become the next metal masterpiece, but your journey ends as you burn alive.
+---
+HippoStatue
+Weight:100
+Str:0
+Def:0
+examine:Its begging to be touched
+touch[Transform(HippoAmulet),AddScore(10),Disappear]:An evil aura glows around you. You must now carry a amulet, lest you become cursed by the hippo you slain.
+---
+HippoAmulet
+Weight:8
+Str:10
+Def:10
+examine:A Glorious Day To Be A HIPPO.
+---
+HippoKey
+Weight:100
+Str:0
+Def:0
+use[Unlock(Hippo Sanctuary)]:The Smell of hippo Fills the air
+---
+LargeRedButton
+Weight:100
+Str:0
+Def:0
+push[Unlock()]:A Blaring alarm erupts, then shortly stops. After a few seconds you can hear a rumble in the distance.
+---
+Pedestal
+Weight:100
+Str:0
+Def:0
+examine:It appears to have a hand symbol on it. It would be nice to touch it.
+touch[Teleport(8)]:As you touch the Pedestal, you are whisked away.
+---
+RedCrayon
+Weight:1
+Str:3
+Def:0
+---
+RedWriting
+Weight:100
+Str:0
+Def:0
+read:There is one word written all over the wall saying REDRUM.
+---
+Terminal
+Weight:0
+Str:0
+Def:0
+spot[Teleport(6)]:As you enter the code on the terminal, you are whisked away
+cave[Teleport(1)]:As you enter the code on the terminal, you are whisked away
+cside[Teleport(18)]:As you enter the code on the terminal, you are whisked away
+w1[Teleport(19)]:As you enter the code on the terminal, you are whisked away
+w2[Teleport(3)]:As you enter the code on the terminal, you are whisked away
+---
+CithpinNote
+Weight:0
+Str:0
+Def:0
+read:I ain't not gunna underestimat' ants no mo. That was dangerous. Im heading off to some recently discovered facility or somthin'. It would be nice to get the dirt off me' leggins. The Code for The facility is somthin like "cside" (Vice Commander)
+---
+BrickRoomNote
+Weight:0
+Str:0
+Def:0
+read:I ain't sure what to do here, they are just a couple a nature lovin' losers and a large pig-thang. I ain't got time to deal with this so im headin back. By the way my new crew found more coordinates. It appears to be a cave full of ants. It sounds weak, but more fun than dealing with this fat cows and protesters. I heading to this place now, I set the code to "cave" to fellow travelers who want to leave this boring zone. (Vice Commander)
+---
+TerminalNote
+Weight:0
+Str:0
+Def:0
+read:I don't know about anyone else in the team but I am nervous about using the machine. They may seem usefull, however the monsters inside them are deadly. If they escaped outside it would probably be the end of civilization.If you want to use the terminal do so at your own risk, as of now I am leaving this issue to you.the code to use the terminal is my dogs name. "spot"  (former commander)
+---
+===
+Rooms:
+Padded Room
+Contents: RedCrayon,RedWriting
+You are in a small softly padded room. There is a door to the north and a hole in the wall to the east. There is red writing all over the walls.
+---
+SeaShore
+Contents: Pedestal
+You are at the beach. There is a path leading to a white building nearby
+---
+Lab Path
+You are following a trail to a lab
+---
+Lab Door
+This is the door to a large white building
+---
+Lab Entrance Room
+Enemies:Angry Dentist,Angry Herboligist
+You are at the Entrance of the Lab.
+---
+Lab Main Hall
+Enemies:Angry Herboligist,Agry Dentist,Angry Doctor
+You are in Science Territory now.
+---
+Lab Lower Floor
+Enemies:Angry ScienFist,Angry Surgeon,Angry Doctor,Angry Dentist
+You are pretty deep inside the lab.
+---
+Final Boss Room
+Enemies:Final Boss OverMad Scientist,Angry ScienFist,Angry Surgeon,Angry Doctor,Angry Dentist,Angry Herboligist
+---
+End Room
+Contents:ContentScientist,ViceCommander
+---
+Cithpin Storage
+Enemies:Cithpin Manager,Cithpin Worker
+You are in a boring and compact room. Its too bad Cithpins dont care about riches or you might have had a good hall of loot.
+---
+Cithpin Throne Room
+Enemies:Cithpin Queen,Cithpin Soldier,Cithpin Manager,Cithpin Worker,Cithpin Drone
+You are in a fabulous looking room, if it was not made of dirt. This appears to be a meeting place of the strongest in the Cithpin Colony.
+---
+Cithpin Castle
+Enemies:Cithpin Soldier,Cithpin Manager,Cithpin Worker,Cithpin Drone
+You are in a Densely packed dirt castle. The might of the Cithpin is pretty grand.
+---
+Cithpin Hive
+Contents: Yellow Goo Pile,Yellow Goo
+Enemies:Cithpin Manager,Cithpin Drone,Cithpin Larva
+You are in the Cithpin hive, it looks like Cithpins heavily infested this area.
+---
+Cithpin Tunnels B
+Enemies:Cithpin Soldier,Cithpin Worker,Cithpin Manager,Cithpin Drone
+---
+Cithpin Tunnels A
+Enemies:Cithpin Worker,Cithpin Manager,Cithpin Drone
+---
+Cithpin Tunnels entrance
+Enemies:Cithpin Soldier
+---
+Outlying Cavern
+You are in a bio-luminecesent cave. There are scratching sounds coming from the walls. The cave splits into three segments in a "Y" shape.
+---
+Furnace Room
+Contents: Furnace,IronSword,SteelSword,IronChainmail,SteelChainmail
+You are in a very hot room, there is some combat gear hung on the wall. There also appears to be a furnace here.
+---
+Hippo Room
+Enemies:Hippy,Hippo
+You are in a large blue room with a cone ceiling. The smell of Hippo is in the air.
+---
+Observation Room
+Contents: LargeRedButton
+You are in a room full of broken tripods and several machines that look like arcade machines. On their screen however are pictures of the places you have been. On one of the machines there is a large red button.
+---
+Hippo Sanctuary
+Contents: HippoStatue
+You are in a room full of hippo drawings. The drawings appear to be made in red crayon. The room is centered around a stone hippo statue in the center.
+---
+Foggy Precipice
+as you enter the room a foggy haze clouds your vision. it appears an intense drop awaits if you take a misstep. There appears to be a metalic building north with its door hanging open. It also seems possible to climb down the mountain.
+---
+Isolated Cave
+Contents: Pedestal
+You are in a erie looking cave. There appears to be glowing dungus on the walls witch ulluminate your surroundings. There is a passage to the west.
+---
+Brick Room
+Contents: Pedestal,Brick,BrickRoomNote
+You are in a cramped room full of red bricks. There appears to be a spiral staircase in the center of the room.
+---
+Old Machine Room
+Contents: Terminal,TerminalNote
+You are in a room surronded by corroded iron walls and a humming metalic structure in the center. 
+It appears connected to a terminal and can accept commands from you. On the terminal's screen text appears saying enter "PASSWORD Terminal" To operate the machine
+---
+===
+Exits:
+SeaShore
+n
+Lab Path
+---
+Lab Path
+s
+SeaShore
+---
+Lab Path
+n
+Lab Door
+---
+Lab Door
+s
+Lab Path
+---
+Lab Door
+n
+Lab Entrance Room
+---
+Lab Entrance Room
+s
+Lab Door
+---
+Lab Entrance Room
+w
+Lab Main Hall
+---
+Lab Main Hall
+e
+Lab Entrance Room
+---
+Lab Main Hall
+d
+Lab Lower Floor
+---
+Lab Lower Floor
+u
+Lab Main Hall
+---
+Lab Lower Floor
+n
+Final Boss Room
+---
+Final Boss Room
+s
+Lab Lower Floor
+---
+Final Boss Room
+n
+End Room
+---
+End Room
+s
+Final Boss Room
+---
+Cithpin Castle
+w
+Cithpin Storage
+---
+Cithpin Storage
+e
+Cithpin Castle
+---
+Cithpin Castle
+n
+Cithpin Throne Room
+---
+Cithpin Throne Room
+s
+Cithpin Castle
+---
+Cithpin Tunnels B
+n
+Cithpin Castle
+---
+Cithpin Castle
+s
+Cithpin Tunnels B
+---
+Cithpin Tunnels A
+n
+Cithpin Tunnels B
+---
+Cithpin Tunnels B
+s
+Cithpin Tunnels A
+---
+Outlying Cavern
+n
+Cithpin Tunnels A
+---
+Cithpin Tunnels A
+s
+Outlying Cavern
+---
+Outlying Cavern
+w
+Cithpin Hive
+---
+Cithpin Hive
+e
+Outlying Cavern
+---
+Cithpin Hive
+n
+Cithpin Castle
+---
+Cithpin Castle
+s
+Cithpin Hive
+---
+Isolated Cave
+w
+Outlying Cavern
+---
+Outlying Cavern
+e
+Isolated Cave
+---
+Brick Room
+e
+Furnace Room
+---
+Furnace Room
+w
+Brick Room
+---
+Brick Room
+u
+Hippo Room
+---
+Hippo Room
+d
+Brick Room
+---
+Hippo Room
+n
+Hippo Sanctuary
+isLocked
+---
+Hippo Sanctuary
+s
+Hippo Room
+---
+Observation Room
+s
+Padded Room
+---
+Padded Room
+n
+Observation Room
+---
+Padded Room
+e
+Foggy Precipice
+---
+Foggy Precipice
+w
+Padded Room
+---
+Foggy Precipice
+n
+Old Machine Room
+---
+Old Machine Room
+s
+Foggy Precipice
+---
+===
