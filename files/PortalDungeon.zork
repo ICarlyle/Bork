@@ -223,18 +223,19 @@ Brick
 Weight:5
 Str:8
 Def:0
+examine:Hits like a brick.
 ---
 IronSword
 Weight:5
 Str:10
 Def:2
-examine:Dull Iron Blade
+examine:Dull Iron Blade.
 ---
 SteelSword
 Weight:8
 Str:15
 Def:3
-examine:Shiny Steel Sword
+examine:Shiny Steel Sword.
 ---
 CithpinCrown
 Weight:5
@@ -292,12 +293,14 @@ HippoKey
 Weight:100
 Str:0
 Def:0
+examine:Large heavy Key shaped like a hippo
 use[Unlock(Hippo Sanctuary)]:The Smell of hippo Fills the air
 ---
 LargeRedButton
 Weight:100
 Str:0
 Def:0
+examine:A must push button
 push[Unlock()]:A Blaring alarm erupts, then shortly stops. After a few seconds you can hear a rumble in the distance.
 ---
 Pedestal
@@ -311,17 +314,20 @@ RedCrayon
 Weight:1
 Str:3
 Def:0
+examine:A cheap Red Crayon
 ---
 RedWriting
 Weight:100
 Str:0
 Def:0
+examine:There is one word written all over the wall saying REDRUM.
 read:There is one word written all over the wall saying REDRUM.
 ---
 Terminal
 Weight:0
 Str:0
 Def:0
+examine:An interactive display that accepts commands.
 spot[Teleport(6)]:As you enter the code on the terminal, you are whisked away
 cave[Teleport(7)]:As you enter the code on the terminal, you are whisked away
 cside[Teleport(3)]:As you enter the code on the terminal, you are whisked away
