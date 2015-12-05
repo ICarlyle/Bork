@@ -7,11 +7,23 @@ Commands:
 use,scrape,examine,take,attack,read,touch
 
 Throughout the game You will find Notes, these notes contain a password to enter on the terminal. You can skip any zone other than the last one. You can return to the hub from any pedistal.
+Each Code is entered by standing next to the terminal and typing
+[CODE Terminal] with no Brackeys
 The codes are:
-spot=Area1
-cave=Area2
-cside=Area3
+[1] spot
+[2] cave
+[3] cside
 
+Area1:
+This is a good place to grab gear in the furnace room and contains optional fights. 
+After fighting the hippo, it drops a statue. Do not Touch it unless you want to be cursed with an item that damages your stats if you take it off.
+
+Area2:
+This area is about raiding a colony of ants. There is a infinite health spawner here and once you defeat a boss, you will be rewarded with a good equipment item.
+
+Area3:
+This is the final area and leads to the final boss.
+After passing through the enemies you may talk to the man you are searching for  and say "yes ViceCommander" to win the game
 
 Tips:
 You can skip every enemy by walking past them, but they will not award points or drop items.
