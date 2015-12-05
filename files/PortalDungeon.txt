@@ -3,6 +3,15 @@ To win the game, You must find the missing Vice commander of a research team.
 
 The Key to staying alive in a fight is having good stats. Stats can only be aquired by holding items. Note: you will lose the stats when you drop an item.
 
+Commands:
+use,scrape,examine,take,attack,read,touch
+
+Throughout the game You will find Notes, these notes contain a password to enter on the terminal. You can skip any zone other than the last one. You can return to the hub from any pedistal.
+The codes are:
+spot=Area1
+cave=Area2
+cside=Area3
+
 
 Tips:
 You can skip every enemy by walking past them, but they will not award points or drop items.
