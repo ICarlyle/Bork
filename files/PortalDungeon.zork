@@ -25,11 +25,11 @@ Strength:30
 Defense:10
 Points:10
 ***
-"*Crunch"
+"Crunch"
 ***
 ---
 Angry Herboligist
-This creature appears the same height as you. Hes got a dentist toolkit! Run for the hills!
+This creature appears the same height as you. Its got chemicals!
 ***
 isHostile
 Health:150
@@ -323,10 +323,8 @@ Weight:0
 Str:0
 Def:0
 spot[Teleport(6)]:As you enter the code on the terminal, you are whisked away
-cave[Teleport(1)]:As you enter the code on the terminal, you are whisked away
-cside[Teleport(18)]:As you enter the code on the terminal, you are whisked away
-w1[Teleport(19)]:As you enter the code on the terminal, you are whisked away
-w2[Teleport(3)]:As you enter the code on the terminal, you are whisked away
+cave[Teleport(7)]:As you enter the code on the terminal, you are whisked away
+cside[Teleport(3)]:As you enter the code on the terminal, you are whisked away
 ---
 CithpinNote
 Weight:0
@@ -367,7 +365,7 @@ Enemies:Angry Dentist,Angry Herboligist
 You are at the Entrance of the Lab.
 ---
 Lab Main Hall
-Enemies:Angry Herboligist,Agry Dentist,Angry Doctor
+Enemies:Angry Herboligist,Angry Dentist,Angry Doctor
 You are in Science Territory now.
 ---
 Lab Lower Floor
@@ -376,9 +374,11 @@ You are pretty deep inside the lab.
 ---
 Final Boss Room
 Enemies:Final Boss OverMad Scientist,Angry ScienFist,Angry Surgeon,Angry Doctor,Angry Dentist,Angry Herboligist
+This is one of the hardest fight rooms in the game.
 ---
 End Room
-Contents:ContentScientist,ViceCommander
+Contents: ContentScientist,ViceCommander
+This is the end of the lab. You may now Talk to the commander
 ---
 Cithpin Storage
 Enemies:Cithpin Manager,Cithpin Worker
