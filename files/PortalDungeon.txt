@@ -1,0 +1,9 @@
+WalkThrough of PortalDungeon
+To win the game, You must find the missing Vice commander of a research team.
+
+The Key to staying alive in a fight is having good stats. Stats can only be aquired by holding items. Note: you will lose the stats when you drop an item.
+
+
+Tips:
+You can skip every enemy by walking past them, but they will not award points or drop items.
+There is a certain yellow blob that can give you more health if you are hurt, examine it to find out more details.
