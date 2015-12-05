@@ -275,7 +275,7 @@ public class Room {
         }
 	if (enemies.size() > 0 && beenHere){
 	for (int i = 0; i < enemies.size(); i++){
-		description += "\nArgh! There is a " + enemies.get(i).getName() + " here!";
+		//description += "\nArgh! There is a " + enemies.get(i).getName() + " here!";
 	}
 	}
         //if(beenHere || full){for (Exit exit : exits){description += "\n" + exit.describe();}}  //Enable to see Exits everytime
