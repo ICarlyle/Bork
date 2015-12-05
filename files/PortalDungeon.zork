@@ -3,7 +3,7 @@ Zork v1.0
 ===
 Enemies:
 Final Boss OverMad Scientist
-This creature appears 10x your height. !
+This creature appears 10x your height.
 ***
 isHostile
 Health:2000
@@ -118,7 +118,7 @@ There appears to be a creature here 2/3's your size. It has 2 meter pinsors it a
 isHostile
 Health:100
 Strength:10
-Defense:10
+Defense:4
 Points:4
 ***
 "chip"
@@ -133,7 +133,7 @@ There appears to be a creature here your size. It has 3 meter pinsors it appears
 isHostile
 Health:100
 Strength:10
-Defense:10
+Defense:5
 Points:4
 ***
 "cho"
@@ -163,7 +163,7 @@ There appears to be a creature here five times your size. This monstrosoty seems
 isHostile
 Health:1000
 Strength:10
-Defense:20
+Defense:10
 Points:10
 Inventory:CithpinCrown
 ***
@@ -194,7 +194,7 @@ There appears to be a large Hippo here 3 times times your size. This loner seems
 isHostile
 Health:500
 Strength:30
-Defense:20
+Defense:5
 Points:20
 Inventory:HippoStatue
 ***
@@ -221,25 +221,25 @@ examine:Just a passive scientist.
 ---
 Brick
 Weight:5
-Str:8
+Str:12
 Def:0
 examine:Hits like a brick.
 ---
 IronSword
 Weight:5
-Str:10
-Def:2
+Str:40
+Def:5
 examine:Dull Iron Blade.
 ---
 SteelSword
 Weight:8
-Str:15
-Def:3
+Str:50
+Def:7
 examine:Shiny Steel Sword.
 ---
 CithpinCrown
 Weight:5
-Str:15
+Str:50
 Def:20
 examine:FOR THE HOARD FOR THE QUEEN, WE HAVE THE STRENGTH OF THE CITHPIN!
 ---
@@ -287,7 +287,7 @@ HippoAmulet
 Weight:8
 Str:10
 Def:10
-examine:A Glorious Day To Be A HIPPO.
+examine:A Glorious Day To Be A HIPPO, Too bad your a human.
 ---
 HippoKey
 Weight:100
