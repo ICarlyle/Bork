@@ -44,7 +44,7 @@ public class Exit {
         Dungeon.IllegalDungeonFormatException {
 
         init();
-	System.out.println("New!");
+	//System.out.println("New!");
         String srcTitle = s.nextLine();
         if (srcTitle.equals(Dungeon.TOP_LEVEL_DELIM)) {
             throw new NoExitException();
@@ -67,7 +67,7 @@ public class Exit {
    
         // I'm an Exit object. Great. Add me as an exit to my source Room too,
         // though.
-	System.out.println(src.getTitle() + " " + dest.getTitle() + " " + dir);
+	//System.out.println(src.getTitle() + " " + dest.getTitle() + " " + dir);
         src.addExit(this);
 
         // throw away delimiter:
