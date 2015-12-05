@@ -41,6 +41,7 @@ class CombatEvent extends Event {
 						System.out.println(enemies.get(i).drop());
 						//enemies.remove(npc);
 						currRoom.remove(enemies.get(i));
+						i=i+10000;
 						//GameState.instance().removeNpc(npc);
 					}
 				}
