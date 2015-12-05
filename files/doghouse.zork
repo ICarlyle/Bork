@@ -1,0 +1,592 @@
+Doghouse
+Zork v1.0
+===
+Enemies:
+Bad Man
+***
+There appears to be a man here who is definitely not a good man.
+(One might say he's a Bad Man.)
+The fiend is snoring quietly in the corner of your cell.
+***
+isHostile
+Health:1
+Strength:0
+Defense:10
+Points:2
+Inventory:Candle
+***
+"zzZzzzzzzzZZZZZZzzzzz"
+"zzzZZZZZzzzzZzZzz"
+"ZzzZZZZZZZzzzzzzzZzZZzzzzzzzZZZZZZZzzzzZzzz"
+***
+---
+Boogie
+***
+Argh!  Boogie smiles at you.
+***
+isHostile
+Health:1000
+Strength:50
+Defense:50
+Points:10
+***
+"Pll-pllease no!  Boogie no want any coogie!"
+"I give another String!"
+"50% off cheese, no??!"
+"aaarrrgrhghghghhhhhhhhhhHHGHGGHHHHGHGHHHHHGHHHHHHHHHHHHHGHHG!!!!!"
+"Boogie NO doogie!"
+***
+---
+Moaning Turtle
+***
+Oh no!  A Moaning Turtle is crying over the toilet!
+***
+isHostile
+Health:50
+Strength:10
+Defense:10
+Points:1
+***
+"Grrruuuuhhhhhhhh"
+"Grrraaahhh"
+***
+---
+Big Bunny
+***
+"A Big Bunny is snoozing in the pool."
+***
+isHostile
+Health:50
+Strength:5
+Defense:5
+Points:1
+***
+"..."
+***
+---
+Fountain
+***
+There is a giant Fountain snoring loudly, best not to wake it.
+***
+isHostile
+Health:200
+Strength:20
+Defense:100
+Points:3
+***
+"Glub glub glub"
+"GlUB GLuB GLub"
+"GLuB"
+***
+---
+Boulder
+***
+A giant Boulder is blocking your path.
+***
+isHostile
+Health:150
+Strength:1
+Defense:10
+Points:2
+***
+"..." 
+***
+---
+===
+Items:
+CrumpledPieceOfPaper
+Weight:1
+Str:0
+Def:0
+read[AddScore(3)]:WELCOME TO THE DOGHOUSE.
+examine:Could it be...a piece of paper...with writing on it..? 
+---
+Candle
+Weight:1
+Str:0
+Def:0
+wave[AddScore(3),Unlock(Moon Hall)]:You make a spooky face.  As if in disgust, the cell door rumbles. . .
+examine:A lit candle, just chillin.  You feel a strange urge to wave it.
+---
+CrustyKey
+Weight:2
+Str:0
+Def:0
+examine:It appears to be an old, crustified key.  What good could that be?
+juggle:You successfully juggle the key.  A use!
+use[AddScore(3),Unlock(Forest Path)]:Clink!  The gate creaks open. . .
+---
+HeadlessCorpse
+Weight:50
+Str:0
+Def:0
+smell:Fresh!
+examine:There's something off about this headless carcass....
+pose[AddScore(5)]:Striking!
+---
+SeveredHead
+Weight:8
+Str:1
+Def:1
+examine:It's a mannequin?!  Gross.
+---
+WoodenPlank
+Weight:10
+Str:2
+Def:5
+examine:A loose plank from the wooden stairwell.  A must for any amnesiac.
+---
+Lightbulb
+Weight:2
+Str:0
+Def:0
+examine:How many amnesiac dungeon dwellers does it take to screw in a lightbulb?  Two.
+---
+RavenousMold
+Weight:0
+Str:0
+Def:-1
+examine:GrrrGRrRRRrrrrrrrrrrrr...
+eat:I think it wants to eat /me/!
+use[Unlock(Bathroom),Disappear]:With care, you scrounge the goop from your pockets and slather it over the wooden door.
+---
+SuperMassiveBlackHole
+Weight:1000
+Str:0
+Def:0
+examine:A long way down....You can make out a small aclove jutting out to the east.
+---
+DirtyMirror
+Weight:1
+Str:0
+Def:0
+examine:Gorgeous!!!! ;)
+clean[Transform(ShinyMirror)]:Rub-a-dub-a-dub!
+---
+YourBody
+Weight:99999999
+Str:0
+Def:0
+examine[Win]:R.I.P.ed
+---
+ShinyMirror
+Weight:1
+Str:0
+Def:0
+examine:I liked you better before.
+use[Transform(HandMirror),Unlock(The Dark)]:The light reflects from the mirror into the jewel.  The door begins to rumble...
+---
+HandMirror
+Weight:1
+Str:0
+Def:0
+examine:Neither dirty nor shiny, just boring.  Your reflection isn't helping.
+break[Transform(GlassShard)]:You smash the face of the mirror...
+---
+GlassShard
+Weight:0
+Str:1
+Def:1
+examine:What remains of the mirror.
+use[Unlock(The Pit)]:You saw away at the rope wrapped around your ankle...
+---
+String
+Weight:1
+Str:0
+Def:0
+examine:Unlike all strings in your clothes.  Boogie quality guarentee!
+---
+OldComputer
+Weight:5
+Str:0
+Def:1
+examine:Maybe you can play a text adventure game on this thing!
+play[Transform(OldMagnet)]:You savagely smash the defenseless machine.  Cool!  A magnet!
+---
+OldMagnet
+Weight:2
+Str:0
+Def:0
+examine:Multitalented.  Can attract and repel many a foreign objects.
+tie[Transform(MagnetOnARope)]:You tie the string to the magnet.
+---
+MagnetOnARope
+Weight:1
+Str:0
+Def:0
+examine:An innovative piece of technology.  Go fish!
+lower[Transform(CrustyKey)]:You fish out a key!
+---
+Something
+Weight:3
+Str:0
+Def:5
+examine:It's squishy!
+---
+SwoleEmber
+Weight:3
+Str:10
+Def:10
+---
+===
+Rooms:
+Cell
+Enemies:Bad Man
+Contents: SwoleEmber
+Welcome to the Doghouse!  In order to escape, you'll have to find a way up and 
+out of the dungeon!  The only way to do that, is to go down...
+Deep Down...  
+
+You are in a small, windowless room.  There is an empty mattress resting on the floor. A flickering candle is illuminating the cell door, which is sealed shut.
+---
+Moldy Cell
+Contents: RavenousMold
+ARRGGGGHHHGHHGHGHGHGRHGRHGRGRHGGHRHHRGHGHGRHGRHGGHGRHGRHGRHGH
+Oh! You are in a small, windowless room.  There is an emptry mattress resting on
+the floor.
+---
+Moon Hall
+A black walkway streches out on either side of you.  A hastilly-assembled railing is the only thing keeping you from falling down into the pitch dark.  Beneath the metal grating you can make out the mural of a shimmering moon shrouded by 
+red clouds.
+---
+West Moon Hall
+You run your hand along the bars until you reach the end of the walkway.  A 
+padded room is here. 
+---
+White Room
+Contents: CrumpledPieceOfPaper,Lightbulb
+A dimming lightbulb is collecting dust above your head.  The bottom of a 
+crumpled piece of manilla paper is lodged into the corner.  You don't like this room.
+---
+Fountain Room
+Enemies:Fountain
+Contents: HeadlessCorpse,SeveredHead
+Your legs give out as you collapse onto the top of the mural.  A rounded fountain etched of marble is your only companion.  You think you can make out something slumped over the base of the marble...
+---
+Spiral Stair
+Contents: WoodenPlank
+Through a narrow archway, a wooden staircase descends from the fountain.  From 
+somewhere close, you can hear the purr of a faint whine.
+---
+Flooded Stair
+An inch of warm water is resting at the base of the stair.  Two dozen unwanted boxes are piled into a corner, and a thick wooden door to the north has sealed off your progress.  The whine has stopped.  You can see some tools floating amidst the boxes...
+---
+East Basement
+The hallway is pitch black.  You wish you could walk without your feet sloshing along in the water, but there's too much here to move without sound.  Directly 
+ahead is the shape of another wooden door, light leaking from the cracks.
+---
+Shallow Pond
+As you wade through the foul-smelling water, you can hear the long, hungry groan of a creature in the dark.   A wooden door leads away to the south, but it 
+seems to be stuck.
+---
+Bathroom
+Contents: DirtyMirror
+Bursts of murky water flood erupt out into the basement.  Aha! The source of the flooding!  A row of stalls is lined up along the far wall.
+---
+Stall
+Enemies:Big Bunny,Moaning Turtle
+You burst into the stall.  It's occupied.
+---
+The Hole
+You heave the door shut behind you with some relief.  The room is well-lit, with a generator humming to itself in the corner.  Could that have been the whine?  You sit and listen to the generator.  An enourmous pit has been chiseled out in the center of The Hole, leaving only just enough space to navigate along the
+sides of the room. 
+---
+Forest Path
+Contents: YourBody
+A twisting path snakes its way up and out of the caverns.  You crawl upwards, 
+exhausted.  You squint out into the evening sky as rays of sunlight warm your skin.
+
+Congratulations!  You escaped the DOGHOUSE!
+...but you are really hungry so you pass out and are eaten by a cougar.
+---
+Bottomless Pit I
+You are falling down.  Very fast.
+---
+Bottomless Pit II
+Verrrrrry fast.  arrrggggghhhhhhHHHHHHGHHHHHHH
+---
+Bottomless Pit III
+GAHGHGGHRGHRHHHHHHHHRRRRGGGGHHHHHHHHGHHGHGHHGRHHHHHHH
+---
+BOTTOMLESS PIT I
+You are falling down.  Very fast.
+---
+BOTTOMLESS PIT II
+Verrrrrrry fast.  arrrggggghhhhhHHHHHHHHHHHHH
+---
+BOTTOMLESS PIT III
+GAHGHGGHRGHRHHHHHHHHRRRGGGGHHHHHHHHHGHHGHGHHGRHHHHHHH
+---
+BOTTOMLESS PIT IV
+GHGHGHGHGAHGRHRGAHGRHGHGHRHRHRGHRHHRGHAGRHGAHRGHAGRGHAHRGHAGRHAGHRGAHRGHAGRH
+---
+Small Alcove
+A small alcove leads off from the pit.  You huff and you puff and you pull 
+yourself up to safety.  
+---
+Cramped Passage
+Enemies:Boulder
+A twisting passage formed of stone leads forwards into the dark. 
+---
+Light Room
+The passage opens into a sprawling chamber.  A horizontal beam of light emanates from a statue from the west to the east.  You can see a door to the south,
+but it's sealed tight.  A circular panel is etched into stone above the door.  
+You think you can make out a dull ruby in the center.     
+---
+The Dark
+You take one step into the room and find yourself flailing upside down.  A 
+thick rope is wrapped around your ankle, and you can't see anything.
+---
+The Pit
+Contents: Something
+Darkness surrounds you on all sides.  Cutting yourself free from the snare may
+have seemed like a good idea at the time but it looks like there's no way back.
+Your foot brushes agaisnt the rough surface of Something but you'd rather not
+know what. 
+---
+The Gate
+A metal gate is blocking your path.  Just beyond the gate you can see a narrow
+path leading up to what may be sunlight.  So close....
+---
+The Well
+A simple well is sitting in the dark, apparently providing water to something
+nearby.  You reach down inside but don't feel any bucket.
+---
+Cliffside Boogies and Knacks
+Enemies:Boogie
+Contents: String,OldComputer
+You pull yourself up and over the side of a cliff.  A creature is bent over a 
+campfire, humming to himself.
+"Welcome to my abode!"
+Boogie gestures to some rocks.
+"Here we have many a fine things for sale!  Like cheese!  
+..Oh.....a new customer?  Here!  Take this complimentary String!  I insist!
+Now don't go snooping around back there, ya hear?"
+---
+Boogie's Bungalow
+You shouldn't be here!
+---
+The Generator
+Contents: SuperMassiveBlackHole
+The tip of your shoe is pointing out over the dark.  A body is pressed up 
+agaisnt the edge of the wall, its legs hanging over the edge.
+---
+Upper Study
+A hundred candles are alligned evenly amoung the room.  You can tell that this was once an idyllic place of study... but now the shelves are empty, the long tables caked in dust, and the candles lit.  From somewhere below, a howl echoes...   
+---
+===
+Exits:
+Cell
+n
+Moon Hall
+isLocked
+---
+Moon Hall
+s
+Moldy Cell
+---
+Moon Hall
+w
+West Moon Hall
+---
+West Moon Hall
+w
+White Room
+---
+West Moon Hall
+e
+Moon Hall
+---
+White Room
+e
+West Moon Hall
+---
+West Moon Hall
+d
+Fountain Room
+---
+Moon Hall
+d
+Fountain Room
+---
+Fountain Room
+w
+Spiral Stair
+---
+Spiral Stair
+e
+Fountain Room
+---
+Spiral Stair
+d
+Flooded Stair
+---
+Flooded Stair
+u
+Spiral Stair
+---
+Flooded Stair
+n
+East Basement
+---
+East Basement
+s
+Flooded Stair
+---
+East Basement
+n
+The Hole
+---
+The Hole
+s
+East Basement
+---
+The Hole
+n
+The Generator
+---
+East Basement
+w
+Shallow Pond
+---
+Shallow Pond
+e
+East Basement
+---
+Shallow Pond
+s
+Bathroom
+isLocked
+---
+Small Alcove
+e
+Cramped Passage
+---
+Bathroom
+w
+Stall
+---
+Stall
+e
+Bathroom
+---
+Bathroom
+n
+Shallow Pond
+---
+The Generator
+s
+The Hole
+---
+Moldy Cell
+n
+Moon Hall
+---
+Cramped Passage
+e
+Light Room
+---
+Light Room
+w
+Cramped Passage
+---
+Light Room
+s
+The Dark
+isLocked
+---
+The Dark
+d
+The Pit
+isLocked
+---
+The Pit
+e
+The Well
+---
+The Pit
+s
+The Gate
+---
+The Gate
+n
+The Pit
+---
+The Gate
+e
+The Well
+---
+The Well
+n
+The Pit
+---
+The Gate
+u
+Cliffside Boogies and Knacks
+---
+Cramped Passage
+w
+Small Alcove
+---
+Cliffside Boogies and Knacks
+d
+The Gate
+---
+The Gate
+s
+Forest Path
+isLocked
+---
+Fountain Room
+e
+Upper Study
+---
+Upper Study
+w
+Fountain Room
+---
+The Hole
+d
+Bottomless Pit I
+---
+Bottomless Pit I
+d
+Bottomless Pit II
+---
+Bottomless Pit II
+d
+Bottomless Pit III
+---
+Bottomless Pit III
+d
+Moldy Cell
+---
+The Generator
+d
+BOTTOMLESS PIT I
+---
+BOTTOMLESS PIT I
+d
+BOTTOMLESS PIT II
+---
+BOTTOMLESS PIT II
+d
+BOTTOMLESS PIT III
+---
+BOTTOMLESS PIT III
+d
+BOTTOMLESS PIT IV
+---
+BOTTOMLESS PIT IV
+d
+Moldy Cell
+---
+BOTTOMLESS PIT III
+e
+Small Alcove
+---
+Small Alcove
+w
+BOTTOMLESS PIT III
+---
+===
