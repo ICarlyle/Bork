@@ -87,7 +87,7 @@ public class Room {
 		}
 		lineOfDesc = s.nextLine(); // Room descrption
 	}
-	System.out.println("Post Enemies:");
+//	System.out.println("Post Enemies:");
         while (!lineOfDesc.equals(Dungeon.SECOND_LEVEL_DELIM) &&
                !lineOfDesc.equals(Dungeon.TOP_LEVEL_DELIM)) {
 
@@ -98,7 +98,7 @@ public class Room {
                     try {
                         if (initState) {
                             add(d.getItem(itemName));
-				System.out.println(itemName);
+				//System.out.println(itemName);
                         }
                     } catch (Item.NoItemException e) {
                         throw new Dungeon.IllegalDungeonFormatException(

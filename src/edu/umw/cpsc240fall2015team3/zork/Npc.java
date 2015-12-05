@@ -37,22 +37,24 @@ Constructs a new, fully fledged npc enemy.
 	Npc(Scanner s) throws NoNpcException, 
 		Dungeon.IllegalDungeonFormatException{
 	String currLine = "";
-	System.out.println("START OF NPC CONSTRCUTOR");
+	//System.out.println("START OF NPC CONSTRCUTOR");
 	init();
 	
 	currLine = s.nextLine();
 	if (currLine.equals("===")){
-		System.out.println("Npc parsing fin");
+	//	System.out.println("Npc parsing fin");
 		throw new Npc.NoNpcException();
 	}
 	this.name = currLine;
 	
-	System.out.println(name);
+	//System.out.println(name);
 	currLine = s.nextLine(); // ***
 	while (!s.hasNext("\\*\\*\\*")){
 		this.description.add(s.nextLine());
 	}
-	System.out.println(s.nextLine()); // ***
+	//System.out.println(s.nextLine()); // ***
+	currLine = s.nextLine();
+	//System.out.println(currLine);
 	String isHostile = s.nextLine();
 	if (isHostile.equals("isHostile")){
 		this.isHostile = true;
@@ -69,11 +71,11 @@ Constructs a new, fully fledged npc enemy.
 	String[] ptsLine = s.nextLine().split(":");
 	this.points = Integer.parseInt(ptsLine[1]);
 	currLine = s.nextLine();
-	System.out.println("inventoryLine: " + currLine);
+	//System.out.println("inventoryLine: " + currLine);
 	if (currLine.contains("Inventory")){
 		String[] inven = currLine.split(":");
 		String allItems = inven[1];
-		System.out.println("allItems: " + allItems);
+		//System.out.println("allItems: " + allItems);
 		if (allItems.contains(",")){
 			String[] allItemsArray = allItems.split(",");
 			for (int i = 0; i < allItemsArray.length; i++){
@@ -84,17 +86,17 @@ Constructs a new, fully fledged npc enemy.
 			this.inventory.add(allItems);
 		}
 	currLine = s.nextLine(); // ***
-	System.out.println("Shld be *** " + currLine);
+	//System.out.println("Shld be *** " + currLine);
 	}
 	if (currLine.equals("***")){
-		System.out.println("ye");
+	//	System.out.println("ye");
 		while(!s.hasNext("\\*\\*\\*")){
 			this.dialog.add(s.nextLine());
 		}
 	}
-	System.out.println("before ===" + s.nextLine()); // ---
+	s.nextLine(); // ---
 	currLine = s.nextLine(); // ---
-	System.out.println("at the end: " + currLine);
+	//System.out.println("at the end: " + currLine);
 	//if (s.hasNext("===")){
 	//	currLine = s.nextLine(); // ===
 	//}

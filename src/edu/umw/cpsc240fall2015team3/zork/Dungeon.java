@@ -118,7 +118,7 @@ Reads from the file passed and instantiates a new dungeon based on it.
                 add(new Item(s));
             }
         } catch (Item.NoItemException e) {  /* end of items */ }
-	System.out.println("Item parsing fin");
+	//System.out.println("Item parsing fin");
         // Throw away Rooms starter.
         if (!s.nextLine().equals(ROOMS_MARKER)) {
             throw new IllegalDungeonFormatException("No '" +
@@ -217,8 +217,8 @@ Stores a room object into this dungeon so that it can be retrieved later.  If th
     public void add(Room room) { 
 	this.rooms.put(room.getTitle(),room); }
     public void add(Npc npc) {
-	System.out.println("[enemiesPut]: " + npc.getName());
-	System.out.println("enemies: " + this.enemies);
+	//System.out.println("[enemiesPut]: " + npc.getName());
+	//System.out.println("enemies: " + this.enemies);
 	this.enemies.put(npc.getName(),npc);  }
 
     public Npc getNpc(String npc){
