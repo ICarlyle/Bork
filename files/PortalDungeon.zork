@@ -308,7 +308,7 @@ Weight:100
 Str:0
 Def:0
 examine:It appears to have a hand symbol on it. It would be nice to touch it.
-touch[Teleport(8)]:As you touch the Pedestal, you are whisked away.
+touch[Teleport(0)]:As you touch the Pedestal, you are whisked away.
 ---
 RedCrayon
 Weight:1
